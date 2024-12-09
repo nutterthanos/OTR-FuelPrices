@@ -8,6 +8,7 @@ from datetime import datetime
 auth_token = os.getenv('AUTH_TOKEN_PROD')
 
 MAX_CONCURRENT_REQUESTS = 5  # Adjust this as needed
+DATA_DIR = "fuelprices"
 
 BASE_URLS = {
     "get_sites": "https://ibjdnxs3i2.execute-api.ap-southeast-2.amazonaws.com/motrPrd/getSites",
@@ -30,8 +31,13 @@ async def fetch_json(session, url, semaphore):
             return await response.json()
 
 
+# Ensure the directory exists
+if not os.path.exists(DATA_DIR):
+    os.makedirs(DATA_DIR)
+
 async def save_json(filename, data):
-    async with aiofiles.open(filename, mode="w") as file:
+    filepath = os.path.join(DATA_DIR, filename)
+    async with aiofiles.open(filepath, mode="w") as file:
         await file.write(json.dumps(data, indent=4))
 
 
