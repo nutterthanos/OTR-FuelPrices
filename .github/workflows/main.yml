@@ -40,8 +40,9 @@ jobs:
       # Step 6: Copy files to GitHub Pages directory
       - name: Copy Files to GitHub Pages
         run: |
-          mkdir -p docs/graphs
-          cp -r graphs/* docs/graphs
+          if [ "$(ls -A graphs)" ]; then
+            cp -r graphs/* docs/graphs
+          fi
           cp index.html docs/
 
 
