@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Prices Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        canvas {
+            max-width: 80%;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fuel Prices Dashboard</h1>
+    <p>Select a site and date range to view the graph:</p>
+    <form id="filter-form">
+        <label for="site-code">Site Code:</label>
+        <input type="text" id="site-code" placeholder="Enter site code" required>
+        <label for="date-range">Date Range:</label>
+        <select id="date-range">
+            <option value="weekly">Weekly</option>
+            <option value="monthly">Monthly</option>
+            <option value="yearly">Yearly</option>
+        </select>
+        <button type="submit">Show Graph</button>
+    </form>
+    <canvas id="fuel-price-chart"></canvas>
+
+    <script>
+        document.getElementById("filter-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const siteCode = document.getElementById("site-code").value;
+            const dateRange = document.getElementById("date-range").value;
+
+            // Build the path to the JSON file
+            const dataFile = `${siteCode}_${dateRange}.json`;
+
+            fetch(dataFile)
+                .then(response => {
+                    if (!response.ok) throw new Error("Data file not found");
+                    return response.json();
+                })
+                .then(data => {
+                    const labels = data.map(entry => entry.date);
+                    const prices = data.map(entry => entry.price);
+
+                    const ctx = document.getElementById("fuel-price-chart").getContext("2d");
+                    new Chart(ctx, {
+                        type: "line",
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: `Fuel Prices for ${siteCode}`,
+                                data: prices,
+                                borderColor: "rgba(75, 192, 192, 1)",
+                                backgroundColor: "rgba(75, 192, 192, 0.2)",
+                                fill: true,
+                            }],
+                        },
+                        options: {
+                            responsive: true,
+                            scales: {
+                                x: { title: { display: true, text: "Date" } },
+                                y: { title: { display: true, text: "Price" } },
+                            },
+                        },
+                    });
+                })
+                .catch(error => {
+                    alert(`Error: ${error.message}`);
+                });
+        });
+    </script>
+</body>
+</html>
