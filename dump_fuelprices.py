@@ -39,40 +39,47 @@ if not os.path.exists(DATA_DIR):
 
 
 async def fetch_json(session, url):
+    """
+    Fetch JSON data from a URL.
+    """
     async with session.get(url, headers=HEADERS) as response:
         response.raise_for_status()
         return await response.json()
 
 
-async def save_json(filename, data):
-    filepath = os.path.join(DATA_DIR, filename)
-    try:
-        async with aiofiles.open(filepath, mode="w") as file:
-            await file.write(json.dumps(data, indent=4))
-        logging.info(f"Saved JSON to {filepath}")
-    except Exception as e:
-        logging.error(f"Error saving JSON to {filepath}: {e}")
-
-
-async def fetch_site_codes(semaphore):
+async def fetch_site_codes():
+    """
+    Fetch and deduplicate site codes from `get_sites` and `site`.
+    """
     async with aiohttp.ClientSession() as session:
-        async with semaphore:
-            get_sites = await fetch_json(session, BASE_URLS["get_sites"])
-            site_data = await fetch_json(session, BASE_URLS["get_site"])
-
-        site_codes = set()
+        # Fetch data from endpoints
+        get_sites = await fetch_json(session, BASE_URLS["get_sites"])
+        site_data = await fetch_json(session, BASE_URLS["site"])
 
         # Extract site codes from get_sites
-        if isinstance(get_sites, list):
-            site_codes.update(site.get("SiteCode") for site in get_sites if "SiteCode" in site)
+        site_codes = {site.get("SiteCode") for site in get_sites if "SiteCode" in site}
 
         # Extract site codes from site_data
-        if isinstance(site_data, dict) and "sites" in site_data:
+        if "sites" in site_data:
             site_codes.update(site.get("site_code") for site in site_data["sites"] if "site_code" in site)
 
+        print(f"Retrieved {len(site_codes)} site codes: {site_codes}")
         return list(site_codes)
 
+
+async def save_json(filename, data):
+    """
+    Save JSON data to a file.
+    """
+    filepath = os.path.join(DATA_DIR, filename)
+    async with aiofiles.open(filepath, mode="w") as file:
+        await file.write(json.dumps(data, indent=4))
+
+
 async def fetch_and_save_fuel_prices(site_codes):
+    """
+    Fetch and save fuel prices for each site code.
+    """
     async with aiohttp.ClientSession() as session:
         tasks = []
         for site_code in site_codes:
@@ -83,24 +90,26 @@ async def fetch_and_save_fuel_prices(site_codes):
 
         for site_code, result in zip(site_codes, results):
             if isinstance(result, Exception):
-                logging.error(f"Failed to fetch data for site_code {site_code}: {result}")
+                print(f"Failed to fetch data for site_code {site_code}: {result}")
                 continue
-            await save_json(f"{site_code}_fuelprices.json", result)
+            filename = f"{site_code}_fuelprices.json"
+            await save_json(filename, result)
 
 
 async def main():
-    # Define the maximum number of concurrent requests
-    MAX_CONCURRENT_REQUESTS = 10
-    semaphore = asyncio.Semaphore(MAX_CONCURRENT_REQUESTS)
+    """
+    Main function to orchestrate the workflow.
+    """
+    # Semaphore to limit concurrent requests
+    semaphore = asyncio.Semaphore(10)  # Adjust the value as needed
 
-    # Fetch site codes using the semaphore
-    site_codes = await fetch_site_codes(semaphore)
+    # Fetch site codes
+    site_codes = await fetch_site_codes()
 
-    # Log the retrieved site codes for debugging
-    print(f"Retrieved {len(site_codes)} site codes: {site_codes}")
+    # Fetch and save fuel prices
+    await fetch_and_save_fuel_prices(site_codes)
 
-    # Proceed with further processing, e.g., fetching and saving fuel prices
-    await fetch_and_save_fuel_prices(site_codes, semaphore)
 
+# Run the script
 if __name__ == "__main__":
     asyncio.run(main())
