@@ -18,38 +18,62 @@
 </head>
 <body>
     <h1>Fuel Prices Dashboard</h1>
-    <p>Select a site and date range to view the graph:</p>
+    <p>Enter a site name and fuel type to view the graph:</p>
     <form id="filter-form">
-        <label for="site-code">Site Code:</label>
-        <input type="text" id="site-code" placeholder="Enter site code" required>
-        <label for="date-range">Date Range:</label>
-        <select id="date-range">
-            <option value="weekly">Weekly</option>
-            <option value="monthly">Monthly</option>
-            <option value="yearly">Yearly</option>
+        <label for="site-name">Site Name:</label>
+        <input type="text" id="site-name" placeholder="Enter site name" required>
+        <label for="fuel-type">Fuel Type:</label>
+        <select id="fuel-type">
+            <option value="1">Diesel</option>
+            <option value="2">Unleaded</option>
+            <option value="3">Premium</option>
+            <option value="4">E85</option>
         </select>
         <button type="submit">Show Graph</button>
     </form>
     <canvas id="fuel-price-chart"></canvas>
 
     <script>
+        let siteMappings = {};
+
+        // Fetch site mappings
+        fetch("site_mappings.json")
+            .then(response => response.json())
+            .then(data => {
+                siteMappings = data;
+                console.log("Site mappings loaded:", siteMappings);
+            })
+            .catch(error => {
+                console.error("Error fetching site mappings:", error);
+            });
+
         document.getElementById("filter-form").addEventListener("submit", function (e) {
             e.preventDefault();
 
-            const siteCode = document.getElementById("site-code").value;
-            const dateRange = document.getElementById("date-range").value;
+            const siteName = document.getElementById("site-name").value.toLowerCase();
+            const departmentCode = document.getElementById("fuel-type").value;
 
-            // Build the path to the JSON file
-            const dataFile = `${siteCode}_${dateRange}.json`;
+            // Find the matching site code
+            const siteCode = Object.keys(siteMappings).find(
+                code => siteMappings[code].toLowerCase().includes(siteName)
+            );
 
-            fetch(dataFile)
+            if (!siteCode) {
+                alert("No matching site found for the entered name.");
+                return;
+            }
+
+            // Build the JSON file path
+            const jsonFile = `fuelprices_json/${departmentCode}_${siteCode}.json`;
+
+            fetch(jsonFile)
                 .then(response => {
                     if (!response.ok) throw new Error("Data file not found");
                     return response.json();
                 })
                 .then(data => {
-                    const labels = data.map(entry => entry.date);
-                    const prices = data.map(entry => entry.price);
+                    const labels = data.prices.map(entry => entry.date);
+                    const prices = data.prices.map(entry => entry.price);
 
                     const ctx = document.getElementById("fuel-price-chart").getContext("2d");
                     new Chart(ctx, {
@@ -57,7 +81,7 @@
                         data: {
                             labels: labels,
                             datasets: [{
-                                label: `Fuel Prices for ${siteCode}`,
+                                label: `Fuel Prices for ${siteMappings[siteCode]} (${departmentCode})`,
                                 data: prices,
                                 borderColor: "rgba(75, 192, 192, 1)",
                                 backgroundColor: "rgba(75, 192, 192, 0.2)",
