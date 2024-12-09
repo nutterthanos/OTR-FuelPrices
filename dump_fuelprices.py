@@ -61,21 +61,32 @@ async def save_json(filename, data):
         logging.error(f"Error saving JSON to {filepath}: {e}")
 
 
-async def fetch_site_codes():
+async def fetch_site_codes(semaphore):
     async with aiohttp.ClientSession() as session:
-        get_sites = await fetch_json(session, BASE_URLS["get_sites"])
-        site_data = await fetch_json(session, BASE_URLS["get_site"])
+        # Fetch data from endpoints
+        get_sites = await fetch_json(session, BASE_URLS["get_sites"], semaphore)
+        site_data = await fetch_json(session, BASE_URLS["get_site"], semaphore)
 
         site_codes = set()
 
+        # Extract site codes from get_sites
         if isinstance(get_sites, list):
-            site_codes.update(site["SiteCode"] for site in get_sites if "SiteCode" in site)
+            print(f"Extracting from get_sites: {len(get_sites)} sites found")
+            site_codes.update(site.get("SiteCode") for site in get_sites if "SiteCode" in site)
+        else:
+            print("Unexpected get_sites structure:", get_sites)
+
+        # Extract site codes from site_data
         if isinstance(site_data, dict) and "sites" in site_data:
-            site_codes.update(site["site_code"] for site in site_data["sites"] if "site_code" in site)
+            print(f"Extracting from site_data: {len(site_data['sites'])} sites found")
+            site_codes.update(site.get("site_code") for site in site_data["sites"] if "site_code" in site)
+        else:
+            print("Unexpected site_data structure:", site_data)
 
-        logging.info(f"Extracted site codes: {site_codes}")
+        if not site_codes:
+            print("No site_codes found!")
+
         return list(site_codes)
-
 
 async def fetch_and_save_fuel_prices(site_codes):
     async with aiohttp.ClientSession() as session:
