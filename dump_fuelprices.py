@@ -4,7 +4,7 @@ import aiofiles
 import json
 from datetime import datetime
 
-AUTH_TOKEN_PROD = "your_auth_token"  # Replace this with the GitHub secret in production
+auth_token = os.getenv('AUTH_TOKEN_PROD')
 
 BASE_URLS = {
     "get_sites": "https://ibjdnxs3i2.execute-api.ap-southeast-2.amazonaws.com/motrPrd/GetSites",
@@ -15,7 +15,7 @@ BASE_URLS = {
 }
 
 HEADERS = {
-    "AuthToken": AUTH_TOKEN_PROD,
+    "AuthToken": auth_token,
     "Accept-Encoding": "br",
 }
 
@@ -35,7 +35,7 @@ async def fetch_site_codes():
     async with aiohttp.ClientSession() as session:
         get_sites = await fetch_json(session, BASE_URLS["get_sites"])
         site_data = await fetch_json(session, BASE_URLS["get_site"])
-        locations = await fetch_json(session, f"{BASE_URLS['list_locations']}?auth_token={AUTH_TOKEN_PROD}")
+        locations = await fetch_json(session, f"{BASE_URLS['list_locations']}?auth_token={auth_token}")
 
         site_codes = set()
         site_codes.update(site.get("site_code") for site in get_sites.get("sites", []))
