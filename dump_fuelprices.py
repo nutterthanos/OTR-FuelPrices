@@ -6,6 +6,8 @@ from datetime import datetime
 
 auth_token = os.getenv('AUTH_TOKEN_PROD')
 
+MAX_CONCURRENT_REQUESTS = 5  # Adjust this as needed
+
 BASE_URLS = {
     "get_sites": "https://ibjdnxs3i2.execute-api.ap-southeast-2.amazonaws.com/motrPrd/GetSites",
     "get_site": "https://ibjdnxs3i2.execute-api.ap-southeast-2.amazonaws.com/motrPrd/site",
@@ -17,13 +19,15 @@ BASE_URLS = {
 HEADERS = {
     "AuthToken": auth_token,
     "Accept-Encoding": "br",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
 }
 
 
-async def fetch_json(session, url):
-    async with session.get(url, headers=HEADERS) as response:
-        response.raise_for_status()
-        return await response.json()
+async def fetch_json(session, url, semaphore):
+    async with semaphore:
+        async with session.get(url, headers=HEADERS) as response:
+            response.raise_for_status()
+            return await response.json()
 
 
 async def save_json(filename, data):
@@ -31,11 +35,11 @@ async def save_json(filename, data):
         await file.write(json.dumps(data, indent=4))
 
 
-async def fetch_site_codes():
+async def fetch_site_codes(semaphore):
     async with aiohttp.ClientSession() as session:
-        get_sites = await fetch_json(session, BASE_URLS["get_sites"])
-        site_data = await fetch_json(session, BASE_URLS["get_site"])
-        locations = await fetch_json(session, f"{BASE_URLS['list_locations']}?auth_token={auth_token}")
+        get_sites = await fetch_json(session, BASE_URLS["get_sites"], semaphore)
+        site_data = await fetch_json(session, BASE_URLS["get_site"], semaphore)
+        locations = await fetch_json(session, f"{BASE_URLS['list_locations']}?auth_token={AUTH_TOKEN_PROD}", semaphore)
 
         site_codes = set()
         site_codes.update(site.get("site_code") for site in get_sites.get("sites", []))
@@ -44,13 +48,13 @@ async def fetch_site_codes():
         return list(site_codes)
 
 
-async def fetch_and_save_fuel_prices(site_codes):
+async def fetch_and_save_fuel_prices(site_codes, semaphore):
     async with aiohttp.ClientSession() as session:
         tasks = []
         for site_code in site_codes:
             url = BASE_URLS["get_fuel_prices"].format(site_code)
-            tasks.append(fetch_json(session, url))
-        
+            tasks.append(fetch_json(session, url, semaphore))
+
         results = await asyncio.gather(*tasks, return_exceptions=True)
 
         for site_code, result in zip(site_codes, results):
@@ -61,8 +65,9 @@ async def fetch_and_save_fuel_prices(site_codes):
 
 
 async def main():
-    site_codes = await fetch_site_codes()
-    await fetch_and_save_fuel_prices(site_codes)
+    semaphore = asyncio.Semaphore(MAX_CONCURRENT_REQUESTS)
+    site_codes = await fetch_site_codes(semaphore)
+    await fetch_and_save_fuel_prices(site_codes, semaphore)
 
 
 if __name__ == "__main__":
