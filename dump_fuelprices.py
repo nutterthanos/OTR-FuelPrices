@@ -37,12 +37,20 @@ async def save_json(filename, data):
 
 async def fetch_site_codes(semaphore):
     async with aiohttp.ClientSession() as session:
+        # Fetch data from endpoints
         get_sites = await fetch_json(session, BASE_URLS["get_sites"], semaphore)
         site_data = await fetch_json(session, BASE_URLS["get_site"], semaphore)
 
         site_codes = set()
-        site_codes.update(site.get("site_code") for site in get_sites.get("sites", []))
-        site_codes.update(site.get("site_code") for site in site_data.get("sites", []))
+
+        # Extract site codes from get_sites (list)
+        if isinstance(get_sites, list):
+            site_codes.update(site["SiteCode"] for site in get_sites if "SiteCode" in site)
+
+        # Extract site codes from site_data (dictionary)
+        if isinstance(site_data, dict) and "sites" in site_data:
+            site_codes.update(site["site_code"] for site in site_data["sites"] if "site_code" in site)
+
         return list(site_codes)
 
 
