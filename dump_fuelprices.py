@@ -2,6 +2,7 @@ import aiohttp
 import asyncio
 import aiofiles
 import json
+import os
 from datetime import datetime
 
 auth_token = os.getenv('AUTH_TOKEN_PROD')
