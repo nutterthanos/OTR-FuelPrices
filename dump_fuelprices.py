@@ -39,16 +39,9 @@ if not os.path.exists(DATA_DIR):
 
 
 async def fetch_json(session, url):
-    try:
-        logging.info(f"Fetching URL: {url}")
-        async with session.get(url, headers=HEADERS) as response:
-            response.raise_for_status()
-            data = await response.json()
-            logging.debug(f"Response from {url}: {data}")
-            return data
-    except Exception as e:
-        logging.error(f"Error fetching URL {url}: {e}")
-        return None
+    async with session.get(url, headers=HEADERS) as response:
+        response.raise_for_status()
+        return await response.json()
 
 
 async def save_json(filename, data):
