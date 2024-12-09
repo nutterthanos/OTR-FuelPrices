@@ -34,7 +34,15 @@ jobs:
       - name: Run Graph Script
         run: python graph.py
 
-      # Step 6: Commit and push changes
+      # Step 6: Copy files to GitHub Pages directory
+      - name: Copy Files to GitHub Pages
+        run: |
+          mkdir -p docs/graphs
+          cp -r graphs/* docs/graphs
+          cp index.html docs/
+
+
+      # Step 7: Commit and push changes
       - name: Commit and Push Changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
