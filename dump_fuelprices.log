@@ -15,3 +15,4 @@
 2024-12-09 13:24:28,875 [INFO] Extracted site codes: set()
 2024-12-09 13:24:28,876 [WARNING] No site codes retrieved. Exiting.
 2024-12-09 21:31:27,593 [DEBUG] Using selector: EpollSelector
+2024-12-09 22:11:26,172 [DEBUG] Using selector: EpollSelector

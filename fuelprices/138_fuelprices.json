@@ -1,0 +1,45 @@
+{
+    "generic_response": {
+        "detailed_message": null,
+        "message": "",
+        "status": "01"
+    },
+    "sitefuelprices": [
+        {
+            "action_by_date": "/Date(1733785210613+1030)/",
+            "current_price": 1.869,
+            "date_entered": "/Date(1728946200000+1030)/",
+            "department_code": 1,
+            "price_delta": 0.02,
+            "site_code": "138",
+            "stockitem_id": 824301
+        },
+        {
+            "action_by_date": "/Date(1733785210613+1030)/",
+            "current_price": 1.699,
+            "date_entered": "/Date(1728946200000+1030)/",
+            "department_code": 2,
+            "price_delta": 0.02,
+            "site_code": "138",
+            "stockitem_id": 824302
+        },
+        {
+            "action_by_date": "/Date(1733785210613+1030)/",
+            "current_price": 1.979,
+            "date_entered": "/Date(1728946200000+1030)/",
+            "department_code": 3,
+            "price_delta": 0.02,
+            "site_code": "138",
+            "stockitem_id": 824303
+        },
+        {
+            "action_by_date": "/Date(1733785210613+1030)/",
+            "current_price": 1.759,
+            "date_entered": "/Date(1732749960000+1030)/",
+            "department_code": 4,
+            "price_delta": 0.04,
+            "site_code": "138",
+            "stockitem_id": 824305
+        }
+    ]
+}
