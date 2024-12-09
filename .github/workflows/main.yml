@@ -2,7 +2,7 @@ name: Update Fuel Prices and Graphs
 
 on:
   schedule:
-    - cron: "0,30 * * * *"
+    - cron: "0 1 * * *" # Runs daily at 01:00 UTC; adjust as needed
   workflow_dispatch: # Allows manual trigger
 
 jobs:
@@ -18,42 +18,44 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.10" # Specify the Python version
+          python-version: "3.10"
 
       # Step 3: Install dependencies
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install aiohttp asyncio aiofiles matplotlib
+          pip install -r requirements.txt
 
-      # Step 4: Run the dump_fuelprices.py script
-      - name: Run Dump Fuel Prices Script
-        env:
-          AUTH_TOKEN_PROD: ${{ secrets.AUTH_TOKEN_PROD }}
+      # Step 4: Create Necessary Directories
+      - name: Create Necessary Directories
         run: |
-          python dump_fuelprices.py
+          mkdir -p docs/graphs
+          mkdir -p graphs
 
-      # Step 5: Run the graph.py script
+      # Step 5: Run Dump Fuel Prices Script
+      - name: Run Dump Fuel Prices Script
+        run: python dump_fuelprices.py
+
+      # Step 6: Run Graph Script
       - name: Run Graph Script
         run: python graph.py
 
-      # Step 6: Copy files to GitHub Pages directory
-      - name: Copy Files to GitHub Pages
+      # Step 7: Copy Graphs to GitHub Pages Directory
+      - name: Copy Graph Files to Docs
         run: |
           if [ "$(ls -A graphs)" ]; then
             cp -r graphs/* docs/graphs
+          else
+            echo "No graphs generated."
           fi
-          cp index.html docs/
 
-
-      # Step 7: Commit and push changes
+      # Step 8: Commit and Push Changes
       - name: Commit and Push Changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TZ: Australia/Adelaide
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "updated fuel prices as of $(date '+%Y-%m-%d %H:%M:%S %Z')"
+          git commit -m "Updated fuel prices and graphs as of $(date '+%Y-%m-%d %H:%M:%S %Z')"
           git push origin main
