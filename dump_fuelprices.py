@@ -33,57 +33,73 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
 }
 
-DATA_DIR = "fuelprices"
-if not os.path.exists(DATA_DIR):
-    os.makedirs(DATA_DIR)
+FUELPRICES_DIR = "fuelprices"
+FUELPRICES_JSON_DIR = "fuelprices_json"
+
+# Ensure directories exist
+os.makedirs(FUELPRICES_DIR, exist_ok=True)
+os.makedirs(FUELPRICES_JSON_DIR, exist_ok=True)
+
+
+def convert_date(ms_date):
+    """
+    Convert Microsoft JSON date format to ISO 8601.
+    """
+    try:
+        timestamp = int(ms_date.split("(")[1].split("+")[0]) / 1000
+        return datetime.utcfromtimestamp(timestamp).isoformat()
+    except Exception as e:
+        print(f"Error converting date {ms_date}: {e}")
+        return None
+
 
 async def fetch_json(session, url):
-    try:
-        async with session.get(url, headers=HEADERS) as response:
-            print(f"Fetching {url}: Status {response.status}")
-            response.raise_for_status()
-            return await response.json()
-    except aiohttp.ClientResponseError as e:
-        print(f"Client error for {url}: {e.status} {e.message}")
-        return None
-    except Exception as e:
-        print(f"Error fetching {url}: {e}")
-        return None
+    """
+    Fetch JSON data from the given URL.
+    """
+    async with session.get(url, headers=HEADERS) as response:
+        response.raise_for_status()
+        return await response.json()
 
-# Function to fetch site codes
-async def fetch_site_codes():
+
+async def fetch_site_mappings():
+    """
+    Fetch site mappings from `get_sites` and `get_site`.
+    """
     async with aiohttp.ClientSession() as session:
-        # Fetch data from endpoints
         get_sites = await fetch_json(session, BASE_URLS["get_sites"])
         site_data = await fetch_json(session, BASE_URLS["get_site"])
 
-        # Extract site codes from get_sites
-        site_codes_set = set()
-        site_codes = [site["site_code"] for site in get_sites.get("sites", [])]  # Handles site_code
-        site_codes_set.update(site_codes)
+        site_mappings = {}
 
-        # Extract site codes from get_site
-        site_codes = [site["SiteCode"] for site in site_data]  # Handles SiteCode
-        site_codes_set.update(site_codes)
+        # Process `get_sites`
+        for site in get_sites:
+            site_code = site.get("SiteCode")
+            site_name = site.get("SiteName")
+            if site_code and site_name:
+                site_mappings[site_code] = site_name
 
-        print(f"Retrieved {len(site_codes_set)} site codes: {site_codes_set}")
-        return list(site_codes_set)
+        # Process `get_site`
+        for site in site_data.get("sites", []):
+            site_code = site.get("site_code")
+            site_name = site.get("name")
+            if site_code and site_name:
+                site_mappings[site_code] = site_name
+
+        print(f"Generated site mappings: {len(site_mappings)} sites found.")
+        return site_mappings
 
 
-# Function to save JSON data to a file
-async def save_json(filename, data):
-    filepath = os.path.join(DATA_DIR, filename)
-    async with aiofiles.open(filepath, mode="w") as file:
-        await file.write(json.dumps(data, indent=4))
-
-async def fetch_and_save_fuel_prices(site_codes):
+async def fetch_and_save_fuel_prices(site_codes, site_mappings):
+    """
+    Fetch and save fuel prices for each site code.
+    """
     async with aiohttp.ClientSession() as session:
         tasks = []
         for site_code in site_codes:
             url = BASE_URLS["get_fuel_prices"].format(site_code)
             tasks.append(fetch_json(session, url))
 
-        # Run tasks and handle results
         results = await asyncio.gather(*tasks, return_exceptions=True)
 
         for site_code, result in zip(site_codes, results):
@@ -91,22 +107,49 @@ async def fetch_and_save_fuel_prices(site_codes):
                 print(f"Failed to fetch data for site_code {site_code}: {result}")
                 continue
 
-            try:
-                filename = f"{site_code}_fuelprices.json"
-                await save_json(filename, result)
-                print(f"Saved fuel prices for site_code {site_code} to {filename}")
-            except Exception as e:
-                print(f"Error saving fuel prices for site_code {site_code}: {e}")
+            # Save original response
+            original_filename = f"{site_code}_fuelprices.json"
+            original_filepath = os.path.join(FUELPRICES_DIR, original_filename)
+            with open(original_filepath, "w") as f:
+                json.dump(result, f, indent=4)
+            print(f"Saved original response for site_code {site_code} to {original_filename}")
+
+            # Generate parsed JSON files
+            site_name = site_mappings.get(site_code, f"Site {site_code}")
+            for entry in result.get("sitefuelprices", []):
+                department_code = entry.get("department_code")
+                price = entry.get("current_price")
+                date = convert_date(entry["date_entered"])
+
+                if department_code and price and date:
+                    parsed_filename = f"{department_code}_{site_code}_{date}.json"
+                    parsed_filepath = os.path.join(FUELPRICES_JSON_DIR, parsed_filename)
+
+                    file_content = {
+                        "site_code": site_code,
+                        "site_name": site_name,
+                        "department_code": department_code,
+                        "prices": [{"date": date, "price": price}],
+                    }
+
+                    with open(parsed_filepath, "w") as f:
+                        json.dump(file_content, f, indent=4)
+                    print(f"Generated parsed JSON for site_code {site_code}, department_code {department_code}")
+
 
 async def main():
-    semaphore = asyncio.Semaphore(10)  # Limit concurrent requests to 10
+    """
+    Main function to orchestrate the workflow.
+    """
+    # Fetch site mappings
+    site_mappings = await fetch_site_mappings()
 
     # Fetch site codes
-    site_codes = await fetch_site_codes()
+    site_codes = list(site_mappings.keys())
 
     # Fetch and save fuel prices
-    async with semaphore:
-        await fetch_and_save_fuel_prices(site_codes)
+    await fetch_and_save_fuel_prices(site_codes, site_mappings)
+
 
 # Run the script
 if __name__ == "__main__":
