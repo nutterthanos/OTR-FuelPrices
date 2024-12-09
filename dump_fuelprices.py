@@ -105,17 +105,18 @@ async def fetch_and_save_fuel_prices(site_codes):
 
 
 async def main():
-    semaphore = asyncio.Semaphore(10)  # Max concurrent requests
-    logging.info("Starting fuel price script")
+    # Define the maximum number of concurrent requests
+    MAX_CONCURRENT_REQUESTS = 10
+    semaphore = asyncio.Semaphore(MAX_CONCURRENT_REQUESTS)
 
-    site_codes = await fetch_site_codes()
-    if not site_codes:
-        logging.warning("No site codes retrieved. Exiting.")
-        return
+    # Fetch site codes using the semaphore
+    site_codes = await fetch_site_codes(semaphore)
 
-    await fetch_and_save_fuel_prices(site_codes)
-    logging.info("Fuel price script completed successfully")
+    # Log the retrieved site codes for debugging
+    print(f"Retrieved {len(site_codes)} site codes: {site_codes}")
 
+    # Proceed with further processing, e.g., fetching and saving fuel prices
+    await fetch_and_save_fuel_prices(site_codes, semaphore)
 
 if __name__ == "__main__":
     asyncio.run(main())
