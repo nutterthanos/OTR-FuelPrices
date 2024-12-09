@@ -49,23 +49,22 @@ async def fetch_json(session, url):
 
 async def fetch_site_codes():
     """
-    Fetch and deduplicate site codes from `get_sites` and `site`.
+    Fetch and deduplicate site codes from `get_sites` and `get_site`.
     """
     async with aiohttp.ClientSession() as session:
         # Fetch data from endpoints
         get_sites = await fetch_json(session, BASE_URLS["get_sites"])
-        site_data = await fetch_json(session, BASE_URLS["site"])
+        site_data = await fetch_json(session, BASE_URLS["get_site"])
 
         # Extract site codes from get_sites
         site_codes = {site.get("SiteCode") for site in get_sites if "SiteCode" in site}
 
-        # Extract site codes from site_data
+        # Extract site codes from get_site (previously `site`)
         if "sites" in site_data:
             site_codes.update(site.get("site_code") for site in site_data["sites"] if "site_code" in site)
 
         print(f"Retrieved {len(site_codes)} site codes: {site_codes}")
         return list(site_codes)
-
 
 async def save_json(filename, data):
     """
