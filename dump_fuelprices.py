@@ -10,7 +10,7 @@ auth_token = os.getenv('AUTH_TOKEN_PROD')
 MAX_CONCURRENT_REQUESTS = 5  # Adjust this as needed
 
 BASE_URLS = {
-    "get_sites": "https://ibjdnxs3i2.execute-api.ap-southeast-2.amazonaws.com/motrPrd/GetSites",
+    "get_sites": "https://ibjdnxs3i2.execute-api.ap-southeast-2.amazonaws.com/motrPrd/getSites",
     "get_site": "https://ibjdnxs3i2.execute-api.ap-southeast-2.amazonaws.com/motrPrd/site",
     "list_locations": "https://app2.ontherun.com.au/api/v2/listLocations",
     "get_fuel_prices": "https://ibjdnxs3i2.execute-api.ap-southeast-2.amazonaws.com/motrPrd/getSiteFuelPrices/{}",
