@@ -6,6 +6,18 @@ import matplotlib.pyplot as plt
 DATA_DIR = "fuelprices"
 GRAPH_DIR = "graphs"
 
+DEPARTMENT_CODE_MAPPING = {
+    "Premium Unleaded": 1,
+    "Unleaded": 2,
+    "Ultimate": 3,
+    "Diesel": 4,
+    "LPG": 5,
+    "Ad Blue": 6,
+    "E85": 8,
+    "E10": 10,
+    "Low Aromatic": 11
+}
+
 def load_fuel_prices():
     """
     Load fuel prices from JSON files into a dictionary.
