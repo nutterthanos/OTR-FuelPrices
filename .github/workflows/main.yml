@@ -34,7 +34,10 @@ jobs:
 
       # Step 5: Run Dump Fuel Prices Script
       - name: Run Dump Fuel Prices Script
-        run: python dump_fuelprices.py
+        env:
+          AUTH_TOKEN_PROD: ${{ secrets.AUTH_TOKEN_PROD }}
+        run: |
+          python dump_fuelprices.py
 
       # Step 6: Run Graph Script
       - name: Run Graph Script
