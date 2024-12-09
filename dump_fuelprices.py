@@ -40,6 +40,14 @@ FUELPRICES_JSON_DIR = "fuelprices_json"
 os.makedirs(FUELPRICES_DIR, exist_ok=True)
 os.makedirs(FUELPRICES_JSON_DIR, exist_ok=True)
 
+async def save_site_mappings(site_mappings):
+    """
+    Save site mappings to a JSON file.
+    """
+    mappings_filepath = os.path.join(FUELPRICES_DIR, "site_mappings.json")
+    with open(mappings_filepath, "w") as f:
+        json.dump(site_mappings, f, indent=4)
+    print(f"Saved site mappings to site_mappings.json")
 
 def convert_date(ms_date):
     """
@@ -144,12 +152,14 @@ async def main():
     # Fetch site mappings
     site_mappings = await fetch_site_mappings()
 
+    # Save site mappings for the frontend
+    await save_site_mappings(site_mappings)
+
     # Fetch site codes
     site_codes = list(site_mappings.keys())
 
     # Fetch and save fuel prices
     await fetch_and_save_fuel_prices(site_codes, site_mappings)
-
 
 # Run the script
 if __name__ == "__main__":
