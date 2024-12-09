@@ -12,7 +12,6 @@ MAX_CONCURRENT_REQUESTS = 5  # Adjust this as needed
 BASE_URLS = {
     "get_sites": "https://ibjdnxs3i2.execute-api.ap-southeast-2.amazonaws.com/motrPrd/getSites",
     "get_site": "https://ibjdnxs3i2.execute-api.ap-southeast-2.amazonaws.com/motrPrd/site",
-    "list_locations": "https://app2.ontherun.com.au/api/v2/listLocations",
     "get_fuel_prices": "https://ibjdnxs3i2.execute-api.ap-southeast-2.amazonaws.com/motrPrd/getSiteFuelPrices/{}",
     "get_departments": "https://ibjdnxs3i2.execute-api.ap-southeast-2.amazonaws.com/motrPrd/getDepartments",
 }
@@ -40,12 +39,10 @@ async def fetch_site_codes(semaphore):
     async with aiohttp.ClientSession() as session:
         get_sites = await fetch_json(session, BASE_URLS["get_sites"], semaphore)
         site_data = await fetch_json(session, BASE_URLS["get_site"], semaphore)
-        locations = await fetch_json(session, f"{BASE_URLS['list_locations']}?auth_token={auth_token}", semaphore)
 
         site_codes = set()
         site_codes.update(site.get("site_code") for site in get_sites.get("sites", []))
         site_codes.update(site.get("site_code") for site in site_data.get("sites", []))
-        site_codes.update(location.get("site_code") for location in locations.get("locations", []))
         return list(site_codes)
 
 
