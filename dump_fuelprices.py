@@ -38,47 +38,42 @@ if not os.path.exists(DATA_DIR):
     os.makedirs(DATA_DIR)
 
 
+# Function to fetch JSON data
 async def fetch_json(session, url):
-    """
-    Fetch JSON data from a URL.
-    """
     async with session.get(url, headers=HEADERS) as response:
         response.raise_for_status()
         return await response.json()
 
 
+# Function to fetch site codes
 async def fetch_site_codes():
-    """
-    Fetch and deduplicate site codes from `get_sites` and `get_site`.
-    """
     async with aiohttp.ClientSession() as session:
         # Fetch data from endpoints
         get_sites = await fetch_json(session, BASE_URLS["get_sites"])
         site_data = await fetch_json(session, BASE_URLS["get_site"])
 
         # Extract site codes from get_sites
-        site_codes = {site.get("SiteCode") for site in get_sites if "SiteCode" in site}
+        site_codes_set = set()
+        site_codes = [site["site_code"] for site in get_sites.get("sites", [])]  # Handles site_code
+        site_codes_set.update(site_codes)
 
-        # Extract site codes from get_site (previously `site`)
-        if "sites" in site_data:
-            site_codes.update(site.get("site_code") for site in site_data["sites"] if "site_code" in site)
+        # Extract site codes from get_site
+        site_codes = [site["SiteCode"] for site in site_data]  # Handles SiteCode
+        site_codes_set.update(site_codes)
 
-        print(f"Retrieved {len(site_codes)} site codes: {site_codes}")
-        return list(site_codes)
+        print(f"Retrieved {len(site_codes_set)} site codes: {site_codes_set}")
+        return list(site_codes_set)
 
+
+# Function to save JSON data to a file
 async def save_json(filename, data):
-    """
-    Save JSON data to a file.
-    """
     filepath = os.path.join(DATA_DIR, filename)
     async with aiofiles.open(filepath, mode="w") as file:
         await file.write(json.dumps(data, indent=4))
 
 
+# Function to fetch and save fuel prices
 async def fetch_and_save_fuel_prices(site_codes):
-    """
-    Fetch and save fuel prices for each site code.
-    """
     async with aiohttp.ClientSession() as session:
         tasks = []
         for site_code in site_codes:
@@ -95,12 +90,10 @@ async def fetch_and_save_fuel_prices(site_codes):
             await save_json(filename, result)
 
 
+# Main function
 async def main():
-    """
-    Main function to orchestrate the workflow.
-    """
     # Semaphore to limit concurrent requests
-    semaphore = asyncio.Semaphore(10)  # Adjust the value as needed
+    semaphore = asyncio.Semaphore(10)
 
     # Fetch site codes
     site_codes = await fetch_site_codes()
