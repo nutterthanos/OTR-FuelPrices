@@ -37,13 +37,18 @@ DATA_DIR = "fuelprices"
 if not os.path.exists(DATA_DIR):
     os.makedirs(DATA_DIR)
 
-
-# Function to fetch JSON data
 async def fetch_json(session, url):
-    async with session.get(url, headers=HEADERS) as response:
-        response.raise_for_status()
-        return await response.json()
-
+    try:
+        async with session.get(url, headers=HEADERS) as response:
+            print(f"Fetching {url}: Status {response.status}")
+            response.raise_for_status()
+            return await response.json()
+    except aiohttp.ClientResponseError as e:
+        print(f"Client error for {url}: {e.status} {e.message}")
+        return None
+    except Exception as e:
+        print(f"Error fetching {url}: {e}")
+        return None
 
 # Function to fetch site codes
 async def fetch_site_codes():
@@ -71,8 +76,6 @@ async def save_json(filename, data):
     async with aiofiles.open(filepath, mode="w") as file:
         await file.write(json.dumps(data, indent=4))
 
-
-# Function to fetch and save fuel prices
 async def fetch_and_save_fuel_prices(site_codes):
     async with aiohttp.ClientSession() as session:
         tasks = []
@@ -80,27 +83,30 @@ async def fetch_and_save_fuel_prices(site_codes):
             url = BASE_URLS["get_fuel_prices"].format(site_code)
             tasks.append(fetch_json(session, url))
 
+        # Run tasks and handle results
         results = await asyncio.gather(*tasks, return_exceptions=True)
 
         for site_code, result in zip(site_codes, results):
             if isinstance(result, Exception):
                 print(f"Failed to fetch data for site_code {site_code}: {result}")
                 continue
-            filename = f"{site_code}_fuelprices.json"
-            await save_json(filename, result)
 
+            try:
+                filename = f"{site_code}_fuelprices.json"
+                await save_json(filename, result)
+                print(f"Saved fuel prices for site_code {site_code} to {filename}")
+            except Exception as e:
+                print(f"Error saving fuel prices for site_code {site_code}: {e}")
 
-# Main function
 async def main():
-    # Semaphore to limit concurrent requests
-    semaphore = asyncio.Semaphore(10)
+    semaphore = asyncio.Semaphore(10)  # Limit concurrent requests to 10
 
     # Fetch site codes
     site_codes = await fetch_site_codes()
 
     # Fetch and save fuel prices
-    await fetch_and_save_fuel_prices(site_codes)
-
+    async with semaphore:
+        await fetch_and_save_fuel_prices(site_codes)
 
 # Run the script
 if __name__ == "__main__":
