@@ -33,19 +33,14 @@ jobs:
         run: |
           python dump_fuelprices.py
 
-      # Step 5: Generate Graphs
-      - name: Generate Graphs
+      # Step 5: Move Files to `docs/`
+      - name: Move Files to Docs
         run: |
-          python graph.py
+          mkdir -p docs/fuelprices_json/
+          cp fuelprices_json/* docs/fuelprices_json/
+          cp index.html docs/
 
-      # Step 6: Move site mappings and graphs to `docs/`
-      - name: Move Site Mappings and Graphs
-        run: |
-          mkdir -p docs/graphs/
-          cp fuelprices/site_mappings.json docs/
-          cp -r graphs/* docs/graphs/
-
-      # Step 7: Commit and push changes
+      # Step 6: Commit and Push Changes
       - name: Commit and Push Changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -53,5 +48,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "Update fuel prices, site mappings, and graphs"
-          git push origin main
+          git commit -m "Update GitHub Pages with latest fuel prices and graphs"
+          git push origin
