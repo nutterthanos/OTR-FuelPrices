@@ -1377,3 +1377,6 @@
 2024-12-10 07:40:00,675 [DEBUG] Using selector: EpollSelector
 2024-12-10 07:40:02,511 [INFO] Generated site mappings: 0 sites found.
 2024-12-10 07:40:02,511 [ERROR] No site codes were retrieved. Exiting.
+2024-12-10 07:48:09,985 [DEBUG] Using selector: EpollSelector
+2024-12-10 07:48:11,882 [INFO] Generated site mappings for 0 sites.
+2024-12-10 07:48:11,883 [ERROR] No site codes were retrieved. Exiting.
