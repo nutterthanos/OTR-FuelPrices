@@ -33,13 +33,19 @@ jobs:
         run: |
           python dump_fuelprices.py
 
-      # Step 5: Move site mappings to `docs/`
-      - name: Move Site Mappings
+      # Step 5: Generate Graphs
+      - name: Generate Graphs
         run: |
-          mkdir -p docs/
-          cp fuelprices/site_mappings.json docs/
+          python graph.py
 
-      # Step 6: Commit and push changes
+      # Step 6: Move site mappings and graphs to `docs/`
+      - name: Move Site Mappings and Graphs
+        run: |
+          mkdir -p docs/graphs/
+          cp fuelprices/site_mappings.json docs/
+          cp -r graphs/* docs/graphs/
+
+      # Step 7: Commit and push changes
       - name: Commit and Push Changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -47,5 +53,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "Update fuel prices and site mappings"
+          git commit -m "Update fuel prices, site mappings, and graphs"
           git push origin main
