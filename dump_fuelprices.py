@@ -81,32 +81,51 @@ async def fetch_site_mappings():
 
         # Initialize mappings
         site_mappings = {}
+        site_codes_set = set()
 
-        # Process `get_sites` (list of site codes)
+        # Process `get_sites` (list of dictionaries or strings)
         if isinstance(get_sites, list):
-            for site_code in get_sites:
-                if isinstance(site_code, str):  # Ensure each item is a string
-                    site_mappings[site_code] = f"Site {site_code}"  # Default name
-                else:
-                    print(f"Unexpected site_code format in get_sites: {site_code}")
-        else:
-            print(f"Unexpected get_sites structure: {get_sites}")
-
-        # Process `get_site` (list of dictionaries under "sites")
-        if isinstance(site_data, dict) and "sites" in site_data:
-            for site in site_data["sites"]:
+            for site in get_sites:
                 if isinstance(site, dict):
-                    site_code = site.get("site_code")
-                    site_name = site.get("name")
-                    if site_code and site_name:
-                        site_mappings[site_code] = site_name
+                    site_code = site.get("SiteCode")
+                    site_name = site.get("SiteName", f"Site {site_code}")
+                elif isinstance(site, str):
+                    site_code = site
+                    site_name = f"Site {site_code}"
                 else:
-                    print(f"Unexpected site format in get_site: {site}")
-        else:
-            print(f"Unexpected get_site structure: {site_data}")
+                    logging.warning(f"Unexpected site format in get_sites: {site}")
+                    continue
 
-        print(f"Generated site mappings: {len(site_mappings)} sites found.")
-        return site_mappings
+                if site_code:
+                    site_codes_set.add(site_code)
+                    site_mappings[site_code] = {"name": site_name}
+        else:
+            logging.error(f"Unexpected get_sites structure: {get_sites}")
+
+        # Process `get_site` (list of dictionaries)
+        if isinstance(site_data, list):
+            for site in site_data:
+                if isinstance(site, dict):
+                    site_code = site.get("site_code") or site.get("SiteCode")
+                    site_name = site.get("name") or site.get("SiteName")
+                    latitude = site.get("latitude")
+                    longitude = site.get("longitude")
+                    address = site.get("address")
+                    if site_code:
+                        site_codes_set.add(site_code)
+                        site_mappings[site_code] = {
+                            "name": site_name,
+                            "latitude": latitude,
+                            "longitude": longitude,
+                            "address": address,
+                        }
+                else:
+                    logging.warning(f"Unexpected site format in get_site: {site}")
+        else:
+            logging.error(f"Unexpected get_site structure: {site_data}")
+
+        logging.info(f"Generated site mappings for {len(site_mappings)} sites.")
+        return site_codes_set, site_mappings
 
 async def fetch_and_save_fuel_prices(site_codes, site_mappings):
     """
@@ -159,17 +178,14 @@ async def main():
     """
     Main function to orchestrate the workflow.
     """
-    # Fetch site mappings
-    site_mappings = await fetch_site_mappings()
+    # Fetch site codes and mappings
+    site_codes_set, site_mappings = await fetch_site_mappings()
 
     # Save site mappings for the frontend
     await save_site_mappings(site_mappings)
 
-    # Fetch site codes
-    site_codes = list(site_mappings.keys())
-
     # Fetch and save fuel prices
-    await fetch_and_save_fuel_prices(site_codes, site_mappings)
+    await fetch_and_save_fuel_prices(site_codes_set, site_mappings)
 
 # Run the script
 if __name__ == "__main__":
