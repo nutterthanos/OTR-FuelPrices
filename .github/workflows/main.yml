@@ -33,12 +33,6 @@ jobs:
         run: |
           python dump_fuelprices.py
 
-      # Step 5: Move Files to `docs/`
-      - name: Move Files to Docs
-        run: |
-          mkdir -p docs/fuelprices_json/
-          cp fuelprices_json/* docs/fuelprices_json/
-
       # Step 6: Commit and Push Changes
       - name: Commit and Push Changes
         env:
