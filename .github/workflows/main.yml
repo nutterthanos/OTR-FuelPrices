@@ -38,7 +38,6 @@ jobs:
         run: |
           mkdir -p docs/fuelprices_json/
           cp fuelprices_json/* docs/fuelprices_json/
-          cp index.html docs/
 
       # Step 6: Commit and Push Changes
       - name: Commit and Push Changes
