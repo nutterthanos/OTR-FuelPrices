@@ -1,0 +1,33 @@
+{
+    "site_code": "821",
+    "site_name": "OTR Para Hills",
+    "latitude": -34.813988,
+    "longitude": 138.643204,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-08T23:45:00",
+            "price": 1.759
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-08T23:45:00",
+            "price": 1.599
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-08T23:45:00",
+            "price": 1.839
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-08T23:45:00",
+            "price": 1.689
+        },
+        {
+            "department_code": 5,
+            "date": "2024-11-25T22:55:00",
+            "price": 0.999
+        }
+    ]
+}

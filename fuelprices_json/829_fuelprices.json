@@ -1,0 +1,33 @@
+{
+    "site_code": "829",
+    "site_name": "S24 Welland",
+    "latitude": -34.896182,
+    "longitude": 138.557427,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-09T00:19:00",
+            "price": 1.859
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-09T00:19:00",
+            "price": 1.699
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-09T00:19:00",
+            "price": 1.929
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-09T00:36:00",
+            "price": 1.799
+        },
+        {
+            "department_code": 5,
+            "date": "2024-11-06T05:07:00",
+            "price": 0.999
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "site_code": "483",
+    "site_name": "OTR Kingsford",
+    "latitude": -33.9249,
+    "longitude": 151.2258,
+    "prices": [
+        {
+            "department_code": 2,
+            "date": "2024-12-10T05:16:00",
+            "price": 1.979
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-10T05:16:00",
+            "price": 2.209
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-10T05:16:00",
+            "price": 1.799
+        },
+        {
+            "department_code": 10,
+            "date": "2024-12-10T05:16:00",
+            "price": 1.959
+        }
+    ]
+}

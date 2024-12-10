@@ -1,0 +1,38 @@
+{
+    "site_code": "868",
+    "site_name": "OTR Nuriootpa",
+    "latitude": -34.476003,
+    "longitude": 138.994946,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-06T06:30:00",
+            "price": 1.789
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-06T06:30:00",
+            "price": 1.629
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-06T06:30:00",
+            "price": 1.859
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-19T05:27:00",
+            "price": 1.759
+        },
+        {
+            "department_code": 5,
+            "date": "2024-11-04T22:36:00",
+            "price": 1.199
+        },
+        {
+            "department_code": 6,
+            "date": "2024-04-21T19:02:00",
+            "price": 1.999
+        }
+    ]
+}

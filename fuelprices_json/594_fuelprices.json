@@ -1,0 +1,33 @@
+{
+    "site_code": "594",
+    "site_name": "OTR West Terrace",
+    "latitude": -34.925243,
+    "longitude": 138.587921,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-09T09:54:00",
+            "price": 1.859
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-09T09:54:00",
+            "price": 1.699
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-09T09:54:00",
+            "price": 1.939
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-25T23:22:00",
+            "price": 1.819
+        },
+        {
+            "department_code": 5,
+            "date": "2024-10-23T23:06:00",
+            "price": 0.999
+        }
+    ]
+}

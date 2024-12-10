@@ -1,0 +1,28 @@
+{
+    "site_code": "575",
+    "site_name": "OTR Salisbury Parabanks",
+    "latitude": -34.764599,
+    "longitude": 138.639832,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-10T04:54:00",
+            "price": 1.769
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-10T04:54:00",
+            "price": 1.619
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-10T04:54:00",
+            "price": 1.849
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-26T23:30:00",
+            "price": 1.799
+        }
+    ]
+}

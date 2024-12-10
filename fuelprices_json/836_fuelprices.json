@@ -1,0 +1,28 @@
+{
+    "site_code": "836",
+    "site_name": "OTR Mount Barker Knott Street",
+    "latitude": -35.070305,
+    "longitude": 138.863037,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-10T08:11:00",
+            "price": 1.909
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-10T08:11:00",
+            "price": 1.759
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-10T08:11:00",
+            "price": 1.989
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-27T05:59:00",
+            "price": 1.759
+        }
+    ]
+}
