@@ -20,7 +20,7 @@ AUTH_TOKEN_PROD = os.getenv("AUTH_TOKEN_PROD")
 if not AUTH_TOKEN_PROD:
     logging.error("AUTH_TOKEN_PROD is not set. Please set it as an environment variable.")
     raise ValueError("AUTH_TOKEN_PROD is required.")
-
+.. 
 BASE_URLS = {
     "get_sites": "https://ibjdnxs3i2.execute-api.ap-southeast-2.amazonaws.com/motrPrd/getSites",
     "get_site": "https://ibjdnxs3i2.execute-api.ap-southeast-2.amazonaws.com/motrPrd/site",
@@ -72,60 +72,42 @@ async def fetch_json(session, url):
 
 async def fetch_site_mappings():
     """
-    Fetch site mappings from `get_sites` and `get_site`.
+    Fetch and merge site mappings from `getSites` and `site`.
     """
     async with aiohttp.ClientSession() as session:
-        # Fetch responses
-        get_sites = await fetch_json(session, BASE_URLS["get_sites"])
+        # Fetch data from both endpoints
+        get_sites_data = await fetch_json(session, BASE_URLS["get_sites"])
         site_data = await fetch_json(session, BASE_URLS["get_site"])
 
         # Initialize mappings
         site_mappings = {}
-        site_codes_set = set()
 
-        # Process `get_sites` (list of dictionaries or strings)
-        if isinstance(get_sites, list):
-            for site in get_sites:
-                if isinstance(site, dict):
-                    site_code = site.get("SiteCode")
-                    site_name = site.get("SiteName", f"Site {site_code}")
-                elif isinstance(site, str):
-                    site_code = site
-                    site_name = f"Site {site_code}"
-                else:
-                    logging.warning(f"Unexpected site format in get_sites: {site}")
-                    continue
+        # Process `getSites`
+        for site in get_sites_data:
+            site_code = site.get("SiteCode")
+            if site_code:
+                site_mappings[site_code] = {
+                    "name": site.get("SiteName"),
+                    "latitude": site.get("Latitude"),
+                    "longitude": site.get("Longitude"),
+                    "address": site.get("StreetAddress"),
+                    "suburb": site.get("Suburb"),
+                    "state": site.get("State"),
+                    "post_code": site.get("PostCode"),
+                }
 
-                if site_code:
-                    site_codes_set.add(site_code)
-                    site_mappings[site_code] = {"name": site_name}
-        else:
-            logging.error(f"Unexpected get_sites structure: {get_sites}")
+        # Process `site`
+        for site in site_data.get("sites", []):
+            site_code = site.get("site_code")
+            if site_code and site_code in site_mappings:
+                site_mappings[site_code].update({
+                    "trading_hours": site.get("TradingHours"),
+                    "phone_number": site.get("phone_nbr"),
+                })
 
-        # Process `get_site` (list of dictionaries)
-        if isinstance(site_data, list):
-            for site in site_data:
-                if isinstance(site, dict):
-                    site_code = site.get("site_code") or site.get("SiteCode")
-                    site_name = site.get("name") or site.get("SiteName")
-                    latitude = site.get("latitude")
-                    longitude = site.get("longitude")
-                    address = site.get("address")
-                    if site_code:
-                        site_codes_set.add(site_code)
-                        site_mappings[site_code] = {
-                            "name": site_name,
-                            "latitude": latitude,
-                            "longitude": longitude,
-                            "address": address,
-                        }
-                else:
-                    logging.warning(f"Unexpected site format in get_site: {site}")
-        else:
-            logging.error(f"Unexpected get_site structure: {site_data}")
+        logging.info(f"Generated site mappings: {len(site_mappings)} sites found.")
+        return site_mappings
 
-        logging.info(f"Generated site mappings for {len(site_mappings)} sites.")
-        return site_codes_set, site_mappings
 
 async def fetch_and_save_fuel_prices(site_codes, site_mappings):
     """
@@ -141,7 +123,7 @@ async def fetch_and_save_fuel_prices(site_codes, site_mappings):
 
         for site_code, result in zip(site_codes, results):
             if isinstance(result, Exception):
-                logging.warning(f"Failed to fetch data for site_code {site_code}: {result}")
+                logging.error(f"Failed to fetch data for site_code {site_code}: {result}")
                 continue
 
             # Save original response
@@ -149,45 +131,31 @@ async def fetch_and_save_fuel_prices(site_codes, site_mappings):
             original_filepath = os.path.join(FUELPRICES_DIR, original_filename)
             async with aiofiles.open(original_filepath, "w") as f:
                 await f.write(json.dumps(result, indent=4))
-            logging.info(f"Saved original response for site_code {site_code} to {original_filename}")
+            logging.info(f"Saved original response for site_code {site_code}.")
 
-            # Generate parsed JSON files
-            site_details = site_mappings.get(site_code, {"name": f"Site {site_code}"})
-            site_name = site_details.get("name")
-            latitude = site_details.get("latitude")
-            longitude = site_details.get("longitude")
-            address = site_details.get("address")
-
-            # Prepare JSON structure for parsed data
-            parsed_data = {
-                "site_code": site_code,
-                "site_name": {
-                    "name": site_name,
-                    "latitude": latitude,
-                    "longitude": longitude,
-                    "address": address,
-                },
-                "prices": []
-            }
-
-            # Add all department codes and prices
+            # Generate parsed JSON
+            site_name = site_mappings.get(site_code, {}).get("name", f"Site {site_code}")
             for entry in result.get("sitefuelprices", []):
                 department_code = entry.get("department_code")
                 price = entry.get("current_price")
                 date = convert_date(entry["date_entered"])
-                if department_code and price and date:
-                    parsed_data["prices"].append({
-                        "department_code": department_code,
-                        "date": date,
-                        "price": price
-                    })
 
-            # Save parsed JSON file
-            parsed_filename = f"{site_code}_parsed.json"
-            parsed_filepath = os.path.join(FUELPRICES_JSON_DIR, parsed_filename)
-            async with aiofiles.open(parsed_filepath, "w") as f:
-                await f.write(json.dumps(parsed_data, indent=4))
-            logging.info(f"Generated parsed JSON for site_code {site_code}")
+                if department_code and price and date:
+                    parsed_filename = f"{department_code}_{site_code}_{date}.json"
+                    parsed_filepath = os.path.join(FUELPRICES_JSON_DIR, parsed_filename)
+
+                    file_content = {
+                        "site_code": site_code,
+                        "site_name": site_name,
+                        "department_code": department_code,
+                        "latitude": site_mappings.get(site_code, {}).get("latitude"),
+                        "longitude": site_mappings.get(site_code, {}).get("longitude"),
+                        "prices": [{"date": date, "price": price}],
+                    }
+
+                    async with aiofiles.open(parsed_filepath, "w") as f:
+                        await f.write(json.dumps(file_content, indent=4))
+                    logging.info(f"Generated parsed JSON for site_code {site_code}, department_code {department_code}.")
 
 async def main():
     """
