@@ -33,7 +33,7 @@ jobs:
         run: |
           python dump_fuelprices.py
 
-      # Step 6: Commit and Push Changes
+      # Step 5: Commit and Push Changes
       - name: Commit and Push Changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -44,7 +44,7 @@ jobs:
           git commit -m "Update GitHub Pages with latest fuel prices and graphs"
           git push origin
 
-      # Step 7: Run build script
+      # Step 6: Run build script
       - name: Trigger page trigger workflow
         run: |
           curl -X POST \
