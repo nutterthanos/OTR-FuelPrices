@@ -6,29 +6,29 @@
     },
     "sitefuelprices": [
         {
-            "action_by_date": null,
+            "action_by_date": "/Date(1733865312440+1030)/",
             "current_price": 1.919,
             "date_entered": "/Date(1733700060000+1030)/",
             "department_code": 1,
-            "price_delta": 0.0,
+            "price_delta": -0.06,
             "site_code": "875",
             "stockitem_id": 423270
         },
         {
-            "action_by_date": null,
+            "action_by_date": "/Date(1733865312440+1030)/",
             "current_price": 1.759,
             "date_entered": "/Date(1733700060000+1030)/",
             "department_code": 2,
-            "price_delta": 0.0,
+            "price_delta": -0.06,
             "site_code": "875",
             "stockitem_id": 406699
         },
         {
-            "action_by_date": null,
+            "action_by_date": "/Date(1733865312440+1030)/",
             "current_price": 1.999,
             "date_entered": "/Date(1733700060000+1030)/",
             "department_code": 3,
-            "price_delta": 0.0,
+            "price_delta": -0.06,
             "site_code": "875",
             "stockitem_id": 406700
         },
