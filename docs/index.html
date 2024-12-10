@@ -154,9 +154,11 @@
             document.addEventListener("click", e => closeAllLists(e.target));
         }
 
-        document.getElementById("filter-form").addEventListener("submit", function (e) {
+        document.getElementById("filter-form").addEventListener("submit", async function (e) {
             e.preventDefault();
             const siteName = siteNameInput.value;
+            const departmentCode = document.getElementById("department").value;
+            const dateRange = document.getElementById("date-range").value;
 
             // Find site code by name
             const site = Object.entries(siteMappings).find(([code, details]) => details.name === siteName);
@@ -167,9 +169,78 @@
             }
 
             const [siteCode] = site;
-            console.log("Selected Site Code:", siteCode);
 
-            // Add your graph generation logic here, using siteCode
+            try {
+                // Fetch the JSON data for the selected site
+                const response = await fetch(`fuelprices_json/fuelprices_${siteCode}.json`);
+                if (!response.ok) throw new Error("Data not found");
+                const data = await response.json();
+
+                // Filter data by department and date range
+                const now = new Date();
+                let startDate;
+
+                switch (dateRange) {
+                    case "hourly":
+                        startDate = new Date(now.getTime() - 60 * 60 * 1000);
+                        break;
+                    case "daily":
+                        startDate = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+                        break;
+                    case "weekly":
+                        startDate = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+                        break;
+                    case "monthly":
+                        startDate = new Date(now.setMonth(now.getMonth() - 1));
+                        break;
+                    case "yearly":
+                        startDate = new Date(now.setFullYear(now.getFullYear() - 1));
+                        break;
+                }
+
+                const filteredPrices = data.prices.filter(
+                    p =>
+                        p.department_code == departmentCode &&
+                        (!startDate || new Date(p.date) >= startDate)
+                );
+
+                if (filteredPrices.length === 0) {
+                    alert("No data available for the selected filters.");
+                    return;
+                }
+
+                const labels = filteredPrices.map(p => new Date(p.date).toLocaleString());
+                const prices = filteredPrices.map(p => p.price);
+
+                // Generate the chart
+                const ctx = document.getElementById("fuel-price-chart").getContext("2d");
+                if (window.chart) window.chart.destroy();
+                window.chart = new Chart(ctx, {
+                    type: "line",
+                    data: {
+                        labels: labels,
+                        datasets: [
+                            {
+                                label: `Fuel Prices for ${siteName}`,
+                                data: prices,
+                                borderColor: "rgba(75, 192, 192, 1)",
+                                backgroundColor: "rgba(75, 192, 192, 0.2)",
+                                fill: true,
+                            },
+                        ],
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: { title: { display: true, text: "Date/Time" } },
+                            y: { title: { display: true, text: "Price" } },
+                        },
+                    },
+                });
+            } catch (error) {
+                alert(`Error: ${error.message}`);
+                console.error(error);
+            }
         });
     </script>
 </body>
