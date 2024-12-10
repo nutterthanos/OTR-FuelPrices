@@ -75,28 +75,38 @@ async def fetch_site_mappings():
     Fetch site mappings from `get_sites` and `get_site`.
     """
     async with aiohttp.ClientSession() as session:
+        # Fetch responses
         get_sites = await fetch_json(session, BASE_URLS["get_sites"])
         site_data = await fetch_json(session, BASE_URLS["get_site"])
 
+        # Initialize mappings
         site_mappings = {}
 
-        # Process `get_sites`
-        for site in get_sites:
-            site_code = site.get("SiteCode")
-            site_name = site.get("SiteName")
-            if site_code and site_name:
-                site_mappings[site_code] = site_name
+        # Process `get_sites` (list of site codes)
+        if isinstance(get_sites, list):
+            for site_code in get_sites:
+                if isinstance(site_code, str):  # Ensure each item is a string
+                    site_mappings[site_code] = f"Site {site_code}"  # Default name
+                else:
+                    print(f"Unexpected site_code format in get_sites: {site_code}")
+        else:
+            print(f"Unexpected get_sites structure: {get_sites}")
 
-        # Process `get_site`
-        for site in site_data.get("sites", []):
-            site_code = site.get("site_code")
-            site_name = site.get("name")
-            if site_code and site_name:
-                site_mappings[site_code] = site_name
+        # Process `get_site` (list of dictionaries under "sites")
+        if isinstance(site_data, dict) and "sites" in site_data:
+            for site in site_data["sites"]:
+                if isinstance(site, dict):
+                    site_code = site.get("site_code")
+                    site_name = site.get("name")
+                    if site_code and site_name:
+                        site_mappings[site_code] = site_name
+                else:
+                    print(f"Unexpected site format in get_site: {site}")
+        else:
+            print(f"Unexpected get_site structure: {site_data}")
 
         print(f"Generated site mappings: {len(site_mappings)} sites found.")
         return site_mappings
-
 
 async def fetch_and_save_fuel_prices(site_codes, site_mappings):
     """
