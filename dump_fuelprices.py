@@ -33,18 +33,20 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
 }
 
+# Directories
 FUELPRICES_DIR = "fuelprices"
-FUELPRICES_JSON_DIR = "fuelprices_json"
+PARSED_FUELPRICES_DIR = "docs/fuelprices_json"
+WEBPAGE_ROOT = "docs"
 
 # Ensure directories exist
 os.makedirs(FUELPRICES_DIR, exist_ok=True)
-os.makedirs(FUELPRICES_JSON_DIR, exist_ok=True)
+os.makedirs(PARSED_FUELPRICES_DIR, exist_ok=True)
 
 async def save_site_mappings(site_mappings):
     """
     Save site mappings to a JSON file.
     """
-    mappings_filepath = os.path.join(FUELPRICES_DIR, "site_mappings.json")
+    mappings_filepath = os.path.join(WEBPAGE_ROOT, "site_mappings.json")
     async with aiofiles.open(mappings_filepath, "w") as f:
         await f.write(json.dumps(site_mappings, indent=4))
     print(f"Saved site mappings to {mappings_filepath}")
@@ -138,6 +140,13 @@ async def fetch_and_save_fuel_prices(site_codes, site_mappings):
                 logging.error(f"Failed to fetch data for site_code {site_code}: {result}")
                 continue
 
+            # Save raw API response
+            raw_filename = f"fuelprices_{site_code}.json"
+            raw_filepath = os.path.join(FUELPRICES_DIR, raw_filename)
+            async with aiofiles.open(raw_filepath, "w") as f:
+                await f.write(json.dumps(result, indent=4))
+            logging.info(f"Raw API response for site_code {site_code} saved to {raw_filepath}")
+
             # Initialize site mapping details
             site_details = site_mappings.get(site_code, {"name": f"Site {site_code}"})
             site_name = site_details.get("name")
@@ -158,10 +167,10 @@ async def fetch_and_save_fuel_prices(site_codes, site_mappings):
                     })
 
             # Load existing data if available
-            filename = f"fuelprices_{site_code}.json"
-            filepath = os.path.join(FUELPRICES_JSON_DIR, filename)
+            parsed_filename = f"fuelprices_{site_code}.json"
+            parsed_filepath = os.path.join(PARSED_FUELPRICES_DIR, parsed_filename)
             try:
-                async with aiofiles.open(filepath, "r") as f:
+                async with aiofiles.open(parsed_filepath, "r") as f:
                     existing_data = json.loads(await f.read())
                     existing_prices = existing_data.get("prices", [])
             except FileNotFoundError:
@@ -178,10 +187,10 @@ async def fetch_and_save_fuel_prices(site_codes, site_mappings):
             updated_prices = {f"{p['date']}_{p['department_code']}": p for p in existing_prices + new_prices}
             existing_data["prices"] = list(updated_prices.values())
 
-            # Save updated data back to the file
-            async with aiofiles.open(filepath, "w") as f:
+            # Save updated parsed data back to the file
+            async with aiofiles.open(parsed_filepath, "w") as f:
                 await f.write(json.dumps(existing_data, indent=4))
-            logging.info(f"Updated fuel prices for site_code {site_code} saved to {filename}")
+            logging.info(f"Parsed fuel prices for site_code {site_code} saved to {parsed_filepath}")
 
 async def main():
     """
