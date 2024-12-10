@@ -72,68 +72,64 @@ async def fetch_json(session, url):
 
 async def fetch_site_mappings():
     """
-    Fetch site mappings dynamically from `get_sites` and `site`.
+    Fetch site mappings from `get_sites` and `site` endpoints.
     """
     async with aiohttp.ClientSession() as session:
         # Fetch data
-        get_sites_response = await fetch_json(session, BASE_URLS["get_sites"])
-        site_response = await fetch_json(session, BASE_URLS["get_site"])
+        try:
+            get_sites_response = await fetch_json(session, BASE_URLS["get_sites"])
+            logging.debug(f"get_sites raw response: {json.dumps(get_sites_response, indent=4)}")
+        except Exception as e:
+            logging.error(f"Error fetching get_sites: {e}")
+            get_sites_response = None
 
-        # Log raw responses
-        logging.debug(f"Raw get_sites response: {json.dumps(get_sites_response, indent=4)}")
-        logging.debug(f"Raw site response: {json.dumps(site_response, indent=4)}")
+        try:
+            site_response = await fetch_json(session, BASE_URLS["get_site"])
+            logging.debug(f"site raw response: {json.dumps(site_response, indent=4)}")
+        except Exception as e:
+            logging.error(f"Error fetching site: {e}")
+            site_response = None
 
-        # Initialize site codes and mappings
+        # Initialize site codes set and mappings
         site_codes_set = set()
         site_mappings = {}
 
-        # Handle `get_sites` response
+        # Process get_sites response
         if isinstance(get_sites_response, list):
             for site in get_sites_response:
                 if isinstance(site, dict):
                     site_code = site.get("SiteCode") or site.get("site_code")
-                    site_name = site.get("SiteName") or site.get("name")
-                    latitude = site.get("Latitude") or site.get("latitude")
-                    longitude = site.get("Longitude") or site.get("longitude")
-                    address = site.get("StreetAddress") or site.get("address")
-
                     if site_code:
                         site_codes_set.add(site_code)
                         site_mappings[site_code] = {
-                            "name": site_name,
-                            "latitude": latitude,
-                            "longitude": longitude,
-                            "address": address,
+                            "name": site.get("SiteName"),
+                            "latitude": site.get("Latitude"),
+                            "longitude": site.get("Longitude"),
+                            "address": site.get("StreetAddress"),
                         }
-                elif isinstance(site, str):  # Handle case where it's a string
+                elif isinstance(site, str):
                     site_codes_set.add(site)
                     site_mappings[site] = {"name": f"Site {site}"}
         else:
-            logging.error("Unexpected structure in get_sites response.")
+            logging.error(f"Unexpected structure in get_sites response: {type(get_sites_response)}")
 
-        # Handle `site` response
+        # Process site response
         if isinstance(site_response, dict) and "sites" in site_response:
             for site in site_response["sites"]:
                 if isinstance(site, dict):
                     site_code = site.get("site_code")
-                    site_name = site.get("name")
-                    latitude = site.get("latitude")
-                    longitude = site.get("longitude")
-                    address = site.get("address")
-
                     if site_code:
                         site_codes_set.add(site_code)
-                        # Update or add data
                         if site_code not in site_mappings:
                             site_mappings[site_code] = {}
                         site_mappings[site_code].update({
-                            "name": site_name or site_mappings[site_code].get("name"),
-                            "latitude": latitude or site_mappings[site_code].get("latitude"),
-                            "longitude": longitude or site_mappings[site_code].get("longitude"),
-                            "address": address or site_mappings[site_code].get("address"),
+                            "name": site.get("name"),
+                            "latitude": site.get("latitude"),
+                            "longitude": site.get("longitude"),
+                            "address": site.get("address"),
                         })
         else:
-            logging.error("Unexpected structure in site response.")
+            logging.error(f"Unexpected structure in site response: {type(site_response)}")
 
         logging.info(f"Generated site mappings for {len(site_mappings)} sites.")
         return site_codes_set, site_mappings
