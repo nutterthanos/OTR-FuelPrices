@@ -138,36 +138,40 @@ async def fetch_and_save_fuel_prices(site_codes, site_mappings):
                 logging.error(f"Failed to fetch data for site_code {site_code}: {result}")
                 continue
 
-            # Save original response
-            original_filename = f"{site_code}_fuelprices.json"
-            original_filepath = os.path.join(FUELPRICES_DIR, original_filename)
-            async with aiofiles.open(original_filepath, "w") as f:
-                await f.write(json.dumps(result, indent=4))
-            logging.info(f"Saved original response for site_code {site_code}.")
+            # Initialize site mapping details
+            site_details = site_mappings.get(site_code, {"name": f"Site {site_code}"})
+            site_name = site_details.get("name")
+            latitude = site_details.get("latitude")
+            longitude = site_details.get("longitude")
 
-            # Generate parsed JSON
-            site_name = site_mappings.get(site_code, {}).get("name", f"Site {site_code}")
+            # Prepare the prices array
+            prices = []
             for entry in result.get("sitefuelprices", []):
                 department_code = entry.get("department_code")
                 price = entry.get("current_price")
                 date = convert_date(entry["date_entered"])
-
                 if department_code and price and date:
-                    parsed_filename = f"{department_code}_{site_code}_{date}.json"
-                    parsed_filepath = os.path.join(FUELPRICES_JSON_DIR, parsed_filename)
-
-                    file_content = {
-                        "site_code": site_code,
-                        "site_name": site_name,
+                    prices.append({
                         "department_code": department_code,
-                        "latitude": site_mappings.get(site_code, {}).get("latitude"),
-                        "longitude": site_mappings.get(site_code, {}).get("longitude"),
-                        "prices": [{"date": date, "price": price}],
-                    }
+                        "date": date,
+                        "price": price,
+                    })
 
-                    async with aiofiles.open(parsed_filepath, "w") as f:
-                        await f.write(json.dumps(file_content, indent=4))
-                    logging.info(f"Generated parsed JSON for site_code {site_code}, department_code {department_code}.")
+            # Save the combined data
+            if prices:
+                output = {
+                    "site_code": site_code,
+                    "site_name": site_name,
+                    "latitude": latitude,
+                    "longitude": longitude,
+                    "prices": prices,
+                }
+
+                filename = f"{site_code}_fuelprices.json"
+                filepath = os.path.join(FUELPRICES_JSON_DIR, filename)
+                async with aiofiles.open(filepath, "w") as f:
+                    await f.write(json.dumps(output, indent=4))
+                logging.info(f"Saved fuel prices for site_code {site_code} to {filename}")
 
 async def main():
     """
