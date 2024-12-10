@@ -9,18 +9,18 @@
     "prices": [
         {
             "department_code": 1,
-            "date": "2024-12-09T10:33:00",
-            "price": 1.919
+            "date": "2024-12-10T03:16:00",
+            "price": 1.899
         },
         {
             "department_code": 2,
-            "date": "2024-12-09T10:33:00",
-            "price": 1.759
+            "date": "2024-12-10T03:16:00",
+            "price": 1.739
         },
         {
             "department_code": 3,
-            "date": "2024-12-09T10:33:00",
-            "price": 1.999
+            "date": "2024-12-10T03:16:00",
+            "price": 1.979
         },
         {
             "department_code": 4,
