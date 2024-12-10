@@ -1,8 +1,6 @@
 name: Update Fuel Prices and Graphs
 
 on:
-  schedule:
-    - cron: '*/10 * * * *'  # Run the script every 10 minutes
   workflow_dispatch:
 
 jobs:
@@ -52,5 +50,20 @@ jobs:
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             https://api.github.com/repos/${{ github.repository }}/actions/workflows/page_build.yml/dispatches \
             -d '{"ref":"prod"}'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Step 7: Wait for 1 minute
+      - name: Wait for 1 minutes
+        run: sleep 60
+
+      # Step 8: Trigger dump fuelprices workflow
+      - name: Trigger dump fuelprices workflow
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/${{ github.repository }}/actions/workflows/dump_fuelprices.yml/dispatches \
+            -d '{"ref":"main"}'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
