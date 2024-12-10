@@ -1,0 +1,28 @@
+{
+    "site_code": "461",
+    "site_name": "S24 Yanchep",
+    "latitude": -31.5496,
+    "longitude": 115.6589,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-09T19:19:00",
+            "price": 1.749
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-09T19:19:00",
+            "price": 1.599
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-09T19:19:00",
+            "price": 1.839
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-09T22:18:00",
+            "price": 1.739
+        }
+    ]
+}

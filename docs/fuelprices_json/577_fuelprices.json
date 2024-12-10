@@ -1,0 +1,28 @@
+{
+    "site_code": "577",
+    "site_name": "OTR Seaton",
+    "latitude": -34.901997,
+    "longitude": 138.514206,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-09T00:12:00",
+            "price": 1.849
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-09T00:12:00",
+            "price": 1.699
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-09T00:12:00",
+            "price": 1.929
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-09T00:12:00",
+            "price": 1.789
+        }
+    ]
+}

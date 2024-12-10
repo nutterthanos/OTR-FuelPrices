@@ -1,0 +1,33 @@
+{
+    "site_code": "830",
+    "site_name": "OTR Seaview Downs",
+    "latitude": -35.029858,
+    "longitude": 138.533676,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-09T20:26:00",
+            "price": 1.859
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-09T20:26:00",
+            "price": 1.699
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-09T20:26:00",
+            "price": 1.929
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-06T00:00:00",
+            "price": 1.859
+        },
+        {
+            "department_code": 5,
+            "date": "2024-07-05T00:01:00",
+            "price": 0.999
+        }
+    ]
+}

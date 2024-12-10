@@ -1,0 +1,33 @@
+{
+    "site_code": "501",
+    "site_name": "OTR Athelstone",
+    "latitude": -34.87178,
+    "longitude": 138.700195,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-10T08:22:00",
+            "price": 1.849
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-10T08:22:00",
+            "price": 1.699
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-10T08:22:00",
+            "price": 1.929
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-05T23:23:00",
+            "price": 1.819
+        },
+        {
+            "department_code": 5,
+            "date": "2023-09-20T04:02:00",
+            "price": 0.999
+        }
+    ]
+}

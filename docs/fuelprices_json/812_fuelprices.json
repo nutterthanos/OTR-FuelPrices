@@ -1,0 +1,33 @@
+{
+    "site_code": "812",
+    "site_name": "OTR Hillbank",
+    "latitude": -34.742435,
+    "longitude": 138.676636,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-09T18:48:00",
+            "price": 1.769
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-09T18:48:00",
+            "price": 1.619
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-09T18:48:00",
+            "price": 1.849
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-28T01:47:00",
+            "price": 1.789
+        },
+        {
+            "department_code": 5,
+            "date": "2024-11-28T01:47:00",
+            "price": 1.019
+        }
+    ]
+}

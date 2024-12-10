@@ -1,0 +1,33 @@
+{
+    "site_code": "883",
+    "site_name": "OTR Paralowie",
+    "latitude": -34.762287,
+    "longitude": 138.593217,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-10T04:49:00",
+            "price": 1.779
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-10T04:49:00",
+            "price": 1.619
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-10T04:49:00",
+            "price": 1.859
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-25T23:09:00",
+            "price": 1.799
+        },
+        {
+            "department_code": 5,
+            "date": "2024-04-03T23:01:00",
+            "price": 1.039
+        }
+    ]
+}
