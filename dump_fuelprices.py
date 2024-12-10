@@ -10,7 +10,6 @@ from datetime import datetime
 logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s [%(levelname)s] %(message)s"
-    ]
 )
 
 AUTH_TOKEN_PROD = os.getenv("AUTH_TOKEN_PROD")
