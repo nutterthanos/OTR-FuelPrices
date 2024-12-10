@@ -14,8 +14,28 @@
             max-width: 80%;
             margin: 20px auto;
         }
-        .form-group {
-            margin: 10px 0;
+        .autocomplete {
+            position: relative;
+            display: inline-block;
+        }
+        .autocomplete-items {
+            position: absolute;
+            border: 1px solid #d4d4d4;
+            border-bottom: none;
+            border-top: none;
+            z-index: 99;
+            top: 100%;
+            left: 0;
+            right: 0;
+        }
+        .autocomplete-items div {
+            padding: 10px;
+            cursor: pointer;
+            background-color: #fff;
+            border-bottom: 1px solid #d4d4d4;
+        }
+        .autocomplete-items div:hover {
+            background-color: #e9e9e9;
         }
     </style>
 </head>
@@ -23,11 +43,11 @@
     <h1>Fuel Prices Dashboard</h1>
     <p>Select a site, department, and time range to view the graph:</p>
     <form id="filter-form">
-        <div class="form-group">
-            <label for="site-code">Site Code:</label>
-            <input type="text" id="site-code" placeholder="Enter site code" required>
+        <div class="autocomplete">
+            <label for="site-name">Site Name:</label>
+            <input type="text" id="site-name" placeholder="Enter site name" required>
         </div>
-        <div class="form-group">
+        <div>
             <label for="department">Department:</label>
             <select id="department">
                 <option value="1">Premium Unleaded</option>
@@ -41,7 +61,7 @@
                 <option value="11">Low Aromatic</option>
             </select>
         </div>
-        <div class="form-group">
+        <div>
             <label for="date-range">Predefined Range:</label>
             <select id="date-range">
                 <option value="hourly">Last Hour</option>
@@ -49,120 +69,107 @@
                 <option value="weekly">Weekly</option>
                 <option value="monthly">Monthly</option>
                 <option value="yearly">Yearly</option>
-                <option value="custom">Custom Range</option>
             </select>
-        </div>
-        <div id="custom-range-fields" style="display: none;">
-            <div class="form-group">
-                <label for="start-date">Start Date/Time:</label>
-                <input type="datetime-local" id="start-date">
-            </div>
-            <div class="form-group">
-                <label for="end-date">End Date/Time:</label>
-                <input type="datetime-local" id="end-date">
-            </div>
         </div>
         <button type="submit">Show Graph</button>
     </form>
     <canvas id="fuel-price-chart"></canvas>
 
     <script>
-        const form = document.getElementById("filter-form");
-        const chartCanvas = document.getElementById("fuel-price-chart");
-        const dateRangeSelect = document.getElementById("date-range");
-        const customRangeFields = document.getElementById("custom-range-fields");
+        const siteMappingsURL = "docs/site_mappings.json"; // URL to the mapping file
+        const siteNameInput = document.getElementById("site-name");
+        let siteMappings = {};
 
-        let chart;
+        // Fetch site mappings and initialize autocomplete
+        fetch(siteMappingsURL)
+            .then(response => response.json())
+            .then(data => {
+                siteMappings = data;
+                initializeAutocomplete(siteNameInput, Object.values(siteMappings).map(site => site.name));
+            })
+            .catch(error => console.error("Error fetching site mappings:", error));
 
-        // Show/hide custom range fields
-        dateRangeSelect.addEventListener("change", () => {
-            customRangeFields.style.display = dateRangeSelect.value === "custom" ? "block" : "none";
-        });
+        function initializeAutocomplete(input, names) {
+            let currentFocus;
 
-        form.addEventListener("submit", async (e) => {
-            e.preventDefault();
+            input.addEventListener("input", function () {
+                const value = this.value;
+                closeAllLists();
 
-            const siteCode = document.getElementById("site-code").value;
-            const department = document.getElementById("department").value;
-            const dateRange = dateRangeSelect.value;
-            const startDate = document.getElementById("start-date").value;
-            const endDate = document.getElementById("end-date").value;
+                if (!value) return false;
+                currentFocus = -1;
 
-            // Fetch data
-            try {
-                const response = await fetch(`fuelprices_json/${siteCode}_fuelprices.json`);
-                if (!response.ok) {
-                    throw new Error("Data file not found");
-                }
-                const data = await response.json();
+                const listContainer = document.createElement("div");
+                listContainer.setAttribute("id", this.id + "autocomplete-list");
+                listContainer.setAttribute("class", "autocomplete-items");
+                this.parentNode.appendChild(listContainer);
 
-                // Determine date range for filtering
-                const now = new Date();
-                let start = null;
-                let end = now;
-
-                if (dateRange === "hourly") {
-                    start = new Date(now.getTime() - 60 * 60 * 1000);
-                } else if (dateRange === "daily") {
-                    start = new Date(now.getTime() - 24 * 60 * 60 * 1000);
-                } else if (dateRange === "weekly") {
-                    start = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
-                } else if (dateRange === "monthly") {
-                    start = new Date(now.setMonth(now.getMonth() - 1));
-                } else if (dateRange === "yearly") {
-                    start = new Date(now.setFullYear(now.getFullYear() - 1));
-                } else if (dateRange === "custom") {
-                    start = new Date(startDate);
-                    end = new Date(endDate);
-                }
-
-                // Filter data
-                const filteredPrices = data.prices.filter(
-                    (entry) =>
-                        entry.department_code == department &&
-                        new Date(entry.date) >= start &&
-                        new Date(entry.date) <= end
-                );
-
-                if (filteredPrices.length === 0) {
-                    alert("No data available for the selected filters.");
-                    return;
-                }
-
-                const labels = filteredPrices.map((entry) => new Date(entry.date).toLocaleString());
-                const prices = filteredPrices.map((entry) => entry.price);
-
-                // Render the chart
-                if (chart) {
-                    chart.destroy();
-                }
-
-                const ctx = chartCanvas.getContext("2d");
-                chart = new Chart(ctx, {
-                    type: "line",
-                    data: {
-                        labels: labels,
-                        datasets: [
-                            {
-                                label: `Fuel Prices (${department})`,
-                                data: prices,
-                                borderColor: "rgba(75, 192, 192, 1)",
-                                backgroundColor: "rgba(75, 192, 192, 0.2)",
-                                fill: true,
-                            },
-                        ],
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            x: { title: { display: true, text: "Date/Time" } },
-                            y: { title: { display: true, text: "Price" } },
-                        },
-                    },
+                names.forEach(name => {
+                    if (name.toLowerCase().includes(value.toLowerCase())) {
+                        const item = document.createElement("div");
+                        item.innerHTML = `<strong>${name.substr(0, value.length)}</strong>${name.substr(value.length)}`;
+                        item.addEventListener("click", () => {
+                            input.value = name;
+                            closeAllLists();
+                        });
+                        listContainer.appendChild(item);
+                    }
                 });
-            } catch (error) {
-                alert(`Error fetching data: ${error.message}`);
+            });
+
+            input.addEventListener("keydown", function (e) {
+                const list = document.getElementById(this.id + "autocomplete-list");
+                if (list) var items = list.getElementsByTagName("div");
+                if (e.keyCode === 40) { // Down key
+                    currentFocus++;
+                    addActive(items);
+                } else if (e.keyCode === 38) { // Up key
+                    currentFocus--;
+                    addActive(items);
+                } else if (e.keyCode === 13) { // Enter key
+                    e.preventDefault();
+                    if (currentFocus > -1 && items) items[currentFocus].click();
+                }
+            });
+
+            function addActive(items) {
+                if (!items) return false;
+                removeActive(items);
+                if (currentFocus >= items.length) currentFocus = 0;
+                if (currentFocus < 0) currentFocus = items.length - 1;
+                items[currentFocus].classList.add("autocomplete-active");
             }
+
+            function removeActive(items) {
+                for (let item of items) item.classList.remove("autocomplete-active");
+            }
+
+            function closeAllLists(elmnt) {
+                const lists = document.getElementsByClassName("autocomplete-items");
+                for (let list of lists) {
+                    if (elmnt != list && elmnt != input) list.parentNode.removeChild(list);
+                }
+            }
+
+            document.addEventListener("click", e => closeAllLists(e.target));
+        }
+
+        document.getElementById("filter-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const siteName = siteNameInput.value;
+
+            // Find site code by name
+            const site = Object.entries(siteMappings).find(([code, details]) => details.name === siteName);
+
+            if (!site) {
+                alert("Site not found. Please select a valid site.");
+                return;
+            }
+
+            const [siteCode] = site;
+            console.log("Selected Site Code:", siteCode);
+
+            // Add your graph generation logic here, using siteCode
         });
     </script>
 </body>
