@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fuel Prices Dashboard</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.20.0.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
         }
-        canvas {
-            max-width: 80%;
+        #fuel-price-chart {
+            width: 90%;
             margin: 20px auto;
         }
         .autocomplete {
@@ -73,10 +73,10 @@
         </div>
         <button type="submit">Show Graph</button>
     </form>
-    <canvas id="fuel-price-chart"></canvas>
+    <div id="fuel-price-chart"></div>
 
     <script>
-        const siteMappingsURL = "site_mappings.json";
+        const siteMappingsURL = "site_mappings.json"; // URL to the mapping file
         const siteNameInput = document.getElementById("site-name");
         let siteMappings = {};
 
@@ -171,10 +171,12 @@
             const [siteCode] = site;
 
             try {
+                // Fetch the JSON data for the selected site
                 const response = await fetch(`fuelprices_json/fuelprices_${siteCode}.json`);
                 if (!response.ok) throw new Error("Data not found");
                 const data = await response.json();
 
+                // Filter data by department and date range
                 const now = new Date();
                 let startDate;
 
@@ -219,30 +221,27 @@
 
                 const prices = filteredPrices.map(p => p.price);
 
-                const ctx = document.getElementById("fuel-price-chart").getContext("2d");
-                if (window.chart) window.chart.destroy();
-                window.chart = new Chart(ctx, {
-                    type: "line",
-                    data: {
-                        labels: labels,
-                        datasets: [
-                            {
-                                label: `Fuel Prices for ${siteName}`,
-                                data: prices,
-                                borderColor: "rgba(75, 192, 192, 1)",
-                                backgroundColor: "rgba(75, 192, 192, 0.2)",
-                                fill: true,
-                            },
-                        ],
+                // Generate the Plotly graph
+                const plotData = [
+                    {
+                        x: labels,
+                        y: prices,
+                        type: "scatter",
+                        mode: "lines+markers",
+                        line: { color: "rgba(75, 192, 192, 1)" },
+                        marker: { color: "rgba(75, 192, 192, 0.8)" },
+                        name: `Department ${departmentCode}`,
                     },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            x: { title: { display: true, text: "Date/Time" } },
-                            y: { title: { display: true, text: "Price" } },
-                        },
-                    },
-                });
+                ];
+
+                const layout = {
+                    title: `Fuel Prices for ${siteName}`,
+                    xaxis: { title: "Date/Time", tickangle: -45 },
+                    yaxis: { title: "Price (AUD)" },
+                    autosize: true,
+                };
+
+                Plotly.newPlot("fuel-price-chart", plotData, layout);
             } catch (error) {
                 alert(`Error: ${error.message}`);
                 console.error(error);
