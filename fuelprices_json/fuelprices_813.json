@@ -1,0 +1,28 @@
+{
+    "site_code": "813",
+    "site_name": "OTR Holden Hill South Cnr Tarton Road",
+    "latitude": -34.852872,
+    "longitude": 138.665131,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-10T04:44:00",
+            "price": 1.799
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-10T04:44:00",
+            "price": 1.649
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-10T04:44:00",
+            "price": 1.879
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-04T01:41:00",
+            "price": 1.739
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "site_code": "845",
+    "site_name": "OTR Para Hills West",
+    "latitude": -34.801129,
+    "longitude": 138.638769,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-10T04:52:00",
+            "price": 1.779
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-10T04:52:00",
+            "price": 1.619
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-10T04:52:00",
+            "price": 1.859
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-02T23:53:00",
+            "price": 1.699
+        },
+        {
+            "department_code": 5,
+            "date": "2023-09-06T00:22:00",
+            "price": 0.999
+        }
+    ]
+}

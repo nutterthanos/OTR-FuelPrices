@@ -1,0 +1,28 @@
+{
+    "site_code": "131",
+    "site_name": "OTR Virginia",
+    "latitude": -34.670577,
+    "longitude": 138.562049,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-10T03:19:00",
+            "price": 1.789
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-10T03:19:00",
+            "price": 1.639
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-10T03:19:00",
+            "price": 1.869
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-05T23:24:00",
+            "price": 1.679
+        }
+    ]
+}

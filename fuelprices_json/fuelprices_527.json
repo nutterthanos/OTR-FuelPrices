@@ -1,0 +1,33 @@
+{
+    "site_code": "527",
+    "site_name": "OTR Blair Athol",
+    "latitude": -34.861557,
+    "longitude": 138.60083,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-05T23:26:00",
+            "price": 1.749
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-05T23:26:00",
+            "price": 1.599
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-05T23:26:00",
+            "price": 1.829
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-30T23:02:00",
+            "price": 1.729
+        },
+        {
+            "department_code": 5,
+            "date": "2024-11-25T22:52:00",
+            "price": 0.959
+        }
+    ]
+}

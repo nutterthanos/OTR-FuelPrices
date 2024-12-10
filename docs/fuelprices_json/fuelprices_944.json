@@ -1,0 +1,33 @@
+{
+    "site_code": "944",
+    "site_name": "S24 Redcliffe",
+    "latitude": -31.93038,
+    "longitude": 115.9448,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-09T19:22:00",
+            "price": 1.759
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-09T19:22:00",
+            "price": 1.599
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-09T19:22:00",
+            "price": 1.849
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-02T19:23:00",
+            "price": 1.739
+        },
+        {
+            "department_code": 5,
+            "date": "2024-12-04T19:21:00",
+            "price": 1.299
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "site_code": "506",
+    "site_name": "OTR Pooraka",
+    "latitude": -34.828224,
+    "longitude": 138.631897,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-08T23:59:00",
+            "price": 1.749
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-08T23:59:00",
+            "price": 1.599
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-08T23:59:00",
+            "price": 1.839
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-02T05:57:00",
+            "price": 1.699
+        },
+        {
+            "department_code": 5,
+            "date": "2024-12-01T23:21:00",
+            "price": 0.999
+        }
+    ]
+}

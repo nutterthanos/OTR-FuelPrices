@@ -1,0 +1,28 @@
+{
+    "site_code": "767",
+    "site_name": "OTR Port Augusta West",
+    "latitude": -32.483737,
+    "longitude": 137.75936,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-11-19T22:59:00",
+            "price": 1.919
+        },
+        {
+            "department_code": 2,
+            "date": "2024-11-19T22:59:00",
+            "price": 1.769
+        },
+        {
+            "department_code": 3,
+            "date": "2024-11-19T22:59:00",
+            "price": 1.999
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-21T23:37:00",
+            "price": 1.859
+        }
+    ]
+}

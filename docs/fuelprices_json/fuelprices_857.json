@@ -1,0 +1,28 @@
+{
+    "site_code": "857",
+    "site_name": "OTR Mawson Lakes",
+    "latitude": -34.805984,
+    "longitude": 138.615616,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-07T05:20:00",
+            "price": 1.789
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-07T05:20:00",
+            "price": 1.639
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-07T05:20:00",
+            "price": 1.879
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-02T07:01:00",
+            "price": 1.799
+        }
+    ]
+}

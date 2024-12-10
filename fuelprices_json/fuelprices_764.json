@@ -1,0 +1,28 @@
+{
+    "site_code": "764",
+    "site_name": "OTR Murray View",
+    "latitude": -35.26565,
+    "longitude": 139.4575,
+    "prices": [
+        {
+            "department_code": 2,
+            "date": "2024-12-06T23:56:00",
+            "price": 1.729
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-06T23:56:00",
+            "price": 1.959
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-06T23:56:00",
+            "price": 1.759
+        },
+        {
+            "department_code": 5,
+            "date": "2024-11-21T23:25:00",
+            "price": 1.199
+        }
+    ]
+}

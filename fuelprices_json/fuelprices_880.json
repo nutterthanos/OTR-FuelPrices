@@ -1,0 +1,33 @@
+{
+    "site_code": "880",
+    "site_name": "OTR Modbury",
+    "latitude": -34.834125,
+    "longitude": 138.681967,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-10T07:29:00",
+            "price": 1.789
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-10T07:29:00",
+            "price": 1.639
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-10T07:29:00",
+            "price": 1.869
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-05T06:00:00",
+            "price": 1.689
+        },
+        {
+            "department_code": 5,
+            "date": "2023-09-18T22:55:00",
+            "price": 0.999
+        }
+    ]
+}

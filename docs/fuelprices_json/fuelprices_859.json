@@ -1,0 +1,38 @@
+{
+    "site_code": "859",
+    "site_name": "OTR Port Wakefield Road",
+    "latitude": -34.768951,
+    "longitude": 138.59313,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-10T04:41:00",
+            "price": 1.789
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-10T04:41:00",
+            "price": 1.629
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-10T04:41:00",
+            "price": 1.869
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-03T23:51:00",
+            "price": 1.719
+        },
+        {
+            "department_code": 5,
+            "date": "2024-06-04T00:03:00",
+            "price": 0.999
+        },
+        {
+            "department_code": 6,
+            "date": "2024-04-21T19:05:00",
+            "price": 1.989
+        }
+    ]
+}

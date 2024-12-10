@@ -1,0 +1,28 @@
+{
+    "site_code": "818",
+    "site_name": "OTR Marion",
+    "latitude": -35.006367,
+    "longitude": 138.557915,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-08T06:37:00",
+            "price": 1.849
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-08T06:37:00",
+            "price": 1.699
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-08T06:37:00",
+            "price": 1.929
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-14T00:15:00",
+            "price": 1.699
+        }
+    ]
+}

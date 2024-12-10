@@ -1,0 +1,38 @@
+{
+    "site_code": "919",
+    "site_name": "OTR Mount Gambier East",
+    "latitude": -37.83467,
+    "longitude": 140.8022,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-11-25T22:38:00",
+            "price": 1.849
+        },
+        {
+            "department_code": 2,
+            "date": "2024-11-25T22:38:00",
+            "price": 1.699
+        },
+        {
+            "department_code": 3,
+            "date": "2024-11-25T22:38:00",
+            "price": 1.929
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-25T22:38:00",
+            "price": 1.719
+        },
+        {
+            "department_code": 5,
+            "date": "2024-11-25T22:38:00",
+            "price": 1.759
+        },
+        {
+            "department_code": 6,
+            "date": "2024-04-21T19:15:00",
+            "price": 1.699
+        }
+    ]
+}

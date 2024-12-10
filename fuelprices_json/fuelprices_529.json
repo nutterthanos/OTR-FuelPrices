@@ -1,0 +1,28 @@
+{
+    "site_code": "529",
+    "site_name": "OTR Hazelwood Park",
+    "latitude": -34.933189,
+    "longitude": 138.659531,
+    "prices": [
+        {
+            "department_code": 2,
+            "date": "2024-12-09T06:08:00",
+            "price": 1.759
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-09T06:08:00",
+            "price": 1.999
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-05T23:22:00",
+            "price": 1.829
+        },
+        {
+            "department_code": 5,
+            "date": "2024-06-03T23:54:00",
+            "price": 0.999
+        }
+    ]
+}

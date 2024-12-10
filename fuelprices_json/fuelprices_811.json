@@ -1,0 +1,33 @@
+{
+    "site_code": "811",
+    "site_name": "OTR Harbourtown Drive Thru",
+    "latitude": -34.944664,
+    "longitude": 138.517646,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-10T07:49:00",
+            "price": 1.839
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-10T07:49:00",
+            "price": 1.679
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-10T07:49:00",
+            "price": 1.919
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-10T23:33:00",
+            "price": 1.819
+        },
+        {
+            "department_code": 5,
+            "date": "2024-11-01T00:29:00",
+            "price": 1.029
+        }
+    ]
+}

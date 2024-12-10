@@ -1,0 +1,33 @@
+{
+    "site_code": "518",
+    "site_name": "OTR Evandale",
+    "latitude": -34.903961,
+    "longitude": 138.639526,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-09T04:47:00",
+            "price": 1.919
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-09T04:47:00",
+            "price": 1.759
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-09T04:47:00",
+            "price": 1.989
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-05T23:19:00",
+            "price": 1.839
+        },
+        {
+            "department_code": 5,
+            "date": "2024-11-25T22:51:00",
+            "price": 0.999
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "site_code": "814",
+    "site_name": "S24 Kensington Gardens",
+    "latitude": -34.91391,
+    "longitude": 138.658196,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-09T06:20:00",
+            "price": 1.919
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-09T06:20:00",
+            "price": 1.759
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-09T06:20:00",
+            "price": 1.989
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-06T23:47:00",
+            "price": 1.839
+        }
+    ]
+}

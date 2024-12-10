@@ -1,0 +1,33 @@
+{
+    "site_code": "537",
+    "site_name": "OTR Cavan Inbound",
+    "latitude": -34.830299,
+    "longitude": 138.599243,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-09T22:41:00",
+            "price": 1.809
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-09T22:41:00",
+            "price": 1.649
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-09T22:41:00",
+            "price": 1.879
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-26T23:17:00",
+            "price": 1.719
+        },
+        {
+            "department_code": 5,
+            "date": "2024-10-30T22:51:00",
+            "price": 0.999
+        }
+    ]
+}
