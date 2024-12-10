@@ -76,7 +76,7 @@
     <canvas id="fuel-price-chart"></canvas>
 
     <script>
-        const siteMappingsURL = "site_mappings.json"; // URL to the mapping file
+        const siteMappingsURL = "site_mappings.json";
         const siteNameInput = document.getElementById("site-name");
         let siteMappings = {};
 
@@ -171,12 +171,10 @@
             const [siteCode] = site;
 
             try {
-                // Fetch the JSON data for the selected site
                 const response = await fetch(`fuelprices_json/fuelprices_${siteCode}.json`);
                 if (!response.ok) throw new Error("Data not found");
                 const data = await response.json();
 
-                // Filter data by department and date range
                 const now = new Date();
                 let startDate;
 
@@ -209,10 +207,18 @@
                     return;
                 }
 
-                const labels = filteredPrices.map(p => new Date(p.date).toLocaleString());
+                const labels = filteredPrices.map(p => {
+                    const date = new Date(p.date);
+                    return `${date.getDate().toString().padStart(2, "0")}/${(date.getMonth() + 1)
+                        .toString()
+                        .padStart(2, "0")}/${date.getFullYear()} ${date
+                        .getHours()
+                        .toString()
+                        .padStart(2, "0")}:${date.getMinutes().toString().padStart(2, "0")}`;
+                });
+
                 const prices = filteredPrices.map(p => p.price);
 
-                // Generate the chart
                 const ctx = document.getElementById("fuel-price-chart").getContext("2d");
                 if (window.chart) window.chart.destroy();
                 window.chart = new Chart(ctx, {
