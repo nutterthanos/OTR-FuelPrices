@@ -1,12 +1,9 @@
 {
     "site_code": "454",
-    "site_name": {
-        "name": "S24 Zilzie",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "S24 Zilzie",
     "department_code": 4,
+    "latitude": -23.26758,
+    "longitude": 150.8202,
     "prices": [
         {
             "date": "2024-11-27T21:51:00",

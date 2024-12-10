@@ -1,12 +1,9 @@
 {
     "site_code": "501",
-    "site_name": {
-        "name": "OTR Athelstone",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Athelstone",
     "department_code": 4,
+    "latitude": -34.87178,
+    "longitude": 138.700195,
     "prices": [
         {
             "date": "2024-12-05T23:23:00",

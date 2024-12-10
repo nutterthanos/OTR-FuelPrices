@@ -1,12 +1,9 @@
 {
     "site_code": "584",
-    "site_name": {
-        "name": "OTR Dry Creek",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Dry Creek",
     "department_code": 6,
+    "latitude": -34.819618,
+    "longitude": 138.591965,
     "prices": [
         {
             "date": "2024-04-21T19:37:00",

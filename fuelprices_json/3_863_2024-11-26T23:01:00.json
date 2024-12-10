@@ -1,12 +1,9 @@
 {
     "site_code": "863",
-    "site_name": {
-        "name": "OTR Kingston SE",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Kingston SE",
     "department_code": 3,
+    "latitude": -36.82566,
+    "longitude": 139.8619,
     "prices": [
         {
             "date": "2024-11-26T23:01:00",

@@ -1,12 +1,9 @@
 {
     "site_code": "541",
-    "site_name": {
-        "name": "OTR Kilburn",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Kilburn",
     "department_code": 2,
+    "latitude": -34.859711,
+    "longitude": 138.583298,
     "prices": [
         {
             "date": "2024-12-10T00:01:00",

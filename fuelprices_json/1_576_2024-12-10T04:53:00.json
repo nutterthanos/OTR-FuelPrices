@@ -1,0 +1,13 @@
+{
+    "site_code": "576",
+    "site_name": "OTR Smithfield",
+    "department_code": 1,
+    "latitude": -34.681683,
+    "longitude": 138.694199,
+    "prices": [
+        {
+            "date": "2024-12-10T04:53:00",
+            "price": 1.779
+        }
+    ]
+}

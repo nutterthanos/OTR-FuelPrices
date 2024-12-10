@@ -1,12 +1,9 @@
 {
     "site_code": "846",
-    "site_name": {
-        "name": "OTR Largs Bay Military Road",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Largs Bay Military Road",
     "department_code": 4,
+    "latitude": -34.830734,
+    "longitude": 138.48764,
     "prices": [
         {
             "date": "2024-12-09T22:57:00",

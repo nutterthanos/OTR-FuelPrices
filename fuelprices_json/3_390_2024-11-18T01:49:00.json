@@ -1,12 +1,9 @@
 {
     "site_code": "390",
-    "site_name": {
-        "name": "OTR Katherine",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Katherine",
     "department_code": 3,
+    "latitude": -14.470535,
+    "longitude": 132.274719,
     "prices": [
         {
             "date": "2024-11-18T01:49:00",

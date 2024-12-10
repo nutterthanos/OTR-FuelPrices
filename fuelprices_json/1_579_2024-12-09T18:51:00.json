@@ -1,12 +1,9 @@
 {
     "site_code": "579",
-    "site_name": {
-        "name": "OTR Stepney",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Stepney",
     "department_code": 1,
+    "latitude": -34.910187,
+    "longitude": 138.627487,
     "prices": [
         {
             "date": "2024-12-09T18:51:00",

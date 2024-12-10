@@ -1,12 +1,9 @@
 {
     "site_code": "593",
-    "site_name": {
-        "name": "OTR Wayville",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Wayville",
     "department_code": 5,
+    "latitude": -34.946548,
+    "longitude": 138.589554,
     "prices": [
         {
             "date": "2024-10-14T03:26:00",

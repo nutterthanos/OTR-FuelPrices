@@ -1,12 +1,9 @@
 {
     "site_code": "823",
-    "site_name": {
-        "name": "OTR Salisbury Downs",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Salisbury Downs",
     "department_code": 4,
+    "latitude": -34.779239,
+    "longitude": 138.626952,
     "prices": [
         {
             "date": "2024-12-03T23:49:00",

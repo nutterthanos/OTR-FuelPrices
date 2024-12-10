@@ -1,12 +1,9 @@
 {
     "site_code": "437",
-    "site_name": {
-        "name": "S24 Ludmilla",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "S24 Ludmilla",
     "department_code": 3,
+    "latitude": -12.42687,
+    "longitude": 130.8559,
     "prices": [
         {
             "date": "2024-11-27T20:57:00",

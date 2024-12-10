@@ -1,12 +1,9 @@
 {
     "site_code": "117",
-    "site_name": {
-        "name": "OTR Keilor Park",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Keilor Park",
     "department_code": 2,
+    "latitude": -37.72516,
+    "longitude": 144.8519,
     "prices": [
         {
             "date": "2024-12-04T23:34:00",

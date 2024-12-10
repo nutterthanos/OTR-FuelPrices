@@ -1,12 +1,9 @@
 {
     "site_code": "578",
-    "site_name": {
-        "name": "OTR Norwood",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Norwood",
     "department_code": 3,
+    "latitude": -34.921684,
+    "longitude": 138.630112,
     "prices": [
         {
             "date": "2024-12-09T06:14:00",

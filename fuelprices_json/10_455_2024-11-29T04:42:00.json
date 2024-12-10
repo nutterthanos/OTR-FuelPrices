@@ -1,12 +1,9 @@
 {
     "site_code": "455",
-    "site_name": {
-        "name": "S24 Maryborough",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "S24 Maryborough",
     "department_code": 10,
+    "latitude": -25.53081,
+    "longitude": 152.6995,
     "prices": [
         {
             "date": "2024-11-29T04:42:00",

@@ -1,0 +1,13 @@
+{
+    "site_code": "946",
+    "site_name": "OTR Aberfoyle Park",
+    "department_code": 3,
+    "latitude": -35.074772,
+    "longitude": 138.59046,
+    "prices": [
+        {
+            "date": "2024-12-10T00:28:00",
+            "price": 1.909
+        }
+    ]
+}

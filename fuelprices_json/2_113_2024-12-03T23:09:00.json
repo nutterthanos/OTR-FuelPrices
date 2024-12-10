@@ -1,12 +1,9 @@
 {
     "site_code": "113",
-    "site_name": {
-        "name": "OTR Alphington",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Alphington",
     "department_code": 2,
+    "latitude": -37.78034,
+    "longitude": 145.0325,
     "prices": [
         {
             "date": "2024-12-03T23:09:00",

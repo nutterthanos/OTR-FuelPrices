@@ -1,12 +1,9 @@
 {
     "site_code": "717",
-    "site_name": {
-        "name": "OTR Naracoorte",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Naracoorte",
     "department_code": 4,
+    "latitude": -36.959053,
+    "longitude": 140.731686,
     "prices": [
         {
             "date": "2024-12-05T22:48:00",

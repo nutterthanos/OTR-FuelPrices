@@ -1,0 +1,13 @@
+{
+    "site_code": "871",
+    "site_name": "OTR Two Wells",
+    "department_code": 2,
+    "latitude": -34.609545,
+    "longitude": 138.528972,
+    "prices": [
+        {
+            "date": "2024-12-10T07:53:00",
+            "price": 1.649
+        }
+    ]
+}

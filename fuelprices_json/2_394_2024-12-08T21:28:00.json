@@ -1,12 +1,9 @@
 {
     "site_code": "394",
-    "site_name": {
-        "name": "S24 Casuarina",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "S24 Casuarina",
     "department_code": 2,
+    "latitude": -12.37372,
+    "longitude": 130.8837,
     "prices": [
         {
             "date": "2024-12-08T21:28:00",

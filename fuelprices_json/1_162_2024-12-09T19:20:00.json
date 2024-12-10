@@ -1,12 +1,9 @@
 {
     "site_code": "162",
-    "site_name": {
-        "name": "OTR Yangebup",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Yangebup",
     "department_code": 1,
+    "latitude": -32.11936,
+    "longitude": 115.7943,
     "prices": [
         {
             "date": "2024-12-09T19:20:00",

@@ -1,12 +1,9 @@
 {
     "site_code": "866",
-    "site_name": {
-        "name": "OTR Mannum",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Mannum",
     "department_code": 1,
+    "latitude": -34.915,
+    "longitude": 139.3025,
     "prices": [
         {
             "date": "2024-12-08T23:10:00",

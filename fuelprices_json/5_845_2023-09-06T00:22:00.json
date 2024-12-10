@@ -1,12 +1,9 @@
 {
     "site_code": "845",
-    "site_name": {
-        "name": "OTR Para Hills West",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Para Hills West",
     "department_code": 5,
+    "latitude": -34.801129,
+    "longitude": 138.638769,
     "prices": [
         {
             "date": "2023-09-06T00:22:00",

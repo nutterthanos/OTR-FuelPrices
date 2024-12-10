@@ -1,12 +1,9 @@
 {
     "site_code": "894",
-    "site_name": {
-        "name": "OTR Mount Gambier",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Mount Gambier",
     "department_code": 3,
+    "latitude": -37.825288,
+    "longitude": 140.782045,
     "prices": [
         {
             "date": "2024-12-08T22:57:00",

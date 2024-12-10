@@ -1,12 +1,9 @@
 {
     "site_code": "752",
-    "site_name": {
-        "name": "OTR Murray Bridge Eastside",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Murray Bridge Eastside",
     "department_code": 2,
+    "latitude": -35.11253,
+    "longitude": 139.2958,
     "prices": [
         {
             "date": "2024-12-02T23:08:00",

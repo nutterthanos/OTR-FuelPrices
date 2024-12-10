@@ -1,12 +1,9 @@
 {
     "site_code": "397",
-    "site_name": {
-        "name": "OTR Fannie Bay",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Fannie Bay",
     "department_code": 1,
+    "latitude": -12.42482,
+    "longitude": 130.8391,
     "prices": [
         {
             "date": "2024-11-27T21:05:00",

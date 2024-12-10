@@ -1,12 +1,9 @@
 {
     "site_code": "474",
-    "site_name": {
-        "name": "OTR Strathfield",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Strathfield",
     "department_code": 4,
+    "latitude": -33.87067,
+    "longitude": 151.092453,
     "prices": [
         {
             "date": "2024-12-08T23:03:00",

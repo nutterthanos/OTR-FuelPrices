@@ -1,12 +1,9 @@
 {
     "site_code": "828",
-    "site_name": {
-        "name": "OTR Underdale",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Underdale",
     "department_code": 5,
+    "latitude": -34.924519,
+    "longitude": 138.549408,
     "prices": [
         {
             "date": "2023-11-13T00:06:00",

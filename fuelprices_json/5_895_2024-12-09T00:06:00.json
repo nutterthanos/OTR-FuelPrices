@@ -1,12 +1,9 @@
 {
     "site_code": "895",
-    "site_name": {
-        "name": "S24 Tanunda",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "S24 Tanunda",
     "department_code": 5,
+    "latitude": -34.511488,
+    "longitude": 138.975659,
     "prices": [
         {
             "date": "2024-12-09T00:06:00",

@@ -1,12 +1,9 @@
 {
     "site_code": "465",
-    "site_name": {
-        "name": "S24 Sawyers Valley",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "S24 Sawyers Valley",
     "department_code": 2,
+    "latitude": -31.90304,
+    "longitude": 116.2071,
     "prices": [
         {
             "date": "2024-12-09T19:21:00",

@@ -1,12 +1,9 @@
 {
     "site_code": "391",
-    "site_name": {
-        "name": "S24 Alice Springs",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "S24 Alice Springs",
     "department_code": 4,
+    "latitude": -23.698711,
+    "longitude": 133.878265,
     "prices": [
         {
             "date": "2024-12-08T21:31:00",

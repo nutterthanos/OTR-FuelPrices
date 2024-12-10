@@ -1,12 +1,9 @@
 {
     "site_code": "387",
-    "site_name": {
-        "name": "OTR Ceduna Mozies",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Ceduna Mozies",
     "department_code": 5,
+    "latitude": -32.12168,
+    "longitude": 133.6871,
     "prices": [
         {
             "date": "2024-11-04T23:28:00",

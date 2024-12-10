@@ -1,12 +1,9 @@
 {
     "site_code": "873",
-    "site_name": {
-        "name": "OTR Irymple",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Irymple",
     "department_code": 2,
+    "latitude": -34.231421,
+    "longitude": 142.165298,
     "prices": [
         {
             "date": "2024-12-04T23:17:00",

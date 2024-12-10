@@ -1,12 +1,9 @@
 {
     "site_code": "536",
-    "site_name": {
-        "name": "OTR Davoren Park",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Davoren Park",
     "department_code": 4,
+    "latitude": -34.697632,
+    "longitude": 138.665894,
     "prices": [
         {
             "date": "2024-11-24T23:36:00",

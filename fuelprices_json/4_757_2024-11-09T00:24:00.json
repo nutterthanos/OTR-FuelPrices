@@ -1,12 +1,9 @@
 {
     "site_code": "757",
-    "site_name": {
-        "name": "OTR Walkerville",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Walkerville",
     "department_code": 4,
+    "latitude": -34.88863,
+    "longitude": 138.6148,
     "prices": [
         {
             "date": "2024-11-09T00:24:00",

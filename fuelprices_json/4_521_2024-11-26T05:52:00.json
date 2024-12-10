@@ -1,12 +1,9 @@
 {
     "site_code": "521",
-    "site_name": {
-        "name": "OTR Fulham",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Fulham",
     "department_code": 4,
+    "latitude": -34.926074,
+    "longitude": 138.517993,
     "prices": [
         {
             "date": "2024-11-26T05:52:00",

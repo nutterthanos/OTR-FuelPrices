@@ -1,12 +1,9 @@
 {
     "site_code": "812",
-    "site_name": {
-        "name": "OTR Hillbank",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Hillbank",
     "department_code": 5,
+    "latitude": -34.742435,
+    "longitude": 138.676636,
     "prices": [
         {
             "date": "2024-11-28T01:47:00",

@@ -1,12 +1,9 @@
 {
     "site_code": "157",
-    "site_name": {
-        "name": "OTR Prestons",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Prestons",
     "department_code": 1,
+    "latitude": -33.93909,
+    "longitude": 150.8685,
     "prices": [
         {
             "date": "2024-12-05T23:29:00",

@@ -1,12 +1,9 @@
 {
     "site_code": "596",
-    "site_name": {
-        "name": "OTR Woodville Park David Terrace",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Woodville Park David Terrace",
     "department_code": 5,
+    "latitude": -34.88105,
+    "longitude": 138.54988,
     "prices": [
         {
             "date": "2024-11-06T05:13:00",

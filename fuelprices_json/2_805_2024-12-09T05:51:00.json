@@ -1,12 +1,9 @@
 {
     "site_code": "805",
-    "site_name": {
-        "name": "OTR Elizabeth South",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Elizabeth South",
     "department_code": 2,
+    "latitude": -34.7533,
+    "longitude": 138.649536,
     "prices": [
         {
             "date": "2024-12-09T05:51:00",

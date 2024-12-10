@@ -1,12 +1,9 @@
 {
     "site_code": "869",
-    "site_name": {
-        "name": "OTR Pinnaroo",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Pinnaroo",
     "department_code": 4,
+    "latitude": -35.260367,
+    "longitude": 140.913862,
     "prices": [
         {
             "date": "2024-12-05T23:05:00",

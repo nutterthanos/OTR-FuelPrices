@@ -1,12 +1,9 @@
 {
     "site_code": "386",
-    "site_name": {
-        "name": "S24 Broken Hill Blende Street",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "S24 Broken Hill Blende Street",
     "department_code": 2,
+    "latitude": -31.9646,
+    "longitude": 141.4535,
     "prices": [
         {
             "date": "2024-12-01T23:10:00",

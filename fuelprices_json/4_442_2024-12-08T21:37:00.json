@@ -1,12 +1,9 @@
 {
     "site_code": "442",
-    "site_name": {
-        "name": "OTR Berrimah Wishart Road",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Berrimah Wishart Road",
     "department_code": 4,
+    "latitude": -12.46033,
+    "longitude": 130.9252,
     "prices": [
         {
             "date": "2024-12-08T21:37:00",

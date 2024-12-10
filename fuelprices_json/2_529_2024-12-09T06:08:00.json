@@ -1,12 +1,9 @@
 {
     "site_code": "529",
-    "site_name": {
-        "name": "OTR Hazelwood Park",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Hazelwood Park",
     "department_code": 2,
+    "latitude": -34.933189,
+    "longitude": 138.659531,
     "prices": [
         {
             "date": "2024-12-09T06:08:00",

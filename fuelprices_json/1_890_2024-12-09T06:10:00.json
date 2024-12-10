@@ -1,12 +1,9 @@
 {
     "site_code": "890",
-    "site_name": {
-        "name": "OTR Munno Para West",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Munno Para West",
     "department_code": 1,
+    "latitude": -34.672389,
+    "longitude": 138.681394,
     "prices": [
         {
             "date": "2024-12-09T06:10:00",

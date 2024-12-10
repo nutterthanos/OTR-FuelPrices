@@ -1,12 +1,9 @@
 {
     "site_code": "889",
-    "site_name": {
-        "name": "OTR Renmark",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Renmark",
     "department_code": 1,
+    "latitude": -34.181034,
+    "longitude": 140.736878,
     "prices": [
         {
             "date": "2024-11-04T23:57:00",

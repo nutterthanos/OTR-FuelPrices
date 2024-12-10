@@ -1,0 +1,13 @@
+{
+    "site_code": "452",
+    "site_name": "S24 Marsden Park",
+    "department_code": 3,
+    "latitude": -33.69714,
+    "longitude": 150.8328,
+    "prices": [
+        {
+            "date": "2024-12-10T04:32:00",
+            "price": 2.299
+        }
+    ]
+}

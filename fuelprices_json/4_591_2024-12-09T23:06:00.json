@@ -1,12 +1,9 @@
 {
     "site_code": "591",
-    "site_name": {
-        "name": "OTR West Beach",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR West Beach",
     "department_code": 4,
+    "latitude": -34.937351,
+    "longitude": 138.501541,
     "prices": [
         {
             "date": "2024-12-09T23:06:00",

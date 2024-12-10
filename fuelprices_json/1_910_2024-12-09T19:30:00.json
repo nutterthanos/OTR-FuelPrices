@@ -1,12 +1,9 @@
 {
     "site_code": "910",
-    "site_name": {
-        "name": "OTR Perth Pier Street",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Perth Pier Street",
     "department_code": 1,
+    "latitude": -31.94422,
+    "longitude": 115.8691,
     "prices": [
         {
             "date": "2024-12-09T19:30:00",

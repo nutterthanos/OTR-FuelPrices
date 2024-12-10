@@ -1,12 +1,9 @@
 {
     "site_code": "523",
-    "site_name": {
-        "name": "OTR Glandore",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Glandore",
     "department_code": 5,
+    "latitude": -34.955189,
+    "longitude": 138.56893,
     "prices": [
         {
             "date": "2024-12-09T23:03:00",

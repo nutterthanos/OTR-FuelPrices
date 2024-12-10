@@ -1,12 +1,9 @@
 {
     "site_code": "840",
-    "site_name": {
-        "name": "OTR Murray Bridge Adelaide Road",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Murray Bridge Adelaide Road",
     "department_code": 4,
+    "latitude": -35.128955,
+    "longitude": 139.250687,
     "prices": [
         {
             "date": "2024-11-25T22:49:00",

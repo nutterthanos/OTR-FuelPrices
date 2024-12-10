@@ -1,0 +1,13 @@
+{
+    "site_code": "803",
+    "site_name": "OTR Angle Vale",
+    "department_code": 2,
+    "latitude": -34.647813,
+    "longitude": 138.643594,
+    "prices": [
+        {
+            "date": "2024-12-10T03:23:00",
+            "price": 1.639
+        }
+    ]
+}

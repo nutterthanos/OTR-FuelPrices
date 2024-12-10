@@ -1,12 +1,9 @@
 {
     "site_code": "562",
-    "site_name": {
-        "name": "OTR Holden Hill North",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Holden Hill North",
     "department_code": 4,
+    "latitude": -34.846176,
+    "longitude": 138.670746,
     "prices": [
         {
             "date": "2024-12-05T05:52:00",

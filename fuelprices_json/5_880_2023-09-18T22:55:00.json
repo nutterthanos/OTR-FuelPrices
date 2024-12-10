@@ -1,12 +1,9 @@
 {
     "site_code": "880",
-    "site_name": {
-        "name": "OTR Modbury",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Modbury",
     "department_code": 5,
+    "latitude": -34.834125,
+    "longitude": 138.681967,
     "prices": [
         {
             "date": "2023-09-18T22:55:00",

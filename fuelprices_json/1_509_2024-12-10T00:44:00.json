@@ -1,0 +1,13 @@
+{
+    "site_code": "509",
+    "site_name": "OTR Angle Park",
+    "department_code": 1,
+    "latitude": -34.855888,
+    "longitude": 138.564636,
+    "prices": [
+        {
+            "date": "2024-12-10T00:44:00",
+            "price": 1.789
+        }
+    ]
+}

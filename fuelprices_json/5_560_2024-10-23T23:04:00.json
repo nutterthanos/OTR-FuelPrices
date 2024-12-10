@@ -1,12 +1,9 @@
 {
     "site_code": "560",
-    "site_name": {
-        "name": "OTR Pasadena",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Pasadena",
     "department_code": 5,
+    "latitude": -35.0009,
+    "longitude": 138.591202,
     "prices": [
         {
             "date": "2024-10-23T23:04:00",

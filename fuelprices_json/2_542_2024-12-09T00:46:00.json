@@ -1,12 +1,9 @@
 {
     "site_code": "542",
-    "site_name": {
-        "name": "OTR Old Reynella",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Old Reynella",
     "department_code": 2,
+    "latitude": -35.096178,
+    "longitude": 138.536291,
     "prices": [
         {
             "date": "2024-12-09T00:46:00",

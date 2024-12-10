@@ -7,8 +7,8 @@
     "sitefuelprices": [
         {
             "action_by_date": null,
-            "current_price": 1.849,
-            "date_entered": "/Date(1733783940000+1030)/",
+            "current_price": 1.799,
+            "date_entered": "/Date(1733806020000+1030)/",
             "department_code": 1,
             "price_delta": 0.0,
             "site_code": "562",
@@ -16,8 +16,8 @@
         },
         {
             "action_by_date": null,
-            "current_price": 1.699,
-            "date_entered": "/Date(1733783940000+1030)/",
+            "current_price": 1.649,
+            "date_entered": "/Date(1733806020000+1030)/",
             "department_code": 2,
             "price_delta": 0.0,
             "site_code": "562",
@@ -25,8 +25,8 @@
         },
         {
             "action_by_date": null,
-            "current_price": 1.929,
-            "date_entered": "/Date(1733783940000+1030)/",
+            "current_price": 1.879,
+            "date_entered": "/Date(1733806020000+1030)/",
             "department_code": 3,
             "price_delta": 0.0,
             "site_code": "562",

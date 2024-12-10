@@ -1,12 +1,9 @@
 {
     "site_code": "835",
-    "site_name": {
-        "name": "OTR Bordertown",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Bordertown",
     "department_code": 6,
+    "latitude": -36.297858,
+    "longitude": 140.757295,
     "prices": [
         {
             "date": "2024-04-21T18:59:00",

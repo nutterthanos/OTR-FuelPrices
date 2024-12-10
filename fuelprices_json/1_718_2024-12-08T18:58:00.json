@@ -1,12 +1,9 @@
 {
     "site_code": "718",
-    "site_name": {
-        "name": "OTR Peterhead",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Peterhead",
     "department_code": 1,
+    "latitude": -34.832452,
+    "longitude": 138.500962,
     "prices": [
         {
             "date": "2024-12-08T18:58:00",

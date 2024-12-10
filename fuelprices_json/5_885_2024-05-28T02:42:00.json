@@ -1,12 +1,9 @@
 {
     "site_code": "885",
-    "site_name": {
-        "name": "OTR Salisbury Park Terrace",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Salisbury Park Terrace",
     "department_code": 5,
+    "latitude": -34.768669,
+    "longitude": 138.651074,
     "prices": [
         {
             "date": "2024-05-28T02:42:00",

@@ -1,12 +1,9 @@
 {
     "site_code": "393",
-    "site_name": {
-        "name": "OTR Berrimah Truck City",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Berrimah Truck City",
     "department_code": 4,
+    "latitude": -12.435191,
+    "longitude": 130.923813,
     "prices": [
         {
             "date": "2024-12-08T22:07:00",

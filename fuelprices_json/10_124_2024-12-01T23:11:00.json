@@ -1,12 +1,9 @@
 {
     "site_code": "124",
-    "site_name": {
-        "name": "OTR Broken Hill South",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Broken Hill South",
     "department_code": 10,
+    "latitude": -31.98095,
+    "longitude": 141.45909,
     "prices": [
         {
             "date": "2024-12-01T23:11:00",

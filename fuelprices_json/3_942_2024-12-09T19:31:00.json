@@ -1,12 +1,9 @@
 {
     "site_code": "942",
-    "site_name": {
-        "name": "S24 Crystal Brook",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "S24 Crystal Brook",
     "department_code": 3,
+    "latitude": -32.01536,
+    "longitude": 116.0431,
     "prices": [
         {
             "date": "2024-12-09T19:31:00",

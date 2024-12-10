@@ -1,12 +1,9 @@
 {
     "site_code": "467",
-    "site_name": {
-        "name": "S24 Balcatta",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "S24 Balcatta",
     "department_code": 4,
+    "latitude": -31.86261,
+    "longitude": 115.8194,
     "prices": [
         {
             "date": "2024-12-02T19:36:00",

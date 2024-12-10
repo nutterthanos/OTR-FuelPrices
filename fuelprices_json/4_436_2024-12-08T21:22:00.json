@@ -1,12 +1,9 @@
 {
     "site_code": "436",
-    "site_name": {
-        "name": "OTR Knuckey Lagoon",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Knuckey Lagoon",
     "department_code": 4,
+    "latitude": -12.43352,
+    "longitude": 130.9251,
     "prices": [
         {
             "date": "2024-12-08T21:22:00",

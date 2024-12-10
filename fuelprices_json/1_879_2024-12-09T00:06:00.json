@@ -1,12 +1,9 @@
 {
     "site_code": "879",
-    "site_name": {
-        "name": "OTR Mitchell Park",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Mitchell Park",
     "department_code": 1,
+    "latitude": -35.002631,
+    "longitude": 138.558058,
     "prices": [
         {
             "date": "2024-12-09T00:06:00",

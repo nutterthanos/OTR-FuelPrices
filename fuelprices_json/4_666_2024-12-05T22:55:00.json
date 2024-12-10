@@ -1,12 +1,9 @@
 {
     "site_code": "666",
-    "site_name": {
-        "name": "OTR Hamilton Tudor Street",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Hamilton Tudor Street",
     "department_code": 4,
+    "latitude": -32.92423,
+    "longitude": 151.7499,
     "prices": [
         {
             "date": "2024-12-05T22:55:00",

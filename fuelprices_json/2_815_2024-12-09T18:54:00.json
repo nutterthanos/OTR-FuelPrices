@@ -1,12 +1,9 @@
 {
     "site_code": "815",
-    "site_name": {
-        "name": "OTR Kent Town",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Kent Town",
     "department_code": 2,
+    "latitude": -34.915754,
+    "longitude": 138.622695,
     "prices": [
         {
             "date": "2024-12-09T18:54:00",

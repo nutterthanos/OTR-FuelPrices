@@ -1,12 +1,9 @@
 {
     "site_code": "974",
-    "site_name": {
-        "name": "OTR Moonee Ponds",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Moonee Ponds",
     "department_code": 1,
+    "latitude": -37.7585,
+    "longitude": 144.9261,
     "prices": [
         {
             "date": "2024-12-03T02:34:00",

@@ -1,0 +1,13 @@
+{
+    "site_code": "911",
+    "site_name": "OTR Lane Cove",
+    "department_code": 2,
+    "latitude": -33.81719,
+    "longitude": 151.1519,
+    "prices": [
+        {
+            "date": "2024-12-10T03:30:00",
+            "price": 1.769
+        }
+    ]
+}

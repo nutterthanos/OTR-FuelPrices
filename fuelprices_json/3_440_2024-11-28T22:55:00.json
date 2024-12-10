@@ -1,12 +1,9 @@
 {
     "site_code": "440",
-    "site_name": {
-        "name": "S24 Ord River",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "S24 Ord River",
     "department_code": 3,
+    "latitude": -15.77845,
+    "longitude": 128.7401,
     "prices": [
         {
             "date": "2024-11-28T22:55:00",

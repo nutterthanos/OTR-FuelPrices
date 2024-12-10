@@ -1,12 +1,9 @@
 {
     "site_code": "852",
-    "site_name": {
-        "name": "OTR Clare",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Clare",
     "department_code": 4,
+    "latitude": -33.836431,
+    "longitude": 138.614261,
     "prices": [
         {
             "date": "2024-12-05T22:49:00",

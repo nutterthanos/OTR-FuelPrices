@@ -1,12 +1,9 @@
 {
     "site_code": "973",
-    "site_name": {
-        "name": "OTR Roleystone",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "OTR Roleystone",
     "department_code": 4,
+    "latitude": -32.11583,
+    "longitude": 116.0833,
     "prices": [
         {
             "date": "2024-11-22T19:31:00",

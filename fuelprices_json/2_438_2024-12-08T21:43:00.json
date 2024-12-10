@@ -1,12 +1,9 @@
 {
     "site_code": "438",
-    "site_name": {
-        "name": "S24 Malak",
-        "latitude": null,
-        "longitude": null,
-        "address": null
-    },
+    "site_name": "S24 Malak",
     "department_code": 2,
+    "latitude": -12.39659,
+    "longitude": 130.9043,
     "prices": [
         {
             "date": "2024-12-08T21:43:00",
