@@ -72,20 +72,24 @@ async def fetch_json(session, url):
 
 async def fetch_site_mappings():
     """
-    Fetch site mappings from `get_sites` and `get_site`.
+    Fetch site mappings and site codes from `get_sites` and `get_site`.
     """
     async with aiohttp.ClientSession() as session:
         # Fetch responses
         get_sites = await fetch_json(session, BASE_URLS["get_sites"])
         get_site = await fetch_json(session, BASE_URLS["get_site"])
 
-        # Initialize mappings
+        # Initialize mappings and site codes set
         site_mappings = {}
+        site_codes_set = set()
 
-        # Process `get_sites` (list of dictionaries)
+        # Process `get_sites` (list of site codes or dictionaries)
         if isinstance(get_sites, list):
             for site in get_sites:
-                if isinstance(site, dict):
+                if isinstance(site, str):  # If it's a string, it's a site code
+                    site_codes_set.add(site)
+                    site_mappings[site] = {"name": f"Site {site}"}
+                elif isinstance(site, dict):  # If it's a dictionary
                     site_code = site.get("SiteCode")
                     site_name = site.get("SiteName")
                     latitude = site.get("Latitude")
@@ -93,14 +97,13 @@ async def fetch_site_mappings():
                     address = site.get("StreetAddress")
 
                     if site_code:
+                        site_codes_set.add(site_code)
                         site_mappings[site_code] = {
                             "name": site_name,
                             "latitude": latitude,
                             "longitude": longitude,
                             "address": address,
                         }
-                else:
-                    print(f"Unexpected site format in get_sites: {site}")
 
         # Process `get_site` (dictionary with `sites` key)
         if isinstance(get_site, dict) and "sites" in get_site:
@@ -113,19 +116,18 @@ async def fetch_site_mappings():
                     address = site.get("address")
 
                     if site_code:
-                        # Update or add to mappings, prioritizing `get_site` data
-                        site_mappings[site_code] = {
-                            "name": site_name or site_mappings.get(site_code, {}).get("name"),
-                            "latitude": latitude or site_mappings.get(site_code, {}).get("latitude"),
-                            "longitude": longitude or site_mappings.get(site_code, {}).get("longitude"),
-                            "address": address or site_mappings.get(site_code, {}).get("address"),
-                        }
-                else:
-                    print(f"Unexpected site format in get_site: {site}")
+                        site_codes_set.add(site_code)
+                        if site_code not in site_mappings:
+                            site_mappings[site_code] = {}
+                        site_mappings[site_code].update({
+                            "name": site_name or site_mappings[site_code].get("name"),
+                            "latitude": latitude or site_mappings[site_code].get("latitude"),
+                            "longitude": longitude or site_mappings[site_code].get("longitude"),
+                            "address": address or site_mappings[site_code].get("address"),
+                        })
 
-        print(f"Generated site mappings: {len(site_mappings)} sites found.")
-        return site_mappings
-
+        logging.info(f"Generated site mappings for {len(site_mappings)} sites.")
+        return site_codes_set, site_mappings
 
 async def fetch_and_save_fuel_prices(site_codes, site_mappings):
     """
@@ -181,6 +183,10 @@ async def main():
     """
     # Fetch site codes and mappings
     site_codes_set, site_mappings = await fetch_site_mappings()
+
+    if not site_codes_set:
+        logging.error("No site codes were retrieved. Exiting.")
+        return
 
     # Save site mappings for the frontend
     await save_site_mappings(site_mappings)
