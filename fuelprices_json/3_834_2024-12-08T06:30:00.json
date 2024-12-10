@@ -1,0 +1,16 @@
+{
+    "site_code": "834",
+    "site_name": {
+        "name": "OTR Littlehampton",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 3,
+    "prices": [
+        {
+            "date": "2024-12-08T06:30:00",
+            "price": 2.089
+        }
+    ]
+}

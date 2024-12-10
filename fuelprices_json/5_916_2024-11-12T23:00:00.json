@@ -1,0 +1,16 @@
+{
+    "site_code": "916",
+    "site_name": {
+        "name": "OTR Port Wakefield",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 5,
+    "prices": [
+        {
+            "date": "2024-11-12T23:00:00",
+            "price": 1.199
+        }
+    ]
+}

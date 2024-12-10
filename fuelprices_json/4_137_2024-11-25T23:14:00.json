@@ -1,0 +1,16 @@
+{
+    "site_code": "137",
+    "site_name": {
+        "name": "OTR West Wodonga",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 4,
+    "prices": [
+        {
+            "date": "2024-11-25T23:14:00",
+            "price": 1.769
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "site_code": "812",
+    "site_name": {
+        "name": "OTR Hillbank",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 4,
+    "prices": [
+        {
+            "date": "2024-11-28T01:47:00",
+            "price": 1.789
+        }
+    ]
+}

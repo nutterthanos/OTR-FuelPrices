@@ -1,0 +1,16 @@
+{
+    "site_code": "559",
+    "site_name": {
+        "name": "OTR Newton",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 4,
+    "prices": [
+        {
+            "date": "2024-11-09T00:17:00",
+            "price": 1.799
+        }
+    ]
+}

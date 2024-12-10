@@ -1,0 +1,16 @@
+{
+    "site_code": "518",
+    "site_name": {
+        "name": "OTR Evandale",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 2,
+    "prices": [
+        {
+            "date": "2024-12-09T04:47:00",
+            "price": 1.759
+        }
+    ]
+}

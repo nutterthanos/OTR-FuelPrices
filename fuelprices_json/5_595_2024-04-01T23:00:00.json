@@ -1,0 +1,16 @@
+{
+    "site_code": "595",
+    "site_name": {
+        "name": "OTR Woodville West",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 5,
+    "prices": [
+        {
+            "date": "2024-04-01T23:00:00",
+            "price": 1.029
+        }
+    ]
+}

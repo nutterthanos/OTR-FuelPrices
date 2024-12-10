@@ -1,0 +1,16 @@
+{
+    "site_code": "881",
+    "site_name": {
+        "name": "OTR Munno Para",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 3,
+    "prices": [
+        {
+            "date": "2024-12-09T05:58:00",
+            "price": 1.879
+        }
+    ]
+}

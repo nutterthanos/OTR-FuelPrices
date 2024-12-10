@@ -1,0 +1,16 @@
+{
+    "site_code": "506",
+    "site_name": {
+        "name": "OTR Pooraka",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 5,
+    "prices": [
+        {
+            "date": "2024-12-01T23:21:00",
+            "price": 0.999
+        }
+    ]
+}

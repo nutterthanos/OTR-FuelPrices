@@ -1,0 +1,16 @@
+{
+    "site_code": "600",
+    "site_name": {
+        "name": "OTR Boolaroo",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 2,
+    "prices": [
+        {
+            "date": "2024-12-09T22:46:00",
+            "price": 2.039
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "site_code": "516",
+    "site_name": {
+        "name": "OTR Clarence Park",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 5,
+    "prices": [
+        {
+            "date": "2024-10-14T03:22:00",
+            "price": 1.029
+        }
+    ]
+}

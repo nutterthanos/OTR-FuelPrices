@@ -1,0 +1,16 @@
+{
+    "site_code": "400",
+    "site_name": {
+        "name": "S24 Howard Springs",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 4,
+    "prices": [
+        {
+            "date": "2024-12-08T23:06:00",
+            "price": 1.819
+        }
+    ]
+}

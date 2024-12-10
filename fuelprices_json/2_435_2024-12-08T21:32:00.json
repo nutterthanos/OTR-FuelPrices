@@ -1,0 +1,16 @@
+{
+    "site_code": "435",
+    "site_name": {
+        "name": "S24 Jingili",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 2,
+    "prices": [
+        {
+            "date": "2024-12-08T21:32:00",
+            "price": 1.779
+        }
+    ]
+}

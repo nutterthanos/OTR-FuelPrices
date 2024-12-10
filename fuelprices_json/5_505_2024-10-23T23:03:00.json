@@ -1,0 +1,16 @@
+{
+    "site_code": "505",
+    "site_name": {
+        "name": "OTR Brighton",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 5,
+    "prices": [
+        {
+            "date": "2024-10-23T23:03:00",
+            "price": 0.979
+        }
+    ]
+}

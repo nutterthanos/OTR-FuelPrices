@@ -1,0 +1,16 @@
+{
+    "site_code": "805",
+    "site_name": {
+        "name": "OTR Elizabeth South",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 2,
+    "prices": [
+        {
+            "date": "2024-12-09T05:51:00",
+            "price": 1.599
+        }
+    ]
+}

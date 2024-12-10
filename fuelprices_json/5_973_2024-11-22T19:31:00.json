@@ -1,0 +1,16 @@
+{
+    "site_code": "973",
+    "site_name": {
+        "name": "OTR Roleystone",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 5,
+    "prices": [
+        {
+            "date": "2024-11-22T19:31:00",
+            "price": 1.739
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "site_code": "524",
+    "site_name": {
+        "name": "OTR Flinders Park",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 1,
+    "prices": [
+        {
+            "date": "2024-12-08T10:16:00",
+            "price": 1.849
+        }
+    ]
+}

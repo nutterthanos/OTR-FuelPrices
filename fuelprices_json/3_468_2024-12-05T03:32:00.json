@@ -1,0 +1,16 @@
+{
+    "site_code": "468",
+    "site_name": {
+        "name": "S24 Diamond Creek",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 3,
+    "prices": [
+        {
+            "date": "2024-12-05T03:32:00",
+            "price": 1.889
+        }
+    ]
+}

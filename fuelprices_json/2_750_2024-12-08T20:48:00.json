@@ -1,0 +1,16 @@
+{
+    "site_code": "750",
+    "site_name": {
+        "name": "OTR Balhannah",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 2,
+    "prices": [
+        {
+            "date": "2024-12-08T20:48:00",
+            "price": 1.859
+        }
+    ]
+}

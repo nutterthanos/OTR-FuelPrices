@@ -1,0 +1,16 @@
+{
+    "site_code": "511",
+    "site_name": {
+        "name": "OTR Christies Beach Gulfview Road",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 2,
+    "prices": [
+        {
+            "date": "2024-12-09T22:56:00",
+            "price": 1.699
+        }
+    ]
+}

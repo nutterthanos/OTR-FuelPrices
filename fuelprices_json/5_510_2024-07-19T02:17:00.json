@@ -1,0 +1,16 @@
+{
+    "site_code": "510",
+    "site_name": {
+        "name": "OTR Christies Beach on Beach Road",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 5,
+    "prices": [
+        {
+            "date": "2024-07-19T02:17:00",
+            "price": 0.959
+        }
+    ]
+}

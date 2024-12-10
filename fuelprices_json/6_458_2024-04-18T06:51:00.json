@@ -1,0 +1,16 @@
+{
+    "site_code": "458",
+    "site_name": {
+        "name": "S24 Mount Larcom",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 6,
+    "prices": [
+        {
+            "date": "2024-04-18T06:51:00",
+            "price": 1.989
+        }
+    ]
+}

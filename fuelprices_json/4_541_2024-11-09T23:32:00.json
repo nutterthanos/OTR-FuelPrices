@@ -1,0 +1,16 @@
+{
+    "site_code": "541",
+    "site_name": {
+        "name": "OTR Kilburn",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 4,
+    "prices": [
+        {
+            "date": "2024-11-09T23:32:00",
+            "price": 1.799
+        }
+    ]
+}

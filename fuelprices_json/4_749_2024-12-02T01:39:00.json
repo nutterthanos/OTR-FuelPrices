@@ -1,0 +1,16 @@
+{
+    "site_code": "749",
+    "site_name": {
+        "name": "OTR Whyalla Playford",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 4,
+    "prices": [
+        {
+            "date": "2024-12-02T01:39:00",
+            "price": 1.839
+        }
+    ]
+}

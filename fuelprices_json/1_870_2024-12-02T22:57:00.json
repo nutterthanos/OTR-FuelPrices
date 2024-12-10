@@ -1,0 +1,16 @@
+{
+    "site_code": "870",
+    "site_name": {
+        "name": "OTR Port Pirie South",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 1,
+    "prices": [
+        {
+            "date": "2024-12-02T22:57:00",
+            "price": 1.889
+        }
+    ]
+}

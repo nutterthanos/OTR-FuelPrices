@@ -1,0 +1,16 @@
+{
+    "site_code": "802",
+    "site_name": {
+        "name": "OTR Aldinga",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 5,
+    "prices": [
+        {
+            "date": "2024-04-29T23:37:00",
+            "price": 0.999
+        }
+    ]
+}

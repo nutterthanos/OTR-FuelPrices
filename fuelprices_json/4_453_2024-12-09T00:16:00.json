@@ -1,0 +1,16 @@
+{
+    "site_code": "453",
+    "site_name": {
+        "name": "S24 Monto",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 4,
+    "prices": [
+        {
+            "date": "2024-12-09T00:16:00",
+            "price": 1.749
+        }
+    ]
+}

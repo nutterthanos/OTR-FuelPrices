@@ -1,0 +1,16 @@
+{
+    "site_code": "754",
+    "site_name": {
+        "name": "OTR Marryatville",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 4,
+    "prices": [
+        {
+            "date": "2024-11-26T01:39:00",
+            "price": 1.819
+        }
+    ]
+}

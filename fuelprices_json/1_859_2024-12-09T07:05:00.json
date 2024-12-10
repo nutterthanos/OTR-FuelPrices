@@ -1,0 +1,16 @@
+{
+    "site_code": "859",
+    "site_name": {
+        "name": "OTR Port Wakefield Road",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 1,
+    "prices": [
+        {
+            "date": "2024-12-09T07:05:00",
+            "price": 1.829
+        }
+    ]
+}

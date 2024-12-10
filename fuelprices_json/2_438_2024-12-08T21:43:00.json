@@ -1,0 +1,16 @@
+{
+    "site_code": "438",
+    "site_name": {
+        "name": "S24 Malak",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 2,
+    "prices": [
+        {
+            "date": "2024-12-08T21:43:00",
+            "price": 1.779
+        }
+    ]
+}

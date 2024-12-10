@@ -1,0 +1,16 @@
+{
+    "site_code": "439",
+    "site_name": {
+        "name": "S24 Nightcliff",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 1,
+    "prices": [
+        {
+            "date": "2024-12-09T02:50:00",
+            "price": 1.979
+        }
+    ]
+}

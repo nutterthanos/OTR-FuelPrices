@@ -1,0 +1,16 @@
+{
+    "site_code": "891",
+    "site_name": {
+        "name": "OTR Greystanes",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 1,
+    "prices": [
+        {
+            "date": "2024-12-09T02:35:00",
+            "price": 1.819
+        }
+    ]
+}

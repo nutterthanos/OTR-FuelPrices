@@ -1,0 +1,16 @@
+{
+    "site_code": "532",
+    "site_name": {
+        "name": "OTR Hilton",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 1,
+    "prices": [
+        {
+            "date": "2024-12-09T06:26:00",
+            "price": 1.859
+        }
+    ]
+}

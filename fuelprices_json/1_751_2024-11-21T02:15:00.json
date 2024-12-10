@@ -1,0 +1,16 @@
+{
+    "site_code": "751",
+    "site_name": {
+        "name": "OTR Horsham Wilson Street",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 1,
+    "prices": [
+        {
+            "date": "2024-11-21T02:15:00",
+            "price": 1.939
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "site_code": "666",
+    "site_name": {
+        "name": "OTR Hamilton Tudor Street",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 2,
+    "prices": [
+        {
+            "date": "2024-12-08T22:55:00",
+            "price": 1.919
+        }
+    ]
+}

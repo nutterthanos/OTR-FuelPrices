@@ -1,0 +1,16 @@
+{
+    "site_code": "566",
+    "site_name": {
+        "name": "OTR Plympton",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 5,
+    "prices": [
+        {
+            "date": "2024-10-09T23:11:00",
+            "price": 0.999
+        }
+    ]
+}

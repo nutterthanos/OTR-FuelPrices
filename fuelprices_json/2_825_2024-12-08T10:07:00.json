@@ -1,0 +1,16 @@
+{
+    "site_code": "825",
+    "site_name": {
+        "name": "OTR Sheidow Park",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 2,
+    "prices": [
+        {
+            "date": "2024-12-08T10:07:00",
+            "price": 1.699
+        }
+    ]
+}

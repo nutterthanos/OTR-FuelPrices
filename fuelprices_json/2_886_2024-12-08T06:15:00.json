@@ -1,0 +1,16 @@
+{
+    "site_code": "886",
+    "site_name": {
+        "name": "OTR Morphett Vale Inbound",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 2,
+    "prices": [
+        {
+            "date": "2024-12-08T06:15:00",
+            "price": 1.699
+        }
+    ]
+}

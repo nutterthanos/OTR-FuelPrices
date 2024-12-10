@@ -1,0 +1,16 @@
+{
+    "site_code": "578",
+    "site_name": {
+        "name": "OTR Norwood",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 3,
+    "prices": [
+        {
+            "date": "2024-12-09T06:14:00",
+            "price": 1.999
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "site_code": "582",
+    "site_name": {
+        "name": "OTR Kensington",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 1,
+    "prices": [
+        {
+            "date": "2024-12-09T04:05:00",
+            "price": 1.919
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "site_code": "884",
+    "site_name": {
+        "name": "OTR Prospect",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 3,
+    "prices": [
+        {
+            "date": "2024-12-09T00:08:00",
+            "price": 1.859
+        }
+    ]
+}

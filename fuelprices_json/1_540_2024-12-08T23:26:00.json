@@ -1,0 +1,16 @@
+{
+    "site_code": "540",
+    "site_name": {
+        "name": "OTR Linden Park",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 1,
+    "prices": [
+        {
+            "date": "2024-12-08T23:26:00",
+            "price": 1.919
+        }
+    ]
+}

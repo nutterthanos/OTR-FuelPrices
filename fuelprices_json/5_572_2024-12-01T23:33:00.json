@@ -1,0 +1,16 @@
+{
+    "site_code": "572",
+    "site_name": {
+        "name": "OTR Rosewater",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 5,
+    "prices": [
+        {
+            "date": "2024-12-01T23:33:00",
+            "price": 0.959
+        }
+    ]
+}

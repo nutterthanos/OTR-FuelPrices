@@ -1,0 +1,16 @@
+{
+    "site_code": "819",
+    "site_name": {
+        "name": "OTR Morphett Vale Outbound",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 3,
+    "prices": [
+        {
+            "date": "2024-12-09T00:10:00",
+            "price": 1.929
+        }
+    ]
+}

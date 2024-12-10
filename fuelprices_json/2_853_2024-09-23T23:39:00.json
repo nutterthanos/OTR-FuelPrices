@@ -1,0 +1,16 @@
+{
+    "site_code": "853",
+    "site_name": {
+        "name": "OTR Port Lincoln",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "department_code": 2,
+    "prices": [
+        {
+            "date": "2024-09-23T23:39:00",
+            "price": 1.789
+        }
+    ]
+}
