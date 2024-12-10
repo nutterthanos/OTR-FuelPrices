@@ -1,0 +1,31 @@
+{
+    "site_code": "465",
+    "site_name": {
+        "name": "S24 Sawyers Valley",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "prices": [
+        {
+            "department_code": 2,
+            "date": "2024-12-09T19:21:00",
+            "price": 1.599
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-09T19:21:00",
+            "price": 1.839
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-02T19:10:00",
+            "price": 1.799
+        },
+        {
+            "department_code": 5,
+            "date": "2024-12-04T19:19:00",
+            "price": 1.349
+        }
+    ]
+}

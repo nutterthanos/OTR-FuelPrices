@@ -1,0 +1,26 @@
+{
+    "site_code": "440",
+    "site_name": {
+        "name": "S24 Ord River",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "prices": [
+        {
+            "department_code": 2,
+            "date": "2024-11-28T22:55:00",
+            "price": 1.859
+        },
+        {
+            "department_code": 3,
+            "date": "2024-11-28T22:55:00",
+            "price": 2.179
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-28T22:55:00",
+            "price": 1.899
+        }
+    ]
+}

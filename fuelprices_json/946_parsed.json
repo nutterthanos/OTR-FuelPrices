@@ -1,0 +1,31 @@
+{
+    "site_code": "946",
+    "site_name": {
+        "name": "OTR Aberfoyle Park",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-10T00:28:00",
+            "price": 1.849
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-10T00:28:00",
+            "price": 1.689
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-10T00:28:00",
+            "price": 1.909
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-09T02:26:00",
+            "price": 1.849
+        }
+    ]
+}

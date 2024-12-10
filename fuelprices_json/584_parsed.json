@@ -1,0 +1,36 @@
+{
+    "site_code": "584",
+    "site_name": {
+        "name": "OTR Dry Creek",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-09T00:01:00",
+            "price": 1.799
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-09T00:01:00",
+            "price": 1.639
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-09T00:01:00",
+            "price": 1.879
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-05T23:50:00",
+            "price": 1.739
+        },
+        {
+            "department_code": 6,
+            "date": "2024-04-21T19:37:00",
+            "price": 1.999
+        }
+    ]
+}

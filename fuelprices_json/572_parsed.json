@@ -1,0 +1,36 @@
+{
+    "site_code": "572",
+    "site_name": {
+        "name": "OTR Rosewater",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-08T10:50:00",
+            "price": 1.849
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-08T10:50:00",
+            "price": 1.699
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-08T10:50:00",
+            "price": 1.929
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-16T23:29:00",
+            "price": 1.699
+        },
+        {
+            "department_code": 5,
+            "date": "2024-12-01T23:33:00",
+            "price": 0.959
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "site_code": "817",
+    "site_name": {
+        "name": "OTR Largs Bay Victoria Road",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-08T18:54:00",
+            "price": 1.859
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-08T18:54:00",
+            "price": 1.699
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-08T18:54:00",
+            "price": 1.929
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-09T23:29:00",
+            "price": 1.749
+        },
+        {
+            "department_code": 5,
+            "date": "2024-10-14T03:08:00",
+            "price": 1.059
+        }
+    ]
+}

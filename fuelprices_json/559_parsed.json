@@ -1,0 +1,36 @@
+{
+    "site_code": "559",
+    "site_name": {
+        "name": "OTR Newton",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-09T10:19:00",
+            "price": 1.909
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-09T10:19:00",
+            "price": 1.759
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-09T10:19:00",
+            "price": 1.989
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-09T00:17:00",
+            "price": 1.799
+        },
+        {
+            "department_code": 5,
+            "date": "2024-11-25T22:45:00",
+            "price": 0.979
+        }
+    ]
+}

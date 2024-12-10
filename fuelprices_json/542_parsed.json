@@ -1,0 +1,36 @@
+{
+    "site_code": "542",
+    "site_name": {
+        "name": "OTR Old Reynella",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-09T00:46:00",
+            "price": 1.859
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-09T00:46:00",
+            "price": 1.699
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-09T00:46:00",
+            "price": 1.939
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-10T23:27:00",
+            "price": 1.829
+        },
+        {
+            "department_code": 5,
+            "date": "2024-10-14T03:19:00",
+            "price": 1.029
+        }
+    ]
+}

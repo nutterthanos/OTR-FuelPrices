@@ -1,0 +1,31 @@
+{
+    "site_code": "138",
+    "site_name": {
+        "name": "OTR Wodonga High Street",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-09T22:48:00",
+            "price": 1.889
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-09T22:48:00",
+            "price": 1.719
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-09T22:48:00",
+            "price": 1.999
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-09T22:48:00",
+            "price": 1.799
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "site_code": "162",
+    "site_name": {
+        "name": "OTR Yangebup",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-09T19:20:00",
+            "price": 1.739
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-09T19:20:00",
+            "price": 1.589
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-09T19:20:00",
+            "price": 1.829
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-02T19:10:00",
+            "price": 1.759
+        }
+    ]
+}

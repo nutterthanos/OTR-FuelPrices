@@ -1,0 +1,36 @@
+{
+    "site_code": "890",
+    "site_name": {
+        "name": "OTR Munno Para West",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-09T06:10:00",
+            "price": 1.749
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-09T06:10:00",
+            "price": 1.599
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-09T06:10:00",
+            "price": 1.849
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-09T06:10:00",
+            "price": 1.739
+        },
+        {
+            "department_code": 5,
+            "date": "2024-11-20T01:29:00",
+            "price": 1.019
+        }
+    ]
+}

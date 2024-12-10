@@ -1,0 +1,31 @@
+{
+    "site_code": "877",
+    "site_name": {
+        "name": "OTR Trinity Gardens",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-09T10:16:00",
+            "price": 1.919
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-09T10:16:00",
+            "price": 1.759
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-09T10:16:00",
+            "price": 1.989
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-05T23:26:00",
+            "price": 1.839
+        }
+    ]
+}

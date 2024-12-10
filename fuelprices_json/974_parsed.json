@@ -1,0 +1,31 @@
+{
+    "site_code": "974",
+    "site_name": {
+        "name": "OTR Moonee Ponds",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-03T02:34:00",
+            "price": 1.809
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-03T02:34:00",
+            "price": 1.649
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-03T02:34:00",
+            "price": 1.879
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-27T03:36:00",
+            "price": 1.779
+        }
+    ]
+}

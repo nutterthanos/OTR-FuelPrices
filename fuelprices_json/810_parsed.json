@@ -1,0 +1,36 @@
+{
+    "site_code": "810",
+    "site_name": {
+        "name": "OTR Christies Beach Dyson Road",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-09T00:00:00",
+            "price": 1.859
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-09T00:00:00",
+            "price": 1.699
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-09T00:00:00",
+            "price": 1.939
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-26T23:58:00",
+            "price": 1.839
+        },
+        {
+            "department_code": 5,
+            "date": "2024-10-23T22:56:00",
+            "price": 0.959
+        }
+    ]
+}

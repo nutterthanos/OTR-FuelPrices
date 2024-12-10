@@ -1,0 +1,36 @@
+{
+    "site_code": "390",
+    "site_name": {
+        "name": "OTR Katherine",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-11-18T01:49:00",
+            "price": 1.979
+        },
+        {
+            "department_code": 3,
+            "date": "2024-11-18T01:49:00",
+            "price": 2.199
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-08T21:25:00",
+            "price": 1.799
+        },
+        {
+            "department_code": 6,
+            "date": "2023-03-31T05:25:00",
+            "price": 1.999
+        },
+        {
+            "department_code": 11,
+            "date": "2024-11-18T01:49:00",
+            "price": 1.799
+        }
+    ]
+}

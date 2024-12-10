@@ -1,0 +1,26 @@
+{
+    "site_code": "454",
+    "site_name": {
+        "name": "S24 Zilzie",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "prices": [
+        {
+            "department_code": 2,
+            "date": "2024-10-23T22:20:00",
+            "price": 1.749
+        },
+        {
+            "department_code": 3,
+            "date": "2024-10-23T22:20:00",
+            "price": 1.989
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-27T21:51:00",
+            "price": 1.799
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "site_code": "922",
+    "site_name": {
+        "name": "OTR Gepps Cross",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-05T23:33:00",
+            "price": 1.749
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-05T23:33:00",
+            "price": 1.599
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-05T23:33:00",
+            "price": 1.839
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-26T03:07:00",
+            "price": 1.739
+        }
+    ]
+}

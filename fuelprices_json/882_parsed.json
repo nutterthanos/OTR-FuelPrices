@@ -1,0 +1,31 @@
+{
+    "site_code": "882",
+    "site_name": {
+        "name": "OTR O'Halloran Hill",
+        "latitude": null,
+        "longitude": null,
+        "address": null
+    },
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-09T04:11:00",
+            "price": 1.859
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-09T04:11:00",
+            "price": 1.699
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-09T04:11:00",
+            "price": 1.929
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-08T23:31:00",
+            "price": 1.889
+        }
+    ]
+}
