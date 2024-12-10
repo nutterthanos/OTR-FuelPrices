@@ -1,0 +1,38 @@
+{
+    "site_code": "847",
+    "site_name": "OTR Motorsport Park",
+    "latitude": -35.303656,
+    "longitude": 139.500845,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-03T01:42:00",
+            "price": 1.859
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-03T01:42:00",
+            "price": 1.709
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-03T01:42:00",
+            "price": 1.939
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-05T23:04:00",
+            "price": 1.739
+        },
+        {
+            "department_code": 5,
+            "date": "2024-12-05T23:04:00",
+            "price": 1.779
+        },
+        {
+            "department_code": 6,
+            "date": "2024-12-03T01:42:00",
+            "price": 1.989
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "site_code": "756",
+    "site_name": "OTR Stawell",
+    "latitude": -37.07257,
+    "longitude": 142.7726,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-11-17T23:55:00",
+            "price": 1.879
+        },
+        {
+            "department_code": 2,
+            "date": "2024-11-17T23:55:00",
+            "price": 1.719
+        },
+        {
+            "department_code": 3,
+            "date": "2024-11-17T23:55:00",
+            "price": 1.959
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-03T23:07:00",
+            "price": 1.739
+        },
+        {
+            "department_code": 5,
+            "date": "2024-12-03T23:07:00",
+            "price": 1.779
+        },
+        {
+            "department_code": 6,
+            "date": "2024-04-21T19:34:00",
+            "price": 1.999
+        }
+    ]
+}

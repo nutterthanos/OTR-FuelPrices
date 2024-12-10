@@ -1,0 +1,28 @@
+{
+    "site_code": "831",
+    "site_name": "OTR Glengowrie",
+    "latitude": -34.996534,
+    "longitude": 138.530644,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-10T09:32:00",
+            "price": 1.839
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-10T09:32:00",
+            "price": 1.679
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-10T09:32:00",
+            "price": 1.909
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-26T02:32:00",
+            "price": 1.829
+        }
+    ]
+}

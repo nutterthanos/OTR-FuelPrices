@@ -1,0 +1,28 @@
+{
+    "site_code": "752",
+    "site_name": "OTR Murray Bridge Eastside",
+    "latitude": -35.11253,
+    "longitude": 139.2958,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-02T23:08:00",
+            "price": 1.849
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-02T23:08:00",
+            "price": 1.699
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-02T23:08:00",
+            "price": 1.929
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-25T22:45:00",
+            "price": 1.759
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "site_code": "524",
+    "site_name": "OTR Flinders Park",
+    "latitude": -34.904682,
+    "longitude": 138.551529,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-10T08:06:00",
+            "price": 1.829
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-10T08:06:00",
+            "price": 1.679
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-10T08:06:00",
+            "price": 1.909
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-25T23:15:00",
+            "price": 1.789
+        },
+        {
+            "department_code": 5,
+            "date": "2024-11-08T01:40:00",
+            "price": 0.979
+        }
+    ]
+}

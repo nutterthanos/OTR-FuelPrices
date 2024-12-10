@@ -1,0 +1,28 @@
+{
+    "site_code": "872",
+    "site_name": "OTR Belair",
+    "latitude": -34.9982,
+    "longitude": 138.622974,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-10T02:57:00",
+            "price": 1.849
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-10T02:57:00",
+            "price": 1.689
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-10T02:57:00",
+            "price": 1.929
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-05T23:45:00",
+            "price": 1.859
+        }
+    ]
+}

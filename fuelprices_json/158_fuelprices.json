@@ -1,0 +1,28 @@
+{
+    "site_code": "158",
+    "site_name": "OTR Frankston Flinders Road",
+    "latitude": -38.15512,
+    "longitude": 145.1337,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-07T04:15:00",
+            "price": 1.789
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-07T04:15:00",
+            "price": 1.639
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-07T04:15:00",
+            "price": 1.869
+        },
+        {
+            "department_code": 4,
+            "date": "2024-11-20T02:07:00",
+            "price": 1.729
+        }
+    ]
+}

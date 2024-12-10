@@ -1,0 +1,28 @@
+{
+    "site_code": "462",
+    "site_name": "S24 Harvey",
+    "latitude": -33.08058,
+    "longitude": 115.8954,
+    "prices": [
+        {
+            "department_code": 1,
+            "date": "2024-12-09T19:18:00",
+            "price": 1.769
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-09T19:18:00",
+            "price": 1.619
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-09T19:18:00",
+            "price": 1.859
+        },
+        {
+            "department_code": 4,
+            "date": "2024-12-02T19:09:00",
+            "price": 1.819
+        }
+    ]
+}
