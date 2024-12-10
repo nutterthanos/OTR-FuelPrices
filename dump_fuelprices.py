@@ -9,10 +9,7 @@ from datetime import datetime
 # Logging configuration
 logging.basicConfig(
     level=logging.DEBUG,
-    format="%(asctime)s [%(levelname)s] %(message)s",
-    handlers=[
-        logging.FileHandler("dump_fuelprices.log"),  # Log to a file
-        logging.StreamHandler()  # Also log to console
+    format="%(asctime)s [%(levelname)s] %(message)s"
     ]
 )
 
