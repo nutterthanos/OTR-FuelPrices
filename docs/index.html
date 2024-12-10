@@ -14,32 +14,54 @@
             max-width: 80%;
             margin: 20px auto;
         }
+        .form-group {
+            margin: 10px 0;
+        }
     </style>
 </head>
 <body>
     <h1>Fuel Prices Dashboard</h1>
-    <p>Select a site, date range, and department to view the graph:</p>
+    <p>Select a site, department, and time range to view the graph:</p>
     <form id="filter-form">
-        <label for="site-code">Site Code:</label>
-        <input type="text" id="site-code" placeholder="Enter site code" required>
-        <label for="date-range">Date Range:</label>
-        <select id="date-range">
-            <option value="weekly">Weekly</option>
-            <option value="monthly">Monthly</option>
-            <option value="yearly">Yearly</option>
-        </select>
-        <label for="department">Department:</label>
-        <select id="department">
-            <option value="1">Premium Unleaded</option>
-            <option value="2">Unleaded</option>
-            <option value="3">Ultimate</option>
-            <option value="4">Diesel</option>
-            <option value="5">LPG</option>
-            <option value="6">Ad Blue</option>
-            <option value="8">E85</option>
-            <option value="10">E10</option>
-            <option value="11">Low Aromatic</option>
-        </select>
+        <div class="form-group">
+            <label for="site-code">Site Code:</label>
+            <input type="text" id="site-code" placeholder="Enter site code" required>
+        </div>
+        <div class="form-group">
+            <label for="department">Department:</label>
+            <select id="department">
+                <option value="1">Premium Unleaded</option>
+                <option value="2">Unleaded</option>
+                <option value="3">Ultimate</option>
+                <option value="4">Diesel</option>
+                <option value="5">LPG</option>
+                <option value="6">Ad Blue</option>
+                <option value="8">E85</option>
+                <option value="10">E10</option>
+                <option value="11">Low Aromatic</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="date-range">Predefined Range:</label>
+            <select id="date-range">
+                <option value="hourly">Last Hour</option>
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+                <option value="yearly">Yearly</option>
+                <option value="custom">Custom Range</option>
+            </select>
+        </div>
+        <div id="custom-range-fields" style="display: none;">
+            <div class="form-group">
+                <label for="start-date">Start Date/Time:</label>
+                <input type="datetime-local" id="start-date">
+            </div>
+            <div class="form-group">
+                <label for="end-date">End Date/Time:</label>
+                <input type="datetime-local" id="end-date">
+            </div>
+        </div>
         <button type="submit">Show Graph</button>
     </form>
     <canvas id="fuel-price-chart"></canvas>
@@ -47,15 +69,24 @@
     <script>
         const form = document.getElementById("filter-form");
         const chartCanvas = document.getElementById("fuel-price-chart");
+        const dateRangeSelect = document.getElementById("date-range");
+        const customRangeFields = document.getElementById("custom-range-fields");
 
         let chart;
+
+        // Show/hide custom range fields
+        dateRangeSelect.addEventListener("change", () => {
+            customRangeFields.style.display = dateRangeSelect.value === "custom" ? "block" : "none";
+        });
 
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
 
             const siteCode = document.getElementById("site-code").value;
-            const dateRange = document.getElementById("date-range").value;
             const department = document.getElementById("department").value;
+            const dateRange = dateRangeSelect.value;
+            const startDate = document.getElementById("start-date").value;
+            const endDate = document.getElementById("end-date").value;
 
             // Fetch data
             try {
@@ -65,19 +96,32 @@
                 }
                 const data = await response.json();
 
-                // Filter data for the selected department and date range
+                // Determine date range for filtering
                 const now = new Date();
-                const startDate = new Date(
-                    dateRange === "weekly" ? now.setDate(now.getDate() - 7) :
-                    dateRange === "monthly" ? now.setMonth(now.getMonth() - 1) :
-                    dateRange === "yearly" ? now.setFullYear(now.getFullYear() - 1) :
-                    now
-                );
+                let start = null;
+                let end = now;
 
+                if (dateRange === "hourly") {
+                    start = new Date(now.getTime() - 60 * 60 * 1000);
+                } else if (dateRange === "daily") {
+                    start = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+                } else if (dateRange === "weekly") {
+                    start = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+                } else if (dateRange === "monthly") {
+                    start = new Date(now.setMonth(now.getMonth() - 1));
+                } else if (dateRange === "yearly") {
+                    start = new Date(now.setFullYear(now.getFullYear() - 1));
+                } else if (dateRange === "custom") {
+                    start = new Date(startDate);
+                    end = new Date(endDate);
+                }
+
+                // Filter data
                 const filteredPrices = data.prices.filter(
                     (entry) =>
                         entry.department_code == department &&
-                        new Date(entry.date) >= startDate
+                        new Date(entry.date) >= start &&
+                        new Date(entry.date) <= end
                 );
 
                 if (filteredPrices.length === 0) {
@@ -85,7 +129,7 @@
                     return;
                 }
 
-                const labels = filteredPrices.map((entry) => new Date(entry.date).toLocaleDateString());
+                const labels = filteredPrices.map((entry) => new Date(entry.date).toLocaleString());
                 const prices = filteredPrices.map((entry) => entry.price);
 
                 // Render the chart
@@ -111,7 +155,7 @@
                     options: {
                         responsive: true,
                         scales: {
-                            x: { title: { display: true, text: "Date" } },
+                            x: { title: { display: true, text: "Date/Time" } },
                             y: { title: { display: true, text: "Price" } },
                         },
                     },
@@ -123,4 +167,3 @@
     </script>
 </body>
 </html>
-"<!-- Rebuild trigger -->" 
