@@ -20,7 +20,7 @@ AUTH_TOKEN_PROD = os.getenv("AUTH_TOKEN_PROD")
 if not AUTH_TOKEN_PROD:
     logging.error("AUTH_TOKEN_PROD is not set. Please set it as an environment variable.")
     raise ValueError("AUTH_TOKEN_PROD is required.")
-.. 
+
 BASE_URLS = {
     "get_sites": "https://ibjdnxs3i2.execute-api.ap-southeast-2.amazonaws.com/motrPrd/getSites",
     "get_site": "https://ibjdnxs3i2.execute-api.ap-southeast-2.amazonaws.com/motrPrd/site",
