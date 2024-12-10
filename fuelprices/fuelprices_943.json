@@ -6,47 +6,47 @@
     },
     "sitefuelprices": [
         {
-            "action_by_date": "/Date(1733859009410+1030)/",
-            "current_price": 1.749,
-            "date_entered": "/Date(1733772540000+1030)/",
+            "action_by_date": null,
+            "current_price": 2.209,
+            "date_entered": "/Date(1733859300000+1030)/",
             "department_code": 1,
-            "price_delta": 0.46,
+            "price_delta": 0.0,
             "site_code": "943",
             "stockitem_id": 561455
         },
         {
-            "action_by_date": "/Date(1733859009410+1030)/",
-            "current_price": 1.599,
-            "date_entered": "/Date(1733772540000+1030)/",
+            "action_by_date": null,
+            "current_price": 2.059,
+            "date_entered": "/Date(1733859300000+1030)/",
             "department_code": 2,
-            "price_delta": 0.46,
+            "price_delta": 0.0,
             "site_code": "943",
             "stockitem_id": 561454
         },
         {
-            "action_by_date": "/Date(1733859009410+1030)/",
-            "current_price": 1.839,
-            "date_entered": "/Date(1733772540000+1030)/",
+            "action_by_date": null,
+            "current_price": 2.299,
+            "date_entered": "/Date(1733859300000+1030)/",
             "department_code": 3,
-            "price_delta": 0.46,
+            "price_delta": 0.0,
             "site_code": "943",
             "stockitem_id": 561456
         },
         {
-            "action_by_date": "/Date(1733859009410+1030)/",
-            "current_price": 1.759,
-            "date_entered": "/Date(1733167920000+1030)/",
+            "action_by_date": null,
+            "current_price": 1.779,
+            "date_entered": "/Date(1733859300000+1030)/",
             "department_code": 4,
-            "price_delta": 0.02,
+            "price_delta": 0.0,
             "site_code": "943",
             "stockitem_id": 561457
         },
         {
-            "action_by_date": "/Date(1733859009410+1030)/",
-            "current_price": 1.799,
-            "date_entered": "/Date(1733167920000+1030)/",
+            "action_by_date": null,
+            "current_price": 1.819,
+            "date_entered": "/Date(1733859300000+1030)/",
             "department_code": 5,
-            "price_delta": 0.02,
+            "price_delta": 0.0,
             "site_code": "943",
             "stockitem_id": 561458
         }
