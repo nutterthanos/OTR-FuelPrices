@@ -123,7 +123,7 @@ async def fetch_site_mappings():
 
 async def fetch_and_save_fuel_prices(site_codes, site_mappings):
     """
-    Fetch and save raw and parsed fuel prices for each site code.
+    Fetch and save fuel prices for each site code.
     """
     async with aiohttp.ClientSession() as session:
         tasks = []
@@ -138,47 +138,50 @@ async def fetch_and_save_fuel_prices(site_codes, site_mappings):
                 logging.error(f"Failed to fetch data for site_code {site_code}: {result}")
                 continue
 
-            # Save the raw API response
-            raw_filename = f"fuelprices_{site_code}.json"
-            raw_filepath = os.path.join(FUELPRICES_DIR, raw_filename)
-            async with aiofiles.open(raw_filepath, "w") as f:
-                await f.write(json.dumps(result, indent=4))
-            logging.info(f"Saved raw API response for site_code {site_code} to {raw_filename}")
-
             # Initialize site mapping details
             site_details = site_mappings.get(site_code, {"name": f"Site {site_code}"})
             site_name = site_details.get("name")
             latitude = site_details.get("latitude")
             longitude = site_details.get("longitude")
 
-            # Prepare the prices array
-            prices = []
+            # Prepare new prices array
+            new_prices = []
             for entry in result.get("sitefuelprices", []):
                 department_code = entry.get("department_code")
                 price = entry.get("current_price")
                 date = convert_date(entry["date_entered"])
                 if department_code and price and date:
-                    prices.append({
+                    new_prices.append({
                         "department_code": department_code,
                         "date": date,
                         "price": price,
                     })
 
-            # Save the parsed data
-            if prices:
-                parsed_output = {
+            # Load existing data if available
+            filename = f"fuelprices_{site_code}.json"
+            filepath = os.path.join(FUELPRICES_JSON_DIR, filename)
+            try:
+                async with aiofiles.open(filepath, "r") as f:
+                    existing_data = json.loads(await f.read())
+                    existing_prices = existing_data.get("prices", [])
+            except FileNotFoundError:
+                existing_data = {
                     "site_code": site_code,
                     "site_name": site_name,
                     "latitude": latitude,
                     "longitude": longitude,
-                    "prices": prices,
+                    "prices": [],
                 }
+                existing_prices = []
 
-                parsed_filename = f"fuelprices_{site_code}.json"
-                parsed_filepath = os.path.join(FUELPRICES_JSON_DIR, parsed_filename)
-                async with aiofiles.open(parsed_filepath, "w") as f:
-                    await f.write(json.dumps(parsed_output, indent=4))
-                logging.info(f"Saved parsed data for site_code {site_code} to {parsed_filename}")
+            # Merge new prices with existing prices (avoid duplicates)
+            updated_prices = {f"{p['date']}_{p['department_code']}": p for p in existing_prices + new_prices}
+            existing_data["prices"] = list(updated_prices.values())
+
+            # Save updated data back to the file
+            async with aiofiles.open(filepath, "w") as f:
+                await f.write(json.dumps(existing_data, indent=4))
+            logging.info(f"Updated fuel prices for site_code {site_code} saved to {filename}")
 
 async def main():
     """
