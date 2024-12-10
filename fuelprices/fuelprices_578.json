@@ -33,11 +33,11 @@
             "stockitem_id": 406700
         },
         {
-            "action_by_date": "/Date(1733874617887+1030)/",
-            "current_price": 1.829,
-            "date_entered": "/Date(1733440860000+1030)/",
+            "action_by_date": null,
+            "current_price": 1.839,
+            "date_entered": "/Date(1733873640000+1030)/",
             "department_code": 4,
-            "price_delta": 0.01,
+            "price_delta": 0.0,
             "site_code": "578",
             "stockitem_id": 447975
         }
