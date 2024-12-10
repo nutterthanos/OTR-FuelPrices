@@ -33,31 +33,40 @@ jobs:
 
       # Step 5: Commit and Push Changes
       - name: Commit and Push Changes
+        id: commit
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "Update GitHub Pages with latest fuel prices and graphs"
-          git push origin
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            echo "skip_commit=true" >> $GITHUB_ENV
+          else
+            git commit -m "Update GitHub Pages with latest fuel prices and graphs"
+            git push origin
+            echo "skip_commit=false" >> $GITHUB_ENV
+          fi
 
-      # Step 6: Run build script
-      - name: Trigger page trigger workflow
+      # Step 6: Conditionally run page build trigger
+      - name: Trigger page build workflow
+        if: env.skip_commit == 'false'
         run: |
           curl -X POST \
             -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             https://api.github.com/repos/${{ github.repository }}/actions/workflows/page_build.yml/dispatches \
-            -d '{"ref":"prod"}'
+            -d '{"ref":"main"}'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Step 7: Wait for 1 minute
-      - name: Wait for 1 minutes
+      # Step 7: Wait for 1 minute (only if page build is triggered)
+      - name: Wait for 1 minute
+        if: env.skip_commit == 'false'
         run: sleep 60
 
-      # Step 8: Trigger dump fuelprices workflow
+      # Step 8: Always trigger dump fuelprices workflow
       - name: Trigger dump fuelprices workflow
         run: |
           curl -X POST \
