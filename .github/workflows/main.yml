@@ -2,8 +2,8 @@ name: Update Fuel Prices and Graphs
 
 on:
   schedule:
-    - cron: "0 1 * * *" # Runs daily at 01:00 UTC; adjust as needed
-  workflow_dispatch: # Allows manual trigger
+    - cron: '*/10 * * * *'  # Run the script every 10 minutes
+  workflow_dispatch:
 
 jobs:
   update-data:
