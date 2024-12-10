@@ -89344,3 +89344,457 @@
 2024-12-10 11:25:53,451 [INFO] Saved parsed data for site_code 830 to fuelprices_830.json
 2024-12-10 11:25:53,451 [INFO] Saved raw API response for site_code 527 to fuelprices_527.json
 2024-12-10 11:25:53,452 [INFO] Saved parsed data for site_code 527 to fuelprices_527.json
+2024-12-10 11:40:19,119 [DEBUG] Using selector: EpollSelector
+2024-12-10 11:40:21,076 [INFO] Generated site mappings for 240 sites.
+2024-12-10 11:40:26,634 [INFO] Saved raw API response for site_code 736 to fuelprices_736.json
+2024-12-10 11:40:26,635 [INFO] Saved raw API response for site_code 748 to fuelprices_748.json
+2024-12-10 11:40:26,635 [INFO] Saved raw API response for site_code 595 to fuelprices_595.json
+2024-12-10 11:40:26,636 [INFO] Saved parsed data for site_code 595 to fuelprices_595.json
+2024-12-10 11:40:26,637 [INFO] Saved raw API response for site_code 814 to fuelprices_814.json
+2024-12-10 11:40:26,637 [INFO] Saved parsed data for site_code 814 to fuelprices_814.json
+2024-12-10 11:40:26,638 [INFO] Saved raw API response for site_code 390 to fuelprices_390.json
+2024-12-10 11:40:26,639 [INFO] Saved parsed data for site_code 390 to fuelprices_390.json
+2024-12-10 11:40:26,639 [INFO] Saved raw API response for site_code 461 to fuelprices_461.json
+2024-12-10 11:40:26,640 [INFO] Saved parsed data for site_code 461 to fuelprices_461.json
+2024-12-10 11:40:26,641 [INFO] Saved raw API response for site_code 831 to fuelprices_831.json
+2024-12-10 11:40:26,641 [INFO] Saved parsed data for site_code 831 to fuelprices_831.json
+2024-12-10 11:40:26,642 [INFO] Saved raw API response for site_code 763 to fuelprices_763.json
+2024-12-10 11:40:26,643 [INFO] Saved parsed data for site_code 763 to fuelprices_763.json
+2024-12-10 11:40:26,643 [INFO] Saved raw API response for site_code 942 to fuelprices_942.json
+2024-12-10 11:40:26,644 [INFO] Saved parsed data for site_code 942 to fuelprices_942.json
+2024-12-10 11:40:26,644 [INFO] Saved raw API response for site_code 734 to fuelprices_734.json
+2024-12-10 11:40:26,645 [INFO] Saved raw API response for site_code 882 to fuelprices_882.json
+2024-12-10 11:40:26,646 [INFO] Saved parsed data for site_code 882 to fuelprices_882.json
+2024-12-10 11:40:26,646 [INFO] Saved raw API response for site_code 513 to fuelprices_513.json
+2024-12-10 11:40:26,647 [INFO] Saved parsed data for site_code 513 to fuelprices_513.json
+2024-12-10 11:40:26,648 [INFO] Saved raw API response for site_code 467 to fuelprices_467.json
+2024-12-10 11:40:26,648 [INFO] Saved parsed data for site_code 467 to fuelprices_467.json
+2024-12-10 11:40:26,649 [INFO] Saved raw API response for site_code 887 to fuelprices_887.json
+2024-12-10 11:40:26,650 [INFO] Saved parsed data for site_code 887 to fuelprices_887.json
+2024-12-10 11:40:26,650 [INFO] Saved raw API response for site_code 892 to fuelprices_892.json
+2024-12-10 11:40:26,651 [INFO] Saved parsed data for site_code 892 to fuelprices_892.json
+2024-12-10 11:40:26,652 [INFO] Saved raw API response for site_code 575 to fuelprices_575.json
+2024-12-10 11:40:26,652 [INFO] Saved parsed data for site_code 575 to fuelprices_575.json
+2024-12-10 11:40:26,653 [INFO] Saved raw API response for site_code 536 to fuelprices_536.json
+2024-12-10 11:40:26,653 [INFO] Saved parsed data for site_code 536 to fuelprices_536.json
+2024-12-10 11:40:26,654 [INFO] Saved raw API response for site_code 847 to fuelprices_847.json
+2024-12-10 11:40:26,655 [INFO] Saved parsed data for site_code 847 to fuelprices_847.json
+2024-12-10 11:40:26,655 [INFO] Saved raw API response for site_code 776 to fuelprices_776.json
+2024-12-10 11:40:26,656 [INFO] Saved raw API response for site_code 894 to fuelprices_894.json
+2024-12-10 11:40:26,656 [INFO] Saved parsed data for site_code 894 to fuelprices_894.json
+2024-12-10 11:40:26,657 [INFO] Saved raw API response for site_code 924 to fuelprices_924.json
+2024-12-10 11:40:26,658 [INFO] Saved parsed data for site_code 924 to fuelprices_924.json
+2024-12-10 11:40:26,658 [INFO] Saved raw API response for site_code 755 to fuelprices_755.json
+2024-12-10 11:40:26,659 [INFO] Saved parsed data for site_code 755 to fuelprices_755.json
+2024-12-10 11:40:26,659 [INFO] Saved raw API response for site_code 436 to fuelprices_436.json
+2024-12-10 11:40:26,660 [INFO] Saved parsed data for site_code 436 to fuelprices_436.json
+2024-12-10 11:40:26,661 [INFO] Saved raw API response for site_code 756 to fuelprices_756.json
+2024-12-10 11:40:26,661 [INFO] Saved parsed data for site_code 756 to fuelprices_756.json
+2024-12-10 11:40:26,662 [INFO] Saved raw API response for site_code 456 to fuelprices_456.json
+2024-12-10 11:40:26,663 [INFO] Saved parsed data for site_code 456 to fuelprices_456.json
+2024-12-10 11:40:26,663 [INFO] Saved raw API response for site_code 386 to fuelprices_386.json
+2024-12-10 11:40:26,664 [INFO] Saved parsed data for site_code 386 to fuelprices_386.json
+2024-12-10 11:40:26,664 [INFO] Saved raw API response for site_code 137 to fuelprices_137.json
+2024-12-10 11:40:26,665 [INFO] Saved parsed data for site_code 137 to fuelprices_137.json
+2024-12-10 11:40:26,666 [INFO] Saved raw API response for site_code 719 to fuelprices_719.json
+2024-12-10 11:40:26,666 [INFO] Saved raw API response for site_code 870 to fuelprices_870.json
+2024-12-10 11:40:26,667 [INFO] Saved parsed data for site_code 870 to fuelprices_870.json
+2024-12-10 11:40:26,667 [INFO] Saved raw API response for site_code 973 to fuelprices_973.json
+2024-12-10 11:40:26,668 [INFO] Saved parsed data for site_code 973 to fuelprices_973.json
+2024-12-10 11:40:26,669 [INFO] Saved raw API response for site_code 805 to fuelprices_805.json
+2024-12-10 11:40:26,669 [INFO] Saved parsed data for site_code 805 to fuelprices_805.json
+2024-12-10 11:40:26,670 [INFO] Saved raw API response for site_code 157 to fuelprices_157.json
+2024-12-10 11:40:26,671 [INFO] Saved parsed data for site_code 157 to fuelprices_157.json
+2024-12-10 11:40:26,671 [INFO] Saved raw API response for site_code 921 to fuelprices_921.json
+2024-12-10 11:40:26,672 [INFO] Saved raw API response for site_code 541 to fuelprices_541.json
+2024-12-10 11:40:26,672 [INFO] Saved parsed data for site_code 541 to fuelprices_541.json
+2024-12-10 11:40:26,673 [INFO] Saved raw API response for site_code 156 to fuelprices_156.json
+2024-12-10 11:40:26,674 [INFO] Saved parsed data for site_code 156 to fuelprices_156.json
+2024-12-10 11:40:26,674 [INFO] Saved raw API response for site_code 851 to fuelprices_851.json
+2024-12-10 11:40:26,675 [INFO] Saved parsed data for site_code 851 to fuelprices_851.json
+2024-12-10 11:40:26,676 [INFO] Saved raw API response for site_code 830 to fuelprices_830.json
+2024-12-10 11:40:26,676 [INFO] Saved parsed data for site_code 830 to fuelprices_830.json
+2024-12-10 11:40:26,677 [INFO] Saved raw API response for site_code 124 to fuelprices_124.json
+2024-12-10 11:40:26,678 [INFO] Saved parsed data for site_code 124 to fuelprices_124.json
+2024-12-10 11:40:26,678 [INFO] Saved raw API response for site_code 878 to fuelprices_878.json
+2024-12-10 11:40:26,679 [INFO] Saved parsed data for site_code 878 to fuelprices_878.json
+2024-12-10 11:40:26,679 [INFO] Saved raw API response for site_code 889 to fuelprices_889.json
+2024-12-10 11:40:26,680 [INFO] Saved parsed data for site_code 889 to fuelprices_889.json
+2024-12-10 11:40:26,681 [INFO] Saved raw API response for site_code 563 to fuelprices_563.json
+2024-12-10 11:40:26,681 [INFO] Saved raw API response for site_code 518 to fuelprices_518.json
+2024-12-10 11:40:26,682 [INFO] Saved parsed data for site_code 518 to fuelprices_518.json
+2024-12-10 11:40:26,682 [INFO] Saved raw API response for site_code 524 to fuelprices_524.json
+2024-12-10 11:40:26,683 [INFO] Saved parsed data for site_code 524 to fuelprices_524.json
+2024-12-10 11:40:26,684 [INFO] Saved raw API response for site_code 397 to fuelprices_397.json
+2024-12-10 11:40:26,684 [INFO] Saved parsed data for site_code 397 to fuelprices_397.json
+2024-12-10 11:40:26,685 [INFO] Saved raw API response for site_code 117 to fuelprices_117.json
+2024-12-10 11:40:26,685 [INFO] Saved parsed data for site_code 117 to fuelprices_117.json
+2024-12-10 11:40:26,686 [INFO] Saved raw API response for site_code 474 to fuelprices_474.json
+2024-12-10 11:40:26,687 [INFO] Saved parsed data for site_code 474 to fuelprices_474.json
+2024-12-10 11:40:26,687 [INFO] Saved raw API response for site_code 943 to fuelprices_943.json
+2024-12-10 11:40:26,688 [INFO] Saved parsed data for site_code 943 to fuelprices_943.json
+2024-12-10 11:40:26,689 [INFO] Saved raw API response for site_code 572 to fuelprices_572.json
+2024-12-10 11:40:26,689 [INFO] Saved parsed data for site_code 572 to fuelprices_572.json
+2024-12-10 11:40:26,690 [INFO] Saved raw API response for site_code 510 to fuelprices_510.json
+2024-12-10 11:40:26,691 [INFO] Saved parsed data for site_code 510 to fuelprices_510.json
+2024-12-10 11:40:26,691 [INFO] Saved raw API response for site_code 774 to fuelprices_774.json
+2024-12-10 11:40:26,692 [INFO] Saved raw API response for site_code 138 to fuelprices_138.json
+2024-12-10 11:40:26,692 [INFO] Saved parsed data for site_code 138 to fuelprices_138.json
+2024-12-10 11:40:26,693 [INFO] Saved raw API response for site_code 919 to fuelprices_919.json
+2024-12-10 11:40:26,694 [INFO] Saved parsed data for site_code 919 to fuelprices_919.json
+2024-12-10 11:40:26,694 [INFO] Saved raw API response for site_code 547 to fuelprices_547.json
+2024-12-10 11:40:26,695 [INFO] Saved raw API response for site_code 840 to fuelprices_840.json
+2024-12-10 11:40:26,695 [INFO] Saved parsed data for site_code 840 to fuelprices_840.json
+2024-12-10 11:40:26,696 [INFO] Saved raw API response for site_code 560 to fuelprices_560.json
+2024-12-10 11:40:26,697 [INFO] Saved parsed data for site_code 560 to fuelprices_560.json
+2024-12-10 11:40:26,697 [INFO] Saved raw API response for site_code 522 to fuelprices_522.json
+2024-12-10 11:40:26,698 [INFO] Saved raw API response for site_code 880 to fuelprices_880.json
+2024-12-10 11:40:26,698 [INFO] Saved parsed data for site_code 880 to fuelprices_880.json
+2024-12-10 11:40:26,699 [INFO] Saved raw API response for site_code 559 to fuelprices_559.json
+2024-12-10 11:40:26,700 [INFO] Saved parsed data for site_code 559 to fuelprices_559.json
+2024-12-10 11:40:26,700 [INFO] Saved raw API response for site_code 883 to fuelprices_883.json
+2024-12-10 11:40:26,701 [INFO] Saved parsed data for site_code 883 to fuelprices_883.json
+2024-12-10 11:40:26,701 [INFO] Saved raw API response for site_code 566 to fuelprices_566.json
+2024-12-10 11:40:26,702 [INFO] Saved parsed data for site_code 566 to fuelprices_566.json
+2024-12-10 11:40:26,703 [INFO] Saved raw API response for site_code 666 to fuelprices_666.json
+2024-12-10 11:40:26,703 [INFO] Saved parsed data for site_code 666 to fuelprices_666.json
+2024-12-10 11:40:26,704 [INFO] Saved raw API response for site_code 579 to fuelprices_579.json
+2024-12-10 11:40:26,704 [INFO] Saved parsed data for site_code 579 to fuelprices_579.json
+2024-12-10 11:40:26,705 [INFO] Saved raw API response for site_code 803 to fuelprices_803.json
+2024-12-10 11:40:26,707 [INFO] Saved parsed data for site_code 803 to fuelprices_803.json
+2024-12-10 11:40:26,707 [INFO] Saved raw API response for site_code 752 to fuelprices_752.json
+2024-12-10 11:40:26,708 [INFO] Saved parsed data for site_code 752 to fuelprices_752.json
+2024-12-10 11:40:26,709 [INFO] Saved raw API response for site_code 561 to fuelprices_561.json
+2024-12-10 11:40:26,709 [INFO] Saved parsed data for site_code 561 to fuelprices_561.json
+2024-12-10 11:40:26,710 [INFO] Saved raw API response for site_code 535 to fuelprices_535.json
+2024-12-10 11:40:26,710 [INFO] Saved parsed data for site_code 535 to fuelprices_535.json
+2024-12-10 11:40:26,711 [INFO] Saved raw API response for site_code 707 to fuelprices_707.json
+2024-12-10 11:40:26,712 [INFO] Saved raw API response for site_code 391 to fuelprices_391.json
+2024-12-10 11:40:26,712 [INFO] Saved parsed data for site_code 391 to fuelprices_391.json
+2024-12-10 11:40:26,713 [INFO] Saved raw API response for site_code 591 to fuelprices_591.json
+2024-12-10 11:40:26,714 [INFO] Saved parsed data for site_code 591 to fuelprices_591.json
+2024-12-10 11:40:26,714 [INFO] Saved raw API response for site_code 828 to fuelprices_828.json
+2024-12-10 11:40:26,715 [INFO] Saved parsed data for site_code 828 to fuelprices_828.json
+2024-12-10 11:40:26,715 [INFO] Saved raw API response for site_code 733 to fuelprices_733.json
+2024-12-10 11:40:26,716 [INFO] Saved raw API response for site_code 768 to fuelprices_768.json
+2024-12-10 11:40:26,716 [INFO] Saved parsed data for site_code 768 to fuelprices_768.json
+2024-12-10 11:40:26,717 [INFO] Saved raw API response for site_code 918 to fuelprices_918.json
+2024-12-10 11:40:26,718 [INFO] Saved parsed data for site_code 918 to fuelprices_918.json
+2024-12-10 11:40:26,718 [INFO] Saved raw API response for site_code 507 to fuelprices_507.json
+2024-12-10 11:40:26,719 [INFO] Saved parsed data for site_code 507 to fuelprices_507.json
+2024-12-10 11:40:26,720 [INFO] Saved raw API response for site_code 920 to fuelprices_920.json
+2024-12-10 11:40:26,720 [INFO] Saved parsed data for site_code 920 to fuelprices_920.json
+2024-12-10 11:40:26,721 [INFO] Saved raw API response for site_code 532 to fuelprices_532.json
+2024-12-10 11:40:26,722 [INFO] Saved parsed data for site_code 532 to fuelprices_532.json
+2024-12-10 11:40:26,722 [INFO] Saved raw API response for site_code 863 to fuelprices_863.json
+2024-12-10 11:40:26,723 [INFO] Saved parsed data for site_code 863 to fuelprices_863.json
+2024-12-10 11:40:26,723 [INFO] Saved raw API response for site_code 884 to fuelprices_884.json
+2024-12-10 11:40:26,724 [INFO] Saved parsed data for site_code 884 to fuelprices_884.json
+2024-12-10 11:40:26,725 [INFO] Saved raw API response for site_code 577 to fuelprices_577.json
+2024-12-10 11:40:26,725 [INFO] Saved parsed data for site_code 577 to fuelprices_577.json
+2024-12-10 11:40:26,726 [INFO] Saved raw API response for site_code 944 to fuelprices_944.json
+2024-12-10 11:40:26,726 [INFO] Saved parsed data for site_code 944 to fuelprices_944.json
+2024-12-10 11:40:26,727 [INFO] Saved raw API response for site_code 729 to fuelprices_729.json
+2024-12-10 11:40:26,728 [INFO] Saved raw API response for site_code 845 to fuelprices_845.json
+2024-12-10 11:40:26,728 [INFO] Saved parsed data for site_code 845 to fuelprices_845.json
+2024-12-10 11:40:26,729 [INFO] Saved raw API response for site_code 527 to fuelprices_527.json
+2024-12-10 11:40:26,730 [INFO] Saved parsed data for site_code 527 to fuelprices_527.json
+2024-12-10 11:40:26,730 [INFO] Saved raw API response for site_code 881 to fuelprices_881.json
+2024-12-10 11:40:26,731 [INFO] Saved parsed data for site_code 881 to fuelprices_881.json
+2024-12-10 11:40:26,731 [INFO] Saved raw API response for site_code 718 to fuelprices_718.json
+2024-12-10 11:40:26,732 [INFO] Saved parsed data for site_code 718 to fuelprices_718.json
+2024-12-10 11:40:26,733 [INFO] Saved raw API response for site_code 885 to fuelprices_885.json
+2024-12-10 11:40:26,733 [INFO] Saved parsed data for site_code 885 to fuelprices_885.json
+2024-12-10 11:40:26,734 [INFO] Saved raw API response for site_code 596 to fuelprices_596.json
+2024-12-10 11:40:26,735 [INFO] Saved parsed data for site_code 596 to fuelprices_596.json
+2024-12-10 11:40:26,735 [INFO] Saved raw API response for site_code 394 to fuelprices_394.json
+2024-12-10 11:40:26,736 [INFO] Saved parsed data for site_code 394 to fuelprices_394.json
+2024-12-10 11:40:26,737 [INFO] Saved raw API response for site_code 582 to fuelprices_582.json
+2024-12-10 11:40:26,737 [INFO] Saved parsed data for site_code 582 to fuelprices_582.json
+2024-12-10 11:40:26,738 [INFO] Saved raw API response for site_code 972 to fuelprices_972.json
+2024-12-10 11:40:26,739 [INFO] Saved parsed data for site_code 972 to fuelprices_972.json
+2024-12-10 11:40:26,739 [INFO] Saved raw API response for site_code 808 to fuelprices_808.json
+2024-12-10 11:40:26,740 [INFO] Saved parsed data for site_code 808 to fuelprices_808.json
+2024-12-10 11:40:26,740 [INFO] Saved raw API response for site_code 767 to fuelprices_767.json
+2024-12-10 11:40:26,741 [INFO] Saved parsed data for site_code 767 to fuelprices_767.json
+2024-12-10 11:40:26,742 [INFO] Saved raw API response for site_code 933 to fuelprices_933.json
+2024-12-10 11:40:26,742 [INFO] Saved parsed data for site_code 933 to fuelprices_933.json
+2024-12-10 11:40:26,743 [INFO] Saved raw API response for site_code 824 to fuelprices_824.json
+2024-12-10 11:40:26,743 [INFO] Saved raw API response for site_code 941 to fuelprices_941.json
+2024-12-10 11:40:26,744 [INFO] Saved parsed data for site_code 941 to fuelprices_941.json
+2024-12-10 11:40:26,745 [INFO] Saved raw API response for site_code 853 to fuelprices_853.json
+2024-12-10 11:40:26,745 [INFO] Saved parsed data for site_code 853 to fuelprices_853.json
+2024-12-10 11:40:26,746 [INFO] Saved raw API response for site_code 460 to fuelprices_460.json
+2024-12-10 11:40:26,747 [INFO] Saved parsed data for site_code 460 to fuelprices_460.json
+2024-12-10 11:40:26,747 [INFO] Saved raw API response for site_code 868 to fuelprices_868.json
+2024-12-10 11:40:26,748 [INFO] Saved parsed data for site_code 868 to fuelprices_868.json
+2024-12-10 11:40:26,748 [INFO] Saved raw API response for site_code 846 to fuelprices_846.json
+2024-12-10 11:40:26,749 [INFO] Saved parsed data for site_code 846 to fuelprices_846.json
+2024-12-10 11:40:26,750 [INFO] Saved raw API response for site_code 861 to fuelprices_861.json
+2024-12-10 11:40:26,750 [INFO] Saved parsed data for site_code 861 to fuelprices_861.json
+2024-12-10 11:40:26,751 [INFO] Saved raw API response for site_code 483 to fuelprices_483.json
+2024-12-10 11:40:26,752 [INFO] Saved parsed data for site_code 483 to fuelprices_483.json
+2024-12-10 11:40:26,752 [INFO] Saved raw API response for site_code 946 to fuelprices_946.json
+2024-12-10 11:40:26,753 [INFO] Saved parsed data for site_code 946 to fuelprices_946.json
+2024-12-10 11:40:26,753 [INFO] Saved raw API response for site_code 869 to fuelprices_869.json
+2024-12-10 11:40:26,754 [INFO] Saved parsed data for site_code 869 to fuelprices_869.json
+2024-12-10 11:40:26,755 [INFO] Saved raw API response for site_code 576 to fuelprices_576.json
+2024-12-10 11:40:26,755 [INFO] Saved parsed data for site_code 576 to fuelprices_576.json
+2024-12-10 11:40:26,756 [INFO] Saved raw API response for site_code 911 to fuelprices_911.json
+2024-12-10 11:40:26,756 [INFO] Saved parsed data for site_code 911 to fuelprices_911.json
+2024-12-10 11:40:26,757 [INFO] Saved raw API response for site_code 862 to fuelprices_862.json
+2024-12-10 11:40:26,758 [INFO] Saved parsed data for site_code 862 to fuelprices_862.json
+2024-12-10 11:40:26,758 [INFO] Saved raw API response for site_code 516 to fuelprices_516.json
+2024-12-10 11:40:26,759 [INFO] Saved parsed data for site_code 516 to fuelprices_516.json
+2024-12-10 11:40:26,759 [INFO] Saved raw API response for site_code 400 to fuelprices_400.json
+2024-12-10 11:40:26,760 [INFO] Saved parsed data for site_code 400 to fuelprices_400.json
+2024-12-10 11:40:26,761 [INFO] Saved raw API response for site_code 922 to fuelprices_922.json
+2024-12-10 11:40:26,761 [INFO] Saved parsed data for site_code 922 to fuelprices_922.json
+2024-12-10 11:40:26,762 [INFO] Saved raw API response for site_code 466 to fuelprices_466.json
+2024-12-10 11:40:26,763 [INFO] Saved parsed data for site_code 466 to fuelprices_466.json
+2024-12-10 11:40:26,763 [INFO] Saved raw API response for site_code 162 to fuelprices_162.json
+2024-12-10 11:40:26,764 [INFO] Saved parsed data for site_code 162 to fuelprices_162.json
+2024-12-10 11:40:26,764 [INFO] Saved raw API response for site_code 562 to fuelprices_562.json
+2024-12-10 11:40:26,765 [INFO] Saved parsed data for site_code 562 to fuelprices_562.json
+2024-12-10 11:40:26,766 [INFO] Saved raw API response for site_code 821 to fuelprices_821.json
+2024-12-10 11:40:26,766 [INFO] Saved parsed data for site_code 821 to fuelprices_821.json
+2024-12-10 11:40:26,767 [INFO] Saved raw API response for site_code 876 to fuelprices_876.json
+2024-12-10 11:40:26,768 [INFO] Saved parsed data for site_code 876 to fuelprices_876.json
+2024-12-10 11:40:26,768 [INFO] Saved raw API response for site_code 811 to fuelprices_811.json
+2024-12-10 11:40:26,769 [INFO] Saved parsed data for site_code 811 to fuelprices_811.json
+2024-12-10 11:40:26,769 [INFO] Saved raw API response for site_code 720 to fuelprices_720.json
+2024-12-10 11:40:26,770 [INFO] Saved parsed data for site_code 720 to fuelprices_720.json
+2024-12-10 11:40:26,771 [INFO] Saved raw API response for site_code 552 to fuelprices_552.json
+2024-12-10 11:40:26,771 [INFO] Saved raw API response for site_code 437 to fuelprices_437.json
+2024-12-10 11:40:26,772 [INFO] Saved parsed data for site_code 437 to fuelprices_437.json
+2024-12-10 11:40:26,772 [INFO] Saved raw API response for site_code 393 to fuelprices_393.json
+2024-12-10 11:40:26,773 [INFO] Saved parsed data for site_code 393 to fuelprices_393.json
+2024-12-10 11:40:26,774 [INFO] Saved raw API response for site_code 807 to fuelprices_807.json
+2024-12-10 11:40:26,774 [INFO] Saved parsed data for site_code 807 to fuelprices_807.json
+2024-12-10 11:40:26,775 [INFO] Saved raw API response for site_code 778 to fuelprices_778.json
+2024-12-10 11:40:26,775 [INFO] Saved raw API response for site_code 835 to fuelprices_835.json
+2024-12-10 11:40:26,776 [INFO] Saved parsed data for site_code 835 to fuelprices_835.json
+2024-12-10 11:40:26,777 [INFO] Saved raw API response for site_code 879 to fuelprices_879.json
+2024-12-10 11:40:26,777 [INFO] Saved parsed data for site_code 879 to fuelprices_879.json
+2024-12-10 11:40:26,778 [INFO] Saved raw API response for site_code 812 to fuelprices_812.json
+2024-12-10 11:40:26,779 [INFO] Saved parsed data for site_code 812 to fuelprices_812.json
+2024-12-10 11:40:26,779 [INFO] Saved raw API response for site_code 836 to fuelprices_836.json
+2024-12-10 11:40:26,780 [INFO] Saved parsed data for site_code 836 to fuelprices_836.json
+2024-12-10 11:40:26,780 [INFO] Saved raw API response for site_code 871 to fuelprices_871.json
+2024-12-10 11:40:26,781 [INFO] Saved parsed data for site_code 871 to fuelprices_871.json
+2024-12-10 11:40:26,782 [INFO] Saved raw API response for site_code 895 to fuelprices_895.json
+2024-12-10 11:40:26,782 [INFO] Saved parsed data for site_code 895 to fuelprices_895.json
+2024-12-10 11:40:26,783 [INFO] Saved raw API response for site_code 454 to fuelprices_454.json
+2024-12-10 11:40:26,793 [INFO] Saved parsed data for site_code 454 to fuelprices_454.json
+2024-12-10 11:40:26,794 [INFO] Saved raw API response for site_code 113 to fuelprices_113.json
+2024-12-10 11:40:26,795 [INFO] Saved parsed data for site_code 113 to fuelprices_113.json
+2024-12-10 11:40:26,795 [INFO] Saved raw API response for site_code 593 to fuelprices_593.json
+2024-12-10 11:40:26,796 [INFO] Saved parsed data for site_code 593 to fuelprices_593.json
+2024-12-10 11:40:26,796 [INFO] Saved raw API response for site_code 796 to fuelprices_796.json
+2024-12-10 11:40:26,797 [INFO] Saved raw API response for site_code 504 to fuelprices_504.json
+2024-12-10 11:40:26,798 [INFO] Saved parsed data for site_code 504 to fuelprices_504.json
+2024-12-10 11:40:26,798 [INFO] Saved raw API response for site_code 529 to fuelprices_529.json
+2024-12-10 11:40:26,799 [INFO] Saved parsed data for site_code 529 to fuelprices_529.json
+2024-12-10 11:40:26,799 [INFO] Saved raw API response for site_code 462 to fuelprices_462.json
+2024-12-10 11:40:26,800 [INFO] Saved parsed data for site_code 462 to fuelprices_462.json
+2024-12-10 11:40:26,800 [INFO] Saved raw API response for site_code 584 to fuelprices_584.json
+2024-12-10 11:40:26,801 [INFO] Saved parsed data for site_code 584 to fuelprices_584.json
+2024-12-10 11:40:26,802 [INFO] Saved raw API response for site_code 875 to fuelprices_875.json
+2024-12-10 11:40:26,802 [INFO] Saved parsed data for site_code 875 to fuelprices_875.json
+2024-12-10 11:40:26,803 [INFO] Saved raw API response for site_code 825 to fuelprices_825.json
+2024-12-10 11:40:26,804 [INFO] Saved parsed data for site_code 825 to fuelprices_825.json
+2024-12-10 11:40:26,804 [INFO] Saved raw API response for site_code 453 to fuelprices_453.json
+2024-12-10 11:40:26,805 [INFO] Saved parsed data for site_code 453 to fuelprices_453.json
+2024-12-10 11:40:26,806 [INFO] Saved raw API response for site_code 594 to fuelprices_594.json
+2024-12-10 11:40:26,806 [INFO] Saved parsed data for site_code 594 to fuelprices_594.json
+2024-12-10 11:40:26,807 [INFO] Saved raw API response for site_code 530 to fuelprices_530.json
+2024-12-10 11:40:26,808 [INFO] Saved parsed data for site_code 530 to fuelprices_530.json
+2024-12-10 11:40:26,809 [INFO] Saved raw API response for site_code 886 to fuelprices_886.json
+2024-12-10 11:40:26,809 [INFO] Saved parsed data for site_code 886 to fuelprices_886.json
+2024-12-10 11:40:26,810 [INFO] Saved raw API response for site_code 893 to fuelprices_893.json
+2024-12-10 11:40:26,810 [INFO] Saved parsed data for site_code 893 to fuelprices_893.json
+2024-12-10 11:40:26,811 [INFO] Saved raw API response for site_code 758 to fuelprices_758.json
+2024-12-10 11:40:26,811 [INFO] Saved parsed data for site_code 758 to fuelprices_758.json
+2024-12-10 11:40:26,812 [INFO] Saved raw API response for site_code 816 to fuelprices_816.json
+2024-12-10 11:40:26,813 [INFO] Saved parsed data for site_code 816 to fuelprices_816.json
+2024-12-10 11:40:26,813 [INFO] Saved raw API response for site_code 573 to fuelprices_573.json
+2024-12-10 11:40:26,814 [INFO] Saved raw API response for site_code 940 to fuelprices_940.json
+2024-12-10 11:40:26,814 [INFO] Saved parsed data for site_code 940 to fuelprices_940.json
+2024-12-10 11:40:26,815 [INFO] Saved raw API response for site_code 866 to fuelprices_866.json
+2024-12-10 11:40:26,816 [INFO] Saved parsed data for site_code 866 to fuelprices_866.json
+2024-12-10 11:40:26,816 [INFO] Saved raw API response for site_code 520 to fuelprices_520.json
+2024-12-10 11:40:26,817 [INFO] Saved parsed data for site_code 520 to fuelprices_520.json
+2024-12-10 11:40:26,817 [INFO] Saved raw API response for site_code 819 to fuelprices_819.json
+2024-12-10 11:40:26,818 [INFO] Saved parsed data for site_code 819 to fuelprices_819.json
+2024-12-10 11:40:26,819 [INFO] Saved raw API response for site_code 455 to fuelprices_455.json
+2024-12-10 11:40:26,819 [INFO] Saved parsed data for site_code 455 to fuelprices_455.json
+2024-12-10 11:40:26,820 [INFO] Saved raw API response for site_code 818 to fuelprices_818.json
+2024-12-10 11:40:26,821 [INFO] Saved parsed data for site_code 818 to fuelprices_818.json
+2024-12-10 11:40:26,821 [INFO] Saved raw API response for site_code 809 to fuelprices_809.json
+2024-12-10 11:40:26,822 [INFO] Saved parsed data for site_code 809 to fuelprices_809.json
+2024-12-10 11:40:26,823 [INFO] Saved raw API response for site_code 502 to fuelprices_502.json
+2024-12-10 11:40:26,823 [INFO] Saved parsed data for site_code 502 to fuelprices_502.json
+2024-12-10 11:40:26,824 [INFO] Saved raw API response for site_code 936 to fuelprices_936.json
+2024-12-10 11:40:26,824 [INFO] Saved parsed data for site_code 936 to fuelprices_936.json
+2024-12-10 11:40:26,825 [INFO] Saved raw API response for site_code 706 to fuelprices_706.json
+2024-12-10 11:40:26,826 [INFO] Saved raw API response for site_code 435 to fuelprices_435.json
+2024-12-10 11:40:26,826 [INFO] Saved parsed data for site_code 435 to fuelprices_435.json
+2024-12-10 11:40:26,827 [INFO] Saved raw API response for site_code 512 to fuelprices_512.json
+2024-12-10 11:40:26,827 [INFO] Saved parsed data for site_code 512 to fuelprices_512.json
+2024-12-10 11:40:26,828 [INFO] Saved raw API response for site_code 580 to fuelprices_580.json
+2024-12-10 11:40:26,829 [INFO] Saved parsed data for site_code 580 to fuelprices_580.json
+2024-12-10 11:40:26,829 [INFO] Saved raw API response for site_code 829 to fuelprices_829.json
+2024-12-10 11:40:26,898 [INFO] Saved parsed data for site_code 829 to fuelprices_829.json
+2024-12-10 11:40:26,899 [INFO] Saved raw API response for site_code 505 to fuelprices_505.json
+2024-12-10 11:40:26,923 [INFO] Saved parsed data for site_code 505 to fuelprices_505.json
+2024-12-10 11:40:26,924 [INFO] Saved raw API response for site_code 865 to fuelprices_865.json
+2024-12-10 11:40:26,925 [INFO] Saved parsed data for site_code 865 to fuelprices_865.json
+2024-12-10 11:40:26,926 [INFO] Saved raw API response for site_code 761 to fuelprices_761.json
+2024-12-10 11:40:26,926 [INFO] Saved raw API response for site_code 856 to fuelprices_856.json
+2024-12-10 11:40:26,927 [INFO] Saved parsed data for site_code 856 to fuelprices_856.json
+2024-12-10 11:40:26,928 [INFO] Saved raw API response for site_code 852 to fuelprices_852.json
+2024-12-10 11:40:26,928 [INFO] Saved parsed data for site_code 852 to fuelprices_852.json
+2024-12-10 11:40:26,929 [INFO] Saved raw API response for site_code 598 to fuelprices_598.json
+2024-12-10 11:40:26,930 [INFO] Saved parsed data for site_code 598 to fuelprices_598.json
+2024-12-10 11:40:26,930 [INFO] Saved raw API response for site_code 801 to fuelprices_801.json
+2024-12-10 11:40:26,931 [INFO] Saved parsed data for site_code 801 to fuelprices_801.json
+2024-12-10 11:40:26,932 [INFO] Saved raw API response for site_code 442 to fuelprices_442.json
+2024-12-10 11:40:26,932 [INFO] Saved parsed data for site_code 442 to fuelprices_442.json
+2024-12-10 11:40:26,933 [INFO] Saved raw API response for site_code 722 to fuelprices_722.json
+2024-12-10 11:40:26,933 [INFO] Saved parsed data for site_code 722 to fuelprices_722.json
+2024-12-10 11:40:26,934 [INFO] Saved raw API response for site_code 387 to fuelprices_387.json
+2024-12-10 11:40:26,935 [INFO] Saved parsed data for site_code 387 to fuelprices_387.json
+2024-12-10 11:40:26,935 [INFO] Saved raw API response for site_code 888 to fuelprices_888.json
+2024-12-10 11:40:26,936 [INFO] Saved parsed data for site_code 888 to fuelprices_888.json
+2024-12-10 11:40:26,936 [INFO] Saved raw API response for site_code 708 to fuelprices_708.json
+2024-12-10 11:40:26,937 [INFO] Saved raw API response for site_code 842 to fuelprices_842.json
+2024-12-10 11:40:26,937 [INFO] Saved parsed data for site_code 842 to fuelprices_842.json
+2024-12-10 11:40:26,938 [INFO] Saved raw API response for site_code 457 to fuelprices_457.json
+2024-12-10 11:40:26,939 [INFO] Saved parsed data for site_code 457 to fuelprices_457.json
+2024-12-10 11:40:26,939 [INFO] Saved raw API response for site_code 458 to fuelprices_458.json
+2024-12-10 11:40:26,940 [INFO] Saved parsed data for site_code 458 to fuelprices_458.json
+2024-12-10 11:40:26,940 [INFO] Saved raw API response for site_code 468 to fuelprices_468.json
+2024-12-10 11:40:26,941 [INFO] Saved parsed data for site_code 468 to fuelprices_468.json
+2024-12-10 11:40:26,942 [INFO] Saved raw API response for site_code 834 to fuelprices_834.json
+2024-12-10 11:40:26,942 [INFO] Saved parsed data for site_code 834 to fuelprices_834.json
+2024-12-10 11:40:26,943 [INFO] Saved raw API response for site_code 465 to fuelprices_465.json
+2024-12-10 11:40:26,943 [INFO] Saved parsed data for site_code 465 to fuelprices_465.json
+2024-12-10 11:40:26,944 [INFO] Saved raw API response for site_code 859 to fuelprices_859.json
+2024-12-10 11:40:26,945 [INFO] Saved parsed data for site_code 859 to fuelprices_859.json
+2024-12-10 11:40:26,945 [INFO] Saved raw API response for site_code 822 to fuelprices_822.json
+2024-12-10 11:40:26,946 [INFO] Saved parsed data for site_code 822 to fuelprices_822.json
+2024-12-10 11:40:26,946 [INFO] Saved raw API response for site_code 519 to fuelprices_519.json
+2024-12-10 11:40:26,947 [INFO] Saved parsed data for site_code 519 to fuelprices_519.json
+2024-12-10 11:40:26,948 [INFO] Saved raw API response for site_code 509 to fuelprices_509.json
+2024-12-10 11:40:26,948 [INFO] Saved parsed data for site_code 509 to fuelprices_509.json
+2024-12-10 11:40:26,949 [INFO] Saved raw API response for site_code 537 to fuelprices_537.json
+2024-12-10 11:40:26,949 [INFO] Saved parsed data for site_code 537 to fuelprices_537.json
+2024-12-10 11:40:26,950 [INFO] Saved raw API response for site_code 523 to fuelprices_523.json
+2024-12-10 11:40:26,951 [INFO] Saved parsed data for site_code 523 to fuelprices_523.json
+2024-12-10 11:40:26,951 [INFO] Saved raw API response for site_code 749 to fuelprices_749.json
+2024-12-10 11:40:26,952 [INFO] Saved parsed data for site_code 749 to fuelprices_749.json
+2024-12-10 11:40:26,952 [INFO] Saved raw API response for site_code 732 to fuelprices_732.json
+2024-12-10 11:40:26,953 [INFO] Saved raw API response for site_code 395 to fuelprices_395.json
+2024-12-10 11:40:26,953 [INFO] Saved parsed data for site_code 395 to fuelprices_395.json
+2024-12-10 11:40:26,954 [INFO] Saved raw API response for site_code 802 to fuelprices_802.json
+2024-12-10 11:40:26,955 [INFO] Saved parsed data for site_code 802 to fuelprices_802.json
+2024-12-10 11:40:26,955 [INFO] Saved raw API response for site_code 511 to fuelprices_511.json
+2024-12-10 11:40:26,956 [INFO] Saved parsed data for site_code 511 to fuelprices_511.json
+2024-12-10 11:40:26,956 [INFO] Saved raw API response for site_code 916 to fuelprices_916.json
+2024-12-10 11:40:26,957 [INFO] Saved parsed data for site_code 916 to fuelprices_916.json
+2024-12-10 11:40:26,958 [INFO] Saved raw API response for site_code 478 to fuelprices_478.json
+2024-12-10 11:40:26,958 [INFO] Saved parsed data for site_code 478 to fuelprices_478.json
+2024-12-10 11:40:26,959 [INFO] Saved raw API response for site_code 440 to fuelprices_440.json
+2024-12-10 11:40:26,960 [INFO] Saved parsed data for site_code 440 to fuelprices_440.json
+2024-12-10 11:40:26,960 [INFO] Saved raw API response for site_code 877 to fuelprices_877.json
+2024-12-10 11:40:26,961 [INFO] Saved parsed data for site_code 877 to fuelprices_877.json
+2024-12-10 11:40:26,961 [INFO] Saved raw API response for site_code 730 to fuelprices_730.json
+2024-12-10 11:40:26,962 [INFO] Saved raw API response for site_code 974 to fuelprices_974.json
+2024-12-10 11:40:26,962 [INFO] Saved parsed data for site_code 974 to fuelprices_974.json
+2024-12-10 11:40:26,963 [INFO] Saved raw API response for site_code 766 to fuelprices_766.json
+2024-12-10 11:40:26,964 [INFO] Saved raw API response for site_code 864 to fuelprices_864.json
+2024-12-10 11:40:26,964 [INFO] Saved raw API response for site_code 857 to fuelprices_857.json
+2024-12-10 11:40:26,965 [INFO] Saved parsed data for site_code 857 to fuelprices_857.json
+2024-12-10 11:40:26,965 [INFO] Saved raw API response for site_code 910 to fuelprices_910.json
+2024-12-10 11:40:26,966 [INFO] Saved parsed data for site_code 910 to fuelprices_910.json
+2024-12-10 11:40:26,967 [INFO] Saved raw API response for site_code 717 to fuelprices_717.json
+2024-12-10 11:40:26,967 [INFO] Saved parsed data for site_code 717 to fuelprices_717.json
+2024-12-10 11:40:26,968 [INFO] Saved raw API response for site_code 751 to fuelprices_751.json
+2024-12-10 11:40:26,968 [INFO] Saved parsed data for site_code 751 to fuelprices_751.json
+2024-12-10 11:40:26,969 [INFO] Saved raw API response for site_code 873 to fuelprices_873.json
+2024-12-10 11:40:26,970 [INFO] Saved parsed data for site_code 873 to fuelprices_873.json
+2024-12-10 11:40:26,970 [INFO] Saved raw API response for site_code 506 to fuelprices_506.json
+2024-12-10 11:40:26,971 [INFO] Saved parsed data for site_code 506 to fuelprices_506.json
+2024-12-10 11:40:26,971 [INFO] Saved raw API response for site_code 600 to fuelprices_600.json
+2024-12-10 11:40:26,972 [INFO] Saved parsed data for site_code 600 to fuelprices_600.json
+2024-12-10 11:40:26,973 [INFO] Saved raw API response for site_code 158 to fuelprices_158.json
+2024-12-10 11:40:26,973 [INFO] Saved parsed data for site_code 158 to fuelprices_158.json
+2024-12-10 11:40:26,974 [INFO] Saved raw API response for site_code 896 to fuelprices_896.json
+2024-12-10 11:40:26,974 [INFO] Saved parsed data for site_code 896 to fuelprices_896.json
+2024-12-10 11:40:26,975 [INFO] Saved raw API response for site_code 433 to fuelprices_433.json
+2024-12-10 11:40:26,975 [INFO] Saved parsed data for site_code 433 to fuelprices_433.json
+2024-12-10 11:40:26,976 [INFO] Saved raw API response for site_code 131 to fuelprices_131.json
+2024-12-10 11:40:26,976 [INFO] Saved parsed data for site_code 131 to fuelprices_131.json
+2024-12-10 11:40:26,977 [INFO] Saved raw API response for site_code 439 to fuelprices_439.json
+2024-12-10 11:40:26,978 [INFO] Saved parsed data for site_code 439 to fuelprices_439.json
+2024-12-10 11:40:26,978 [INFO] Saved raw API response for site_code 521 to fuelprices_521.json
+2024-12-10 11:40:26,979 [INFO] Saved parsed data for site_code 521 to fuelprices_521.json
+2024-12-10 11:40:26,979 [INFO] Saved raw API response for site_code 815 to fuelprices_815.json
+2024-12-10 11:40:26,980 [INFO] Saved parsed data for site_code 815 to fuelprices_815.json
+2024-12-10 11:40:26,981 [INFO] Saved raw API response for site_code 938 to fuelprices_938.json
+2024-12-10 11:40:26,981 [INFO] Saved raw API response for site_code 810 to fuelprices_810.json
+2024-12-10 11:40:26,982 [INFO] Saved parsed data for site_code 810 to fuelprices_810.json
+2024-12-10 11:40:26,982 [INFO] Saved raw API response for site_code 155 to fuelprices_155.json
+2024-12-10 11:40:26,983 [INFO] Saved parsed data for site_code 155 to fuelprices_155.json
+2024-12-10 11:40:26,984 [INFO] Saved raw API response for site_code 542 to fuelprices_542.json
+2024-12-10 11:40:26,984 [INFO] Saved parsed data for site_code 542 to fuelprices_542.json
+2024-12-10 11:40:26,985 [INFO] Saved raw API response for site_code 501 to fuelprices_501.json
+2024-12-10 11:40:26,986 [INFO] Saved parsed data for site_code 501 to fuelprices_501.json
+2024-12-10 11:40:26,986 [INFO] Saved raw API response for site_code 813 to fuelprices_813.json
+2024-12-10 11:40:26,987 [INFO] Saved parsed data for site_code 813 to fuelprices_813.json
+2024-12-10 11:40:26,987 [INFO] Saved raw API response for site_code 872 to fuelprices_872.json
+2024-12-10 11:40:26,988 [INFO] Saved parsed data for site_code 872 to fuelprices_872.json
+2024-12-10 11:40:26,989 [INFO] Saved raw API response for site_code 874 to fuelprices_874.json
+2024-12-10 11:40:26,989 [INFO] Saved parsed data for site_code 874 to fuelprices_874.json
+2024-12-10 11:40:26,990 [INFO] Saved raw API response for site_code 592 to fuelprices_592.json
+2024-12-10 11:40:26,991 [INFO] Saved parsed data for site_code 592 to fuelprices_592.json
+2024-12-10 11:40:26,991 [INFO] Saved raw API response for site_code 867 to fuelprices_867.json
+2024-12-10 11:40:26,992 [INFO] Saved parsed data for site_code 867 to fuelprices_867.json
+2024-12-10 11:40:26,992 [INFO] Saved raw API response for site_code 890 to fuelprices_890.json
+2024-12-10 11:40:26,993 [INFO] Saved parsed data for site_code 890 to fuelprices_890.json
+2024-12-10 11:40:26,994 [INFO] Saved raw API response for site_code 441 to fuelprices_441.json
+2024-12-10 11:40:26,994 [INFO] Saved parsed data for site_code 441 to fuelprices_441.json
+2024-12-10 11:40:26,995 [INFO] Saved raw API response for site_code 764 to fuelprices_764.json
+2024-12-10 11:40:26,995 [INFO] Saved parsed data for site_code 764 to fuelprices_764.json
+2024-12-10 11:40:26,996 [INFO] Saved raw API response for site_code 452 to fuelprices_452.json
+2024-12-10 11:40:26,996 [INFO] Saved parsed data for site_code 452 to fuelprices_452.json
+2024-12-10 11:40:26,997 [INFO] Saved raw API response for site_code 540 to fuelprices_540.json
+2024-12-10 11:40:26,998 [INFO] Saved parsed data for site_code 540 to fuelprices_540.json
+2024-12-10 11:40:26,998 [INFO] Saved raw API response for site_code 817 to fuelprices_817.json
+2024-12-10 11:40:26,999 [INFO] Saved parsed data for site_code 817 to fuelprices_817.json
+2024-12-10 11:40:27,000 [INFO] Saved raw API response for site_code 757 to fuelprices_757.json
+2024-12-10 11:40:27,000 [INFO] Saved parsed data for site_code 757 to fuelprices_757.json
+2024-12-10 11:40:27,001 [INFO] Saved raw API response for site_code 750 to fuelprices_750.json
+2024-12-10 11:40:27,001 [INFO] Saved parsed data for site_code 750 to fuelprices_750.json
+2024-12-10 11:40:27,002 [INFO] Saved raw API response for site_code 897 to fuelprices_897.json
+2024-12-10 11:40:27,003 [INFO] Saved parsed data for site_code 897 to fuelprices_897.json
+2024-12-10 11:40:27,003 [INFO] Saved raw API response for site_code 578 to fuelprices_578.json
+2024-12-10 11:40:27,004 [INFO] Saved parsed data for site_code 578 to fuelprices_578.json
+2024-12-10 11:40:27,004 [INFO] Saved raw API response for site_code 514 to fuelprices_514.json
+2024-12-10 11:40:27,005 [INFO] Saved raw API response for site_code 891 to fuelprices_891.json
+2024-12-10 11:40:27,006 [INFO] Saved parsed data for site_code 891 to fuelprices_891.json
+2024-12-10 11:40:27,006 [INFO] Saved raw API response for site_code 583 to fuelprices_583.json
+2024-12-10 11:40:27,007 [INFO] Saved parsed data for site_code 583 to fuelprices_583.json
+2024-12-10 11:40:27,007 [INFO] Saved raw API response for site_code 823 to fuelprices_823.json
+2024-12-10 11:40:27,008 [INFO] Saved parsed data for site_code 823 to fuelprices_823.json
+2024-12-10 11:40:27,008 [INFO] Saved raw API response for site_code 839 to fuelprices_839.json
+2024-12-10 11:40:27,009 [INFO] Saved parsed data for site_code 839 to fuelprices_839.json
+2024-12-10 11:40:27,010 [INFO] Saved raw API response for site_code 806 to fuelprices_806.json
+2024-12-10 11:40:27,010 [INFO] Saved parsed data for site_code 806 to fuelprices_806.json
+2024-12-10 11:40:27,011 [INFO] Saved raw API response for site_code 438 to fuelprices_438.json
+2024-12-10 11:40:27,011 [INFO] Saved parsed data for site_code 438 to fuelprices_438.json
+2024-12-10 11:40:27,012 [INFO] Saved raw API response for site_code 581 to fuelprices_581.json
+2024-12-10 11:40:27,013 [INFO] Saved raw API response for site_code 754 to fuelprices_754.json
+2024-12-10 11:40:27,013 [INFO] Saved parsed data for site_code 754 to fuelprices_754.json
+2024-12-10 11:40:27,014 [INFO] Saved raw API response for site_code 937 to fuelprices_937.json
+2024-12-10 11:40:27,014 [INFO] Saved parsed data for site_code 937 to fuelprices_937.json
