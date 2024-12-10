@@ -72,62 +72,52 @@ async def fetch_json(session, url):
 
 async def fetch_site_mappings():
     """
-    Fetch site mappings and site codes from `get_sites` and `get_site`.
+    Fetch site mappings from `get_sites` and `get_site`.
     """
     async with aiohttp.ClientSession() as session:
         # Fetch responses
-        get_sites = await fetch_json(session, BASE_URLS["get_sites"])
-        get_site = await fetch_json(session, BASE_URLS["get_site"])
+        get_sites_data = await fetch_json(session, BASE_URLS["get_sites"])
+        get_site_data = await fetch_json(session, BASE_URLS["get_site"])
 
-        # Initialize mappings and site codes set
         site_mappings = {}
-        site_codes_set = set()
 
-        # Process `get_sites` (list of site codes or dictionaries)
-        if isinstance(get_sites, list):
-            for site in get_sites:
-                if isinstance(site, str):  # If it's a string, it's a site code
-                    site_codes_set.add(site)
-                    site_mappings[site] = {"name": f"Site {site}"}
-                elif isinstance(site, dict):  # If it's a dictionary
-                    site_code = site.get("SiteCode")
-                    site_name = site.get("SiteName")
-                    latitude = site.get("Latitude")
-                    longitude = site.get("Longitude")
-                    address = site.get("StreetAddress")
-
-                    if site_code:
-                        site_codes_set.add(site_code)
-                        site_mappings[site_code] = {
-                            "name": site_name,
-                            "latitude": latitude,
-                            "longitude": longitude,
-                            "address": address,
-                        }
-
-        # Process `get_site` (dictionary with `sites` key)
-        if isinstance(get_site, dict) and "sites" in get_site:
-            for site in get_site["sites"]:
+        # Process data from get_sites
+        if isinstance(get_sites_data, list):
+            for site in get_sites_data:
                 if isinstance(site, dict):
-                    site_code = site.get("site_code")
-                    site_name = site.get("name")
-                    latitude = site.get("latitude")
-                    longitude = site.get("longitude")
-                    address = site.get("address")
+                    site_code = site.get("SiteCode")
+                    site_mappings[site_code] = {
+                        "name": f"Site {site_code}",
+                        "latitude": site.get("Latitude"),
+                        "longitude": site.get("Longitude"),
+                        "address": site.get("StreetAddress"),
+                    }
+        else:
+            logging.error(f"Unexpected get_sites structure: {get_sites_data}")
 
-                    if site_code:
-                        site_codes_set.add(site_code)
-                        if site_code not in site_mappings:
-                            site_mappings[site_code] = {}
-                        site_mappings[site_code].update({
-                            "name": site_name or site_mappings[site_code].get("name"),
-                            "latitude": latitude or site_mappings[site_code].get("latitude"),
-                            "longitude": longitude or site_mappings[site_code].get("longitude"),
-                            "address": address or site_mappings[site_code].get("address"),
-                        })
+        # Update site mappings with more detailed data from get_site
+        if isinstance(get_site_data, dict) and "sites" in get_site_data:
+            for site in get_site_data["sites"]:
+                site_code = site.get("site_code")
+                if site_code and site_code in site_mappings:
+                    site_mappings[site_code].update({
+                        "name": site.get("name"),
+                        "latitude": site.get("latitude"),
+                        "longitude": site.get("longitude"),
+                        "address": site.get("address"),
+                    })
+                elif site_code:
+                    site_mappings[site_code] = {
+                        "name": site.get("name"),
+                        "latitude": site.get("latitude"),
+                        "longitude": site.get("longitude"),
+                        "address": site.get("address"),
+                    }
+        else:
+            logging.error(f"Unexpected get_site structure: {get_site_data}")
 
-        logging.info(f"Generated site mappings for {len(site_mappings)} sites.")
-        return site_codes_set, site_mappings
+        logging.info(f"Generated site mappings: {len(site_mappings)} sites found.")
+        return site_mappings
 
 async def fetch_and_save_fuel_prices(site_codes, site_mappings):
     """
