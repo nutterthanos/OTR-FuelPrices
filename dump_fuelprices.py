@@ -72,52 +72,43 @@ async def fetch_json(session, url):
 
 async def fetch_site_mappings():
     """
-    Fetch site mappings from `get_sites` and `get_site`.
+    Fetch and parse site mappings from `getSites` and `site` endpoints.
     """
     async with aiohttp.ClientSession() as session:
-        # Fetch responses
-        get_sites_data = await fetch_json(session, BASE_URLS["get_sites"])
-        get_site_data = await fetch_json(session, BASE_URLS["get_site"])
+        # Fetch data from both endpoints
+        get_sites_response = await fetch_json(session, BASE_URLS["get_sites"])
+        site_response = await fetch_json(session, BASE_URLS["get_site"])
 
-        # Initialize site codes set and mappings
+        # Initialize mappings and sets
         site_codes_set = set()
         site_mappings = {}
 
-        # Process data from get_sites
-        if isinstance(get_sites_data, list):
-            for site in get_sites_data:
-                if isinstance(site, dict):
-                    site_code = site.get("SiteCode")
-                    if site_code:
-                        site_codes_set.add(site_code)
-                        site_mappings[site_code] = {
-                            "name": site.get("SiteName"),
-                            "latitude": site.get("Latitude"),
-                            "longitude": site.get("Longitude"),
-                            "address": site.get("StreetAddress"),
-                        }
-                elif isinstance(site, str):  # Handle if site is a string
-                    site_codes_set.add(site)
-                    site_mappings[site] = {"name": f"Site {site}"}
+        # Process get_sites response
+        if isinstance(get_sites_response, list):
+            for site in get_sites_response:
+                site_code = site.get("SiteCode") or site.get("site_code")  # Handle case sensitivity
+                if site_code:
+                    site_codes_set.add(site_code)
 
-        # Process data from get_site
-        if isinstance(get_site_data, dict) and "sites" in get_site_data:
-            for site in get_site_data["sites"]:
-                if isinstance(site, dict):
-                    site_code = site.get("site_code")
-                    if site_code:
-                        site_codes_set.add(site_code)
-                        if site_code not in site_mappings:
-                            site_mappings[site_code] = {}
-                        site_mappings[site_code].update({
-                            "name": site.get("name"),
-                            "latitude": site.get("latitude"),
-                            "longitude": site.get("longitude"),
-                            "address": site.get("address"),
-                        })
+        # Process site response
+        if isinstance(site_response, dict) and "sites" in site_response:
+            for site in site_response["sites"]:
+                site_code = site.get("site_code")
+                site_name = site.get("name")
+                latitude = site.get("latitude")
+                longitude = site.get("longitude")
+                address = site.get("address")
+                if site_code:
+                    site_codes_set.add(site_code)
+                    site_mappings[site_code] = {
+                        "name": site_name,
+                        "latitude": latitude,
+                        "longitude": longitude,
+                        "address": address,
+                    }
 
-        # Log and return
-        logging.info(f"Generated site mappings: {len(site_mappings)} sites found.")
+        # Logging for debugging
+        logging.info(f"Generated site mappings for {len(site_mappings)} sites.")
         return site_codes_set, site_mappings
 
 async def fetch_and_save_fuel_prices(site_codes, site_mappings):
