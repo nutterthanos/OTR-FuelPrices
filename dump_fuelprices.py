@@ -94,39 +94,46 @@ async def fetch_site_mappings():
         site_codes_set = set()
         site_mappings = {}
 
-        # Process get_sites response
-        if isinstance(get_sites_response, list):
-            for site in get_sites_response:
+        # Process get_sites response (dict structure)
+        if isinstance(get_sites_response, dict):
+            for key, site in get_sites_response.items():
                 if isinstance(site, dict):
                     site_code = site.get("SiteCode") or site.get("site_code")
+                    site_name = site.get("SiteName") or site.get("name")
+                    latitude = site.get("Latitude") or site.get("latitude")
+                    longitude = site.get("Longitude") or site.get("longitude")
+                    address = site.get("StreetAddress") or site.get("address")
+
                     if site_code:
                         site_codes_set.add(site_code)
                         site_mappings[site_code] = {
-                            "name": site.get("SiteName"),
-                            "latitude": site.get("Latitude"),
-                            "longitude": site.get("Longitude"),
-                            "address": site.get("StreetAddress"),
+                            "name": site_name,
+                            "latitude": latitude,
+                            "longitude": longitude,
+                            "address": address,
                         }
-                elif isinstance(site, str):
-                    site_codes_set.add(site)
-                    site_mappings[site] = {"name": f"Site {site}"}
         else:
             logging.error(f"Unexpected structure in get_sites response: {type(get_sites_response)}")
 
-        # Process site response
-        if isinstance(site_response, dict) and "sites" in site_response:
-            for site in site_response["sites"]:
+        # Process site response (list structure)
+        if isinstance(site_response, list):
+            for site in site_response:
                 if isinstance(site, dict):
                     site_code = site.get("site_code")
+                    site_name = site.get("name")
+                    latitude = site.get("latitude")
+                    longitude = site.get("longitude")
+                    address = site.get("address")
+
                     if site_code:
                         site_codes_set.add(site_code)
                         if site_code not in site_mappings:
                             site_mappings[site_code] = {}
                         site_mappings[site_code].update({
-                            "name": site.get("name"),
-                            "latitude": site.get("latitude"),
-                            "longitude": site.get("longitude"),
-                            "address": site.get("address"),
+                            "name": site_name or site_mappings[site_code].get("name"),
+                            "latitude": latitude or site_mappings[site_code].get("latitude"),
+                            "longitude": longitude or site_mappings[site_code].get("longitude"),
+                            "address": address or site_mappings[site_code].get("address"),
                         })
         else:
             logging.error(f"Unexpected structure in site response: {type(site_response)}")
