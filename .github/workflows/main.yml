@@ -50,9 +50,8 @@ jobs:
           fi
 
       # Step 6: Wait for 1 minute
-      - name: Wait for 1 minute
-        if: env.skip_commit == 'false'
-        run: sleep 60
+      - name: Wait for 5 minutes
+        run: sleep 300
 
       # Step 7: Always trigger dump fuelprices workflow
       - name: Trigger dump fuelprices workflow
