@@ -23,6 +23,21 @@
             "department_code": 4,
             "date": "2024-12-06T23:47:00",
             "price": 1.839
+        },
+        {
+            "department_code": 1,
+            "date": "2024-12-11T00:31:00",
+            "price": 1.859
+        },
+        {
+            "department_code": 2,
+            "date": "2024-12-11T00:31:00",
+            "price": 1.699
+        },
+        {
+            "department_code": 3,
+            "date": "2024-12-11T00:31:00",
+            "price": 1.929
         }
     ]
 }
