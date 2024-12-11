@@ -1,8 +1,45 @@
 {
     "generic_response": {
         "detailed_message": null,
-        "message": "Customer not found.",
-        "status": "02"
+        "message": "",
+        "status": "01"
     },
-    "sitefuelprices": null
+    "sitefuelprices": [
+        {
+            "action_by_date": null,
+            "current_price": 1.879,
+            "date_entered": "/Date(1728863460000+1030)/",
+            "department_code": 1,
+            "price_delta": 0.0,
+            "site_code": "137",
+            "stockitem_id": 820296
+        },
+        {
+            "action_by_date": null,
+            "current_price": 1.699,
+            "date_entered": "/Date(1728863460000+1030)/",
+            "department_code": 2,
+            "price_delta": 0.0,
+            "site_code": "137",
+            "stockitem_id": 820295
+        },
+        {
+            "action_by_date": null,
+            "current_price": 1.939,
+            "date_entered": "/Date(1728863460000+1030)/",
+            "department_code": 3,
+            "price_delta": 0.0,
+            "site_code": "137",
+            "stockitem_id": 820297
+        },
+        {
+            "action_by_date": null,
+            "current_price": 1.769,
+            "date_entered": "/Date(1732576440000+1030)/",
+            "department_code": 4,
+            "price_delta": 0.0,
+            "site_code": "137",
+            "stockitem_id": 820298
+        }
+    ]
 }

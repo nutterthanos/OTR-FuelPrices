@@ -37,6 +37,7 @@ WEBPAGE_ROOT = "docs"
 # Ensure directories exist
 os.makedirs(FUELPRICES_DIR, exist_ok=True)
 os.makedirs(PARSED_FUELPRICES_DIR, exist_ok=True)
+logging.debug(f"AuthToken in headers: {HEADERS.get('AuthToken')}")
 
 async def save_site_mappings(site_mappings):
     """

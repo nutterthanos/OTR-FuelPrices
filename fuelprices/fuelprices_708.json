@@ -1,8 +1,8 @@
 {
     "generic_response": {
         "detailed_message": null,
-        "message": "Customer not found.",
-        "status": "02"
+        "message": "",
+        "status": "01"
     },
-    "sitefuelprices": null
+    "sitefuelprices": []
 }
